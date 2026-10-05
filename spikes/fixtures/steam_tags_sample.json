@@ -1,0 +1,558 @@
+{
+  "steamspy_appdetails": {
+    "753640": {
+      "name": "Outer Wilds",
+      "tags": {
+        "Exploration": 1255,
+        "Space": 1104,
+        "Mystery": 981,
+        "Story Rich": 961,
+        "Adventure": 889,
+        "Great Soundtrack": 844,
+        "Atmospheric": 818,
+        "Puzzle": 771,
+        "Open World": 730,
+        "Singleplayer": 690,
+        "Indie": 616,
+        "Sci-fi": 610,
+        "Horror": 589,
+        "First-Person": 568,
+        "Beautiful": 548,
+        "Psychological Horror": 398,
+        "Epic": 350,
+        "3D": 293,
+        "Simulation": 289,
+        "Action": 210
+      }
+    },
+    "1145360": {
+      "name": "Hades",
+      "tags": {
+        "Action Roguelike": 1330,
+        "Rogue-lite": 954,
+        "Hack and Slash": 936,
+        "Indie": 928,
+        "Mythology": 877,
+        "Action": 816,
+        "Rogue-like": 747,
+        "Singleplayer": 701,
+        "Great Soundtrack": 696,
+        "Story Rich": 669,
+        "RPG": 648,
+        "Dungeon Crawler": 638,
+        "Replay Value": 565,
+        "Isometric": 432,
+        "Difficult": 397,
+        "Action RPG": 305,
+        "Hand-drawn": 297,
+        "Atmospheric": 284,
+        "Perma Death": 102,
+        "LGBTQ+": 93
+      }
+    },
+    "413150": {
+      "name": "Stardew Valley",
+      "tags": {
+        "Farming Sim": 7935,
+        "Pixel Graphics": 7389,
+        "Multiplayer": 7278,
+        "Life Sim": 7246,
+        "RPG": 6530,
+        "Relaxing": 6286,
+        "Agriculture": 5335,
+        "Simulation": 5307,
+        "Crafting": 4480,
+        "Sandbox": 4378,
+        "Indie": 4324,
+        "Building": 3620,
+        "Singleplayer": 3359,
+        "Casual": 3356,
+        "Open World": 3328,
+        "2D": 2997,
+        "Dating Sim": 2824,
+        "Cute": 2814,
+        "Great Soundtrack": 2561,
+        "Fishing": 2287
+      }
+    },
+    "1086940": {
+      "name": "Baldur's Gate 3",
+      "tags": {
+        "RPG": 4536,
+        "Character Customization": 3522,
+        "Choices Matter": 3475,
+        "Story Rich": 3416,
+        "Turn-Based Combat": 3370,
+        "Dungeons & Dragons": 3237,
+        "CRPG": 2637,
+        "Fantasy": 2619,
+        "Adventure": 2578,
+        "Sexual Content": 2483,
+        "Romance": 2448,
+        "Online Co-Op": 2361,
+        "Multiplayer": 2273,
+        "Strategy": 2082,
+        "Singleplayer": 2044,
+        "Co-op Campaign": 1925,
+        "Nudity": 1817,
+        "Class-Based": 1814,
+        "Dark Fantasy": 1628,
+        "Combat": 1507
+      }
+    }
+  },
+  "getitems": [
+    {
+      "appid": 753640,
+      "name": "Outer Wilds",
+      "tags": [
+        {
+          "tagid": 3834,
+          "weight": 927
+        },
+        {
+          "tagid": 1755,
+          "weight": 799
+        },
+        {
+          "tagid": 5716,
+          "weight": 720
+        },
+        {
+          "tagid": 1742,
+          "weight": 706
+        },
+        {
+          "tagid": 21,
+          "weight": 632
+        },
+        {
+          "tagid": 1756,
+          "weight": 621
+        },
+        {
+          "tagid": 4166,
+          "weight": 598
+        },
+        {
+          "tagid": 1664,
+          "weight": 588
+        },
+        {
+          "tagid": 1695,
+          "weight": 540
+        },
+        {
+          "tagid": 4182,
+          "weight": 523
+        },
+        {
+          "tagid": 492,
+          "weight": 469
+        },
+        {
+          "tagid": 3942,
+          "weight": 451
+        },
+        {
+          "tagid": 1667,
+          "weight": 448
+        },
+        {
+          "tagid": 3839,
+          "weight": 411
+        },
+        {
+          "tagid": 5411,
+          "weight": 406
+        },
+        {
+          "tagid": 1721,
+          "weight": 316
+        },
+        {
+          "tagid": 3965,
+          "weight": 258
+        },
+        {
+          "tagid": 4191,
+          "weight": 230
+        },
+        {
+          "tagid": 599,
+          "weight": 203
+        },
+        {
+          "tagid": 19,
+          "weight": 144
+        }
+      ],
+      "reviews": {
+        "summary_filtered": {
+          "review_count": 89912,
+          "percent_positive": 95,
+          "review_score": 9,
+          "review_score_label": "Overwhelmingly Positive"
+        },
+        "summary_language_specific": {
+          "review_count": 53092,
+          "percent_positive": 95,
+          "review_score": 9,
+          "review_score_label": "Overwhelmingly Positive"
+        }
+      }
+    },
+    {
+      "appid": 1145360,
+      "name": "Hades",
+      "tags": [
+        {
+          "tagid": 42804,
+          "weight": 1051
+        },
+        {
+          "tagid": 3959,
+          "weight": 766
+        },
+        {
+          "tagid": 1646,
+          "weight": 749
+        },
+        {
+          "tagid": 492,
+          "weight": 735
+        },
+        {
+          "tagid": 16094,
+          "weight": 730
+        },
+        {
+          "tagid": 19,
+          "weight": 636
+        },
+        {
+          "tagid": 1716,
+          "weight": 620
+        },
+        {
+          "tagid": 4182,
+          "weight": 579
+        },
+        {
+          "tagid": 1756,
+          "weight": 555
+        },
+        {
+          "tagid": 1742,
+          "weight": 545
+        },
+        {
+          "tagid": 1720,
+          "weight": 511
+        },
+        {
+          "tagid": 122,
+          "weight": 500
+        },
+        {
+          "tagid": 4711,
+          "weight": 462
+        },
+        {
+          "tagid": 5851,
+          "weight": 360
+        },
+        {
+          "tagid": 4026,
+          "weight": 328
+        },
+        {
+          "tagid": 6815,
+          "weight": 239
+        },
+        {
+          "tagid": 4231,
+          "weight": 235
+        },
+        {
+          "tagid": 4166,
+          "weight": 231
+        },
+        {
+          "tagid": 1759,
+          "weight": 80
+        },
+        {
+          "tagid": 44868,
+          "weight": 79
+        }
+      ],
+      "reviews": {
+        "summary_filtered": {
+          "review_count": 286167,
+          "percent_positive": 97,
+          "review_score": 9,
+          "review_score_label": "Overwhelmingly Positive"
+        },
+        "summary_language_specific": {
+          "review_count": 142630,
+          "percent_positive": 98,
+          "review_score": 9,
+          "review_score_label": "Overwhelmingly Positive"
+        }
+      }
+    },
+    {
+      "appid": 413150,
+      "name": "Stardew Valley",
+      "tags": [
+        {
+          "tagid": 87918,
+          "weight": 859
+        },
+        {
+          "tagid": 3964,
+          "weight": 788
+        },
+        {
+          "tagid": 3859,
+          "weight": 780
+        },
+        {
+          "tagid": 10235,
+          "weight": 768
+        },
+        {
+          "tagid": 122,
+          "weight": 685
+        },
+        {
+          "tagid": 1654,
+          "weight": 684
+        },
+        {
+          "tagid": 599,
+          "weight": 555
+        },
+        {
+          "tagid": 22602,
+          "weight": 549
+        },
+        {
+          "tagid": 1702,
+          "weight": 472
+        },
+        {
+          "tagid": 3810,
+          "weight": 471
+        },
+        {
+          "tagid": 492,
+          "weight": 471
+        },
+        {
+          "tagid": 1643,
+          "weight": 386
+        },
+        {
+          "tagid": 1695,
+          "weight": 365
+        },
+        {
+          "tagid": 597,
+          "weight": 364
+        },
+        {
+          "tagid": 4182,
+          "weight": 355
+        },
+        {
+          "tagid": 3871,
+          "weight": 317
+        },
+        {
+          "tagid": 9551,
+          "weight": 315
+        },
+        {
+          "tagid": 4726,
+          "weight": 300
+        },
+        {
+          "tagid": 1756,
+          "weight": 266
+        },
+        {
+          "tagid": 15564,
+          "weight": 241
+        }
+      ],
+      "reviews": {
+        "summary_filtered": {
+          "review_count": 896642,
+          "percent_positive": 98,
+          "review_score": 9,
+          "review_score_label": "Overwhelmingly Positive"
+        },
+        "summary_language_specific": {
+          "review_count": 395096,
+          "percent_positive": 98,
+          "review_score": 9,
+          "review_score_label": "Overwhelmingly Positive"
+        }
+      }
+    },
+    {
+      "appid": 1086940,
+      "name": "Baldur's Gate 3",
+      "tags": [
+        {
+          "tagid": 122,
+          "weight": 953
+        },
+        {
+          "tagid": 4747,
+          "weight": 723
+        },
+        {
+          "tagid": 6426,
+          "weight": 707
+        },
+        {
+          "tagid": 4325,
+          "weight": 697
+        },
+        {
+          "tagid": 1742,
+          "weight": 679
+        },
+        {
+          "tagid": 12095,
+          "weight": 560
+        },
+        {
+          "tagid": 4474,
+          "weight": 528
+        },
+        {
+          "tagid": 1684,
+          "weight": 526
+        },
+        {
+          "tagid": 21,
+          "weight": 494
+        },
+        {
+          "tagid": 4947,
+          "weight": 489
+        },
+        {
+          "tagid": 3843,
+          "weight": 452
+        },
+        {
+          "tagid": 3859,
+          "weight": 436
+        },
+        {
+          "tagid": 6650,
+          "weight": 401
+        },
+        {
+          "tagid": 9,
+          "weight": 395
+        },
+        {
+          "tagid": 4182,
+          "weight": 391
+        },
+        {
+          "tagid": 4508,
+          "weight": 366
+        },
+        {
+          "tagid": 4155,
+          "weight": 351
+        },
+        {
+          "tagid": 4604,
+          "weight": 313
+        },
+        {
+          "tagid": 3993,
+          "weight": 285
+        },
+        {
+          "tagid": 44868,
+          "weight": 246
+        }
+      ],
+      "reviews": {
+        "summary_filtered": {
+          "review_count": 757056,
+          "percent_positive": 96,
+          "review_score": 9,
+          "review_score_label": "Overwhelmingly Positive"
+        },
+        "summary_language_specific": {
+          "review_count": 450260,
+          "percent_positive": 96,
+          "review_score": 9,
+          "review_score_label": "Overwhelmingly Positive"
+        }
+      }
+    }
+  ],
+  "taglist_sample": {
+    "9": "Strategy",
+    "19": "Action",
+    "21": "Adventure",
+    "84": "Design & Illustration",
+    "87": "Utilities",
+    "113": "Free to Play",
+    "122": "RPG",
+    "128": "Massively Multiplayer",
+    "492": "Indie",
+    "493": "Early Access",
+    "597": "Casual",
+    "599": "Simulation",
+    "699": "Racing",
+    "701": "Sports",
+    "784": "Video Production",
+    "809": "Photo Editing",
+    "872": "Animation & Modeling",
+    "1027": "Audio Production",
+    "1036": "Education",
+    "1445": "Software Training",
+    "1616": "Trains",
+    "1621": "Music",
+    "1625": "Platformer",
+    "1628": "Metroidvania",
+    "1637": "Dogs",
+    "1638": "Dog",
+    "1643": "Building",
+    "1644": "Driving",
+    "1645": "Tower Defense",
+    "1646": "Hack and Slash",
+    "1647": "Western",
+    "1651": "Satire",
+    "1654": "Relaxing",
+    "1659": "Zombies",
+    "1662": "Survival",
+    "1663": "FPS",
+    "1664": "Puzzle",
+    "1665": "Match 3",
+    "1666": "Card Game",
+    "1667": "Horror",
+    "1669": "Moddable",
+    "1670": "4X",
+    "1671": "Superhero",
+    "1673": "Aliens",
+    "1674": "Typing",
+    "1676": "RTS",
+    "1677": "Turn-Based",
+    "1678": "War",
+    "1680": "Heist",
+    "1681": "Pirates"
+  }
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "query": "The Legend of Zelda: Breath of the Wild",
+    "igdb_name": "The Legend of Zelda: Breath of the Wild",
+    "has_steam": false,
+    "n_keywords": 78,
+    "n_themes": 5
+  },
+  {
+    "query": "Bloodborne",
+    "igdb_name": "Bloodborne",
+    "has_steam": false,
+    "n_keywords": 36,
+    "n_themes": 4
+  },
+  {
+    "query": "Super Mario Odyssey",
+    "igdb_name": "Super Mario Bros: Odyssey - Chapter 1",
+    "has_steam": false,
+    "n_keywords": 4,
+    "n_themes": 1
+  },
+  {
+    "query": "The Last of Us Part II",
+    "igdb_name": "The Last of Us Part II",
+    "has_steam": false,
+    "n_keywords": 16,
+    "n_themes": 4
+  },
+  {
+    "query": "Hollow Knight",
+    "igdb_name": "Hollow Knight",
+    "has_steam": true,
+    "n_keywords": 40,
+    "n_themes": 2
+  },
+  {
+    "query": "Celeste",
+    "igdb_name": "Celeste",
+    "has_steam": true,
+    "n_keywords": 33,
+    "n_themes": 2
+  },
+  {
+    "query": "Metroid Dread",
+    "igdb_name": "Metroid Dread",
+    "has_steam": false,
+    "n_keywords": 2,
+    "n_themes": 1
+  },
+  {
+    "query": "Astro Bot",
+    "igdb_name": "Astro Bot",
+    "has_steam": false,
+    "n_keywords": 12,
+    "n_themes": 2
+  }
+]

@@ -1,0 +1,364 @@
+{
+  "game": {
+    "id": 11737,
+    "aggregated_rating": 84.71428571428571,
+    "aggregated_rating_count": 7,
+    "cover": {
+      "id": 286788,
+      "image_id": "co65ac"
+    },
+    "external_games": [
+      {
+        "id": 111832,
+        "uid": "49344",
+        "external_game_source": {
+          "id": 3,
+          "name": "GiantBomb"
+        }
+      },
+      {
+        "id": 1931605,
+        "uid": "B07SH7MWDW",
+        "external_game_source": {
+          "id": 20,
+          "name": "Amazon"
+        }
+      },
+      {
+        "id": 2175778,
+        "uid": "229826",
+        "external_game_source": {
+          "id": 36,
+          "name": "Playstation Store US"
+        }
+      },
+      {
+        "id": 323909,
+        "uid": "753640",
+        "external_game_source": {
+          "id": 1,
+          "name": "Steam"
+        }
+      },
+      {
+        "id": 2628481,
+        "uid": "5a1f3f34df1f4c21850b997aa08da19e",
+        "external_game_source": {
+          "id": 26,
+          "name": "Epic Games Store"
+        }
+      },
+      {
+        "id": 2082214,
+        "uid": "C596FKDKMQN7",
+        "external_game_source": {
+          "id": 11,
+          "name": "Microsoft"
+        }
+      },
+      {
+        "id": 2118690,
+        "uid": "d5e3beaf-bdc6-4983-a70d-584444b0f92b",
+        "external_game_source": {
+          "id": 26,
+          "name": "Epic Games Store"
+        }
+      },
+      {
+        "id": 1902707,
+        "uid": "489335",
+        "external_game_source": {
+          "id": 14,
+          "name": "Twitch"
+        }
+      }
+    ],
+    "first_release_date": 1559001600,
+    "game_modes": [
+      {
+        "id": 1,
+        "name": "Single player"
+      }
+    ],
+    "genres": [
+      {
+        "id": 9,
+        "name": "Puzzle"
+      },
+      {
+        "id": 13,
+        "name": "Simulator"
+      },
+      {
+        "id": 31,
+        "name": "Adventure"
+      },
+      {
+        "id": 32,
+        "name": "Indie"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 144456,
+        "company": {
+          "id": 11662,
+          "name": "Annapurna Interactive"
+        },
+        "developer": false
+      },
+      {
+        "id": 145321,
+        "company": {
+          "id": 11662,
+          "name": "Annapurna Interactive"
+        },
+        "developer": false
+      },
+      {
+        "id": 145322,
+        "company": {
+          "id": 6209,
+          "name": "Mobius Digital"
+        },
+        "developer": true
+      },
+      {
+        "id": 318852,
+        "company": {
+          "id": 31592,
+          "name": "Limited Run Games"
+        },
+        "developer": false
+      }
+    ],
+    "keywords": [
+      {
+        "id": 23,
+        "name": "space simulation"
+      },
+      {
+        "id": 72,
+        "name": "exploration"
+      },
+      {
+        "id": 170,
+        "name": "time travel"
+      },
+      {
+        "id": 4090,
+        "name": "astronaut"
+      }
+    ],
+    "name": "Outer Wilds",
+    "platforms": [
+      {
+        "id": 169,
+        "abbreviation": "Series X|S"
+      },
+      {
+        "id": 48,
+        "abbreviation": "PS4"
+      },
+      {
+        "id": 6,
+        "abbreviation": "PC"
+      },
+      {
+        "id": 167,
+        "abbreviation": "PS5"
+      },
+      {
+        "id": 49,
+        "abbreviation": "XONE"
+      },
+      {
+        "id": 130,
+        "abbreviation": "Switch"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 1,
+        "name": "First person"
+      }
+    ],
+    "rating": 89.28043864145235,
+    "rating_count": 887,
+    "similar_games": [
+      {
+        "id": 164243,
+        "name": "Madison"
+      },
+      {
+        "id": 152267,
+        "name": "Tinykin"
+      },
+      {
+        "id": 131869,
+        "name": "I Am Dead"
+      },
+      {
+        "id": 109668,
+        "name": "Stay Out of the House"
+      },
+      {
+        "id": 26223,
+        "name": "Quern: Undying Thoughts"
+      },
+      {
+        "id": 30264,
+        "name": "The Station"
+      },
+      {
+        "id": 197202,
+        "name": "Escape the Backrooms"
+      },
+      {
+        "id": 153808,
+        "name": "AI: The Somnium Files - Nirvana Initiative"
+      },
+      {
+        "id": 17480,
+        "name": "Eastshade"
+      },
+      {
+        "id": 141543,
+        "name": "Road 96"
+      }
+    ],
+    "slug": "outer-wilds",
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 18,
+        "name": "Science fiction"
+      },
+      {
+        "id": 38,
+        "name": "Open world"
+      },
+      {
+        "id": 43,
+        "name": "Mystery"
+      }
+    ],
+    "total_rating": 86.99736217786904,
+    "collections": [
+      {
+        "id": 6980,
+        "name": "Outer Wilds"
+      }
+    ],
+    "game_type": {
+      "id": 0,
+      "type": "Main Game"
+    }
+  },
+  "time_to_beat": [
+    {
+      "id": 1758,
+      "game_id": 11737,
+      "hastily": 43200,
+      "normally": 68400,
+      "completely": 115200,
+      "count": 7,
+      "created_at": 1728556582,
+      "updated_at": 1788196857,
+      "checksum": "8a9dc478-c9fe-54a5-d0a8-bc7e0ffcf2d5"
+    }
+  ],
+  "external_game_sources": [
+    {
+      "id": 1,
+      "name": "Steam"
+    },
+    {
+      "id": 3,
+      "name": "GiantBomb"
+    },
+    {
+      "id": 5,
+      "name": "GOG"
+    },
+    {
+      "id": 10,
+      "name": "Youtube"
+    },
+    {
+      "id": 11,
+      "name": "Microsoft"
+    },
+    {
+      "id": 13,
+      "name": "Apple"
+    },
+    {
+      "id": 14,
+      "name": "Twitch"
+    },
+    {
+      "id": 15,
+      "name": "Android"
+    },
+    {
+      "id": 20,
+      "name": "Amazon"
+    },
+    {
+      "id": 22,
+      "name": "Amazon Luna"
+    },
+    {
+      "id": 23,
+      "name": "Amazon ADG"
+    },
+    {
+      "id": 26,
+      "name": "Epic Games Store"
+    },
+    {
+      "id": 28,
+      "name": "Oculus"
+    },
+    {
+      "id": 29,
+      "name": "Utomik"
+    },
+    {
+      "id": 30,
+      "name": "Itchio"
+    },
+    {
+      "id": 31,
+      "name": "Xbox Marketplace"
+    },
+    {
+      "id": 32,
+      "name": "Kartridge"
+    },
+    {
+      "id": 36,
+      "name": "Playstation Store US"
+    },
+    {
+      "id": 37,
+      "name": "Focus Entertainment"
+    },
+    {
+      "id": 54,
+      "name": "Xbox Game Pass Ultimate Cloud"
+    },
+    {
+      "id": 55,
+      "name": "GameJolt"
+    },
+    {
+      "id": 121,
+      "name": "IGDB"
+    }
+  ]
+}

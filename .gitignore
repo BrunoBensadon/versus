@@ -1,0 +1,27 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Token caches
+*.token
+.token-cache*
+spikes/.cache/
+
+# Raw API dumps (only trimmed, secret-free fixtures in spikes/fixtures/ are committed)
+spikes/raw/
+*.raw.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Node
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
