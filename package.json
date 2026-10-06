@@ -9,15 +9,19 @@
     "node": ">=24"
   },
   "scripts": {
-    "typecheck": "tsc -p tsconfig.core.json && tsc -p tsconfig.json",
-    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.core.json && tsc -p tsconfig.json && tsc -p tsconfig.worker.json",
+    "test": "vitest run && vitest run -c vitest.worker.config.ts",
+    "test:worker": "vitest run -c vitest.worker.config.ts",
     "eval": "tsx scripts/eval.ts",
     "capture-fixtures": "tsx scripts/capture-fixtures.ts"
   },
   "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.22.0",
+    "@cloudflare/workers-types": "5.20261006.1",
     "@types/node": "26.6.4",
     "tsx": "4.23.15",
     "typescript": "6.0.3",
-    "vitest": "4.1.11"
+    "vitest": "4.1.11",
+    "wrangler": "4.147.0"
   }
 }

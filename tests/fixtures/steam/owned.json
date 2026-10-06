@@ -1,0 +1,16 @@
+{
+  "_comment": "SYNTHETIC GetOwnedGames response for tests. Real appids and names; the playtimes are made up. Never replace with real output: the repo is public.",
+  "response": {
+    "game_count": 8,
+    "games": [
+      { "appid": 753640, "name": "Outer Wilds", "playtime_forever": 1200 },
+      { "appid": 1145360, "name": "Hades", "playtime_forever": 3000 },
+      { "appid": 7670, "name": "BioShock", "playtime_forever": 600 },
+      { "appid": 409710, "name": "BioShock Remastered", "playtime_forever": 300 },
+      { "appid": 489830, "name": "The Elder Scrolls V: Skyrim Special Edition", "playtime_forever": 5000 },
+      { "appid": 271590, "name": "Grand Theft Auto V Legacy", "playtime_forever": 2000 },
+      { "appid": 3240220, "name": "Grand Theft Auto V Enhanced", "playtime_forever": 100 },
+      { "appid": 431960, "name": "Wallpaper Engine", "playtime_forever": 50 }
+    ]
+  }
+}

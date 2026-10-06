@@ -1,0 +1,25 @@
+// Cloudflare Worker config (spec §3, §10). Docs: https://developers.cloudflare.com/workers/wrangler/configuration/
+{
+  "name": "versus",
+  "main": "src/worker/index.ts",
+  // Must be ≤ 2026-08-22: the Workers runtime bundled with @cloudflare/vitest-pool-workers@0.22.0
+  // refuses newer dates (verified 2026-10-06). Bump it together with that package.
+  "compatibility_date": "2026-08-15",
+  // The built PWA (npm run build → dist/web). Only /api/* runs the Worker; every other path is a
+  // static file, and unknown paths fall back to index.html (the app uses hash routes).
+  "assets": {
+    "directory": "./dist/web",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "versus",
+      // Placeholder for local dev and tests. Plan 6 replaces it with the id from `wrangler d1 create versus`.
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "observability": { "enabled": true }
+}
