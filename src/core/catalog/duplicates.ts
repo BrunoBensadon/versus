@@ -28,19 +28,34 @@ export function normalizeName(name: string): string {
  * collection in IGDB, only the franchise. See the roadmap, deviation 1.)
  */
 export function duplicateHints(library: GameMeta[]): [GameId, GameId][] {
-  const groupsOf = (g: GameMeta) => new Set([...g.collections, ...g.franchises].map((x) => x.toLowerCase()));
+  // 1 + 2. Normalize each name and build each group set ONCE, and put the games into buckets by
+  // normalized name: two games can only be duplicates if they land in the same bucket.
+  // A game whose name normalizes to '' never matches anything, so it is left out.
+  const byName = new Map<string, { id: GameId; groups: Set<string> }[]>();
+  for (const g of library) {
+    const name = normalizeName(g.name);
+    if (name === '') continue;
+    const groups = new Set([...g.collections, ...g.franchises].map((x) => x.toLowerCase()));
+    const bucket = byName.get(name);
+    if (bucket) bucket.push({ id: g.id, groups });
+    else byName.set(name, [{ id: g.id, groups }]);
+  }
+
+  // 3. Compare pairs only inside a bucket. Most buckets hold a single game, so this is close to one
+  // pass over the library instead of every pair of games.
   const out: [GameId, GameId][] = [];
-  for (let i = 0; i < library.length; i++) {
-    for (let j = i + 1; j < library.length; j++) {
-      const a = library[i];
-      const b = library[j];
-      if (a.id === b.id) continue;
-      const shared = [...groupsOf(a)].some((x) => groupsOf(b).has(x));
-      const nameA = normalizeName(a.name);
-      if (shared && nameA !== '' && nameA === normalizeName(b.name)) {
-        out.push(a.id < b.id ? [a.id, b.id] : [b.id, a.id]);
+  for (const bucket of byName.values()) {
+    for (let i = 0; i < bucket.length; i++) {
+      for (let j = i + 1; j < bucket.length; j++) {
+        const a = bucket[i];
+        const b = bucket[j];
+        if (a.id === b.id) continue; // the same game listed twice is not its own duplicate
+        const shared = [...a.groups].some((x) => b.groups.has(x));
+        if (shared) out.push(a.id < b.id ? [a.id, b.id] : [b.id, a.id]);
       }
     }
   }
+
+  // 4. Same order as always: by smaller id, then by larger id.
   return out.sort((p, q) => p[0] - q[0] || p[1] - q[1]);
 }

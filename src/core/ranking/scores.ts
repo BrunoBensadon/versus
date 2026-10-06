@@ -32,10 +32,16 @@ export function scores(state: Pick<RankState, 'lists'>, bands: Bands = DEFAULT_B
   return out;
 }
 
-/** The bucket whose band contains a (predicted) score. Scores in the gaps go to the lower bucket. */
+/**
+ * The bucket whose band contains a (predicted) score, judged on exactly the text formatScore()
+ * puts on screen (one decimal), so the number shown and its bucket always agree — even at the
+ * rare binary ties where Math.round and toFixed would round differently. Scores in the gaps go to
+ * the lower bucket.
+ */
 export function bandOf(score: number, bands: Bands = DEFAULT_BANDS): Bucket {
-  if (score >= bands.loved.lo) return 'loved';
-  if (score >= bands.liked.lo) return 'liked';
+  const shown = Number(formatScore(score)); // the number on screen, so it and its bucket always agree
+  if (shown >= bands.loved.lo) return 'loved';
+  if (shown >= bands.liked.lo) return 'liked';
   return 'disliked';
 }
 

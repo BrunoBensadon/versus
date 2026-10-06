@@ -71,6 +71,8 @@ Plans 2 and 3 are independent of each other (both need Plan 1); Plan 4 needs 1�
 17. **Undo with no answers left stays on the question.** Spec §6.1 says the UI returns to bucket choice; the ranking screen instead keeps the first question up and swaps Undo for a "Change bucket" button, and the e2e journey asserts that. Approved by Bruno at pre-flight, 2026-10-06. (Plan 5)
 18. **λ is fixed at 1 below 10 ranked games.** Spec §7.2 chooses λ by 5-fold CV at every refit; with fewer than 10 games that CV is noise, so `chooseLambda` returns 1. Predictions start at 5 games (deviation 5), so games 5–9 always use λ = 1. Approved by Bruno at pre-flight, 2026-10-06. (Plan 2)
 
+19. **Reasons name only features the game has.** Spec §7.3's contribution w·(x − x̄) is non-zero for a feature the game *lacks* (x = 0 gives −w·x̄), so 27% of reasons on the synthetic library named absent features ("Theme: Comedy −0.56" for a game without it). `recommend()` now picks the top 3 positive / top 1 negative among columns the game has, plus the rating column when the game has a rating. The score is unchanged. Approved by Bruno after the Plan 2 review, 2026-10-06. (Plan 2 follow-up)
+
 ## Pre-flight changes to the plans (approved by Bruno, 2026-10-06)
 
 A read-through of all six plans before execution found these; each is applied when its task runs.
@@ -81,6 +83,16 @@ A read-through of all six plans before execution found these; each is applied wh
 - **Plan 5 keeps its own rules:** the confidence label is always shown (also below 5 ranked games), and `.tab` / `button.link` tap targets are at least 44 px.
 - **Plan 6 Task 3** writes the drill restore to `drill.restore.sql` (git-ignored), not `drill.sql`.
 - Noted, no change: replay's `merged` handling uses the raw `from` id and resolves `into` (safer than the §6.2 pseudocode); deviation 8's text lists `GET /api/sublists/:id`, but Plan 4 builds `GET /api/sublists` (the collection).
+
+## Follow-ups after the Plan 1–3 reviews (branch `followups-p1p2`, approved by Bruno, 2026-10-06)
+
+- `bandOf` classifies the score exactly as `formatScore` shows it, so the number on screen and its bucket always agree (it also absorbs float error like 6.699999…).
+- The question-bound test runs both answer paths and asserts the bound ⌈log₂(m+1)⌉ is tight for m = 1..200.
+- Boundary rule: the test also catches side-effect, dynamic and `require` imports and `src/core-*` siblings; `npm run typecheck` starts with `tsc -p tsconfig.core.json` (no Node, DOM or Workers types). **Plans 4–5 keep that pass first when they rewrite the `typecheck` script.**
+- Deviation 19 (reasons). `prepareRecommender()` fits once and returns a predict-many function (`recommend()` is a wrapper); **Plan 5 caches it per event log / game metadata** instead of refitting on every page.
+- `chooseLambda` builds each fold's (symmetric) kernel once instead of refitting per λ: identical λ on 500+ test datasets; ~190 → ~73 ms at 115 ranked games, ~980 → ~196 ms at 200 (desktop). ⚠️ Still to measure on the phone (Plan 6 Task 4).
+- `MAX_CHAIN_STEPS = 5` is exported from `canonical.ts`; **Plan 4's `fetchWithAncestors` fetches that many ancestor levels** (the plan text had 2, which would stop 3+-hop chains early and give the wrong root).
+- `duplicateHints` compares only games with the same normalized name (identical output on 403 test libraries; 396 → 1.8 ms at 500 games); **Plan 5's triage screen memoizes it**.
 
 ## Spec coverage
 

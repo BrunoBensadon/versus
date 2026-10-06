@@ -45,17 +45,29 @@ describe('step', () => {
     expect(step([10], [{ pivot: 10, result: 'better' }, { pivot: 10, result: 'better' }])).toEqual({ kind: 'stale' });
   });
 
-  it('asks at most ceil(log2(m+1)) questions', () => {
-    for (const m of [1, 2, 7, 60, 100, 200]) {
-      const list = Array.from({ length: m }, (_, i) => i + 1);
-      // Always answer "worse" (the longest path to the bottom).
-      const answers: { pivot: number; result: 'worse' }[] = [];
+  it('asks at most ceil(log2(m+1)) questions, and that bound is reached', () => {
+    // Answer every question the same way and count how many questions it takes to place the game.
+    // With c candidate slots, "better" keeps ceil(c/2) of them and "worse" keeps floor(c/2),
+    // so "better" every time is the longest path and "worse" every time the shortest.
+    const questionsAsked = (list: number[], result: 'better' | 'worse'): number => {
+      const answers: { pivot: number; result: 'better' | 'worse' }[] = [];
       for (;;) {
         const next = step(list, answers);
         if (next.kind !== 'ask') break;
-        answers.push({ pivot: next.pivot, result: 'worse' });
+        answers.push({ pivot: next.pivot, result });
       }
-      expect(answers.length).toBeLessThanOrEqual(Math.ceil(Math.log2(m + 1)));
+      return answers.length;
+    };
+
+    for (let m = 1; m <= 200; m++) {
+      const list = Array.from({ length: m }, (_, i) => i + 1);
+      const bound = Math.ceil(Math.log2(m + 1));
+      const allBetter = questionsAsked(list, 'better');
+      const allWorse = questionsAsked(list, 'worse');
+      expect(allBetter, `m = ${m}, all better`).toBeLessThanOrEqual(bound);
+      expect(allWorse, `m = ${m}, all worse`).toBeLessThanOrEqual(bound);
+      // The bound is tight: the longer of the two paths asks exactly `bound` questions.
+      expect(Math.max(allBetter, allWorse), `m = ${m}, longest path`).toBe(bound);
     }
   });
 });
