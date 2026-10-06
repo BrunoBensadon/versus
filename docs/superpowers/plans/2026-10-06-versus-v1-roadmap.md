@@ -68,6 +68,19 @@ Plans 2 and 3 are independent of each other (both need Plan 1); Plan 4 needs 1�
 14. **Duplicate hints:** "Not the same" dismissals live in the browser's `localStorage`; Merge also sets the merged-away game to `ignored`; Unmerge (on the survivor's page) puts it back in the inbox. (Plan 5)
 15. **"Rank 10"** is a `#/queue?left=10` run over played/dropped games that have a triage bucket but no place, highest playtime first, with a "Rank it" button per game. (Plan 5)
 16. **D1 Time Travel window:** the runbook plans on the spec's 7 days (free plan); `wrangler`'s help mentions 30 days (⚠️ assumed to be the paid plan). (Plan 6)
+17. **Undo with no answers left stays on the question.** Spec §6.1 says the UI returns to bucket choice; the ranking screen instead keeps the first question up and swaps Undo for a "Change bucket" button, and the e2e journey asserts that. Approved by Bruno at pre-flight, 2026-10-06. (Plan 5)
+18. **λ is fixed at 1 below 10 ranked games.** Spec §7.2 chooses λ by 5-fold CV at every refit; with fewer than 10 games that CV is noise, so `chooseLambda` returns 1. Predictions start at 5 games (deviation 5), so games 5–9 always use λ = 1. Approved by Bruno at pre-flight, 2026-10-06. (Plan 2)
+
+## Pre-flight changes to the plans (approved by Bruno, 2026-10-06)
+
+A read-through of all six plans before execution found these; each is applied when its task runs.
+
+- **Stronger tests:** Plan 1 Task 5's prefix test now checks replay against the live state after every action (spec §11), not replay against itself; Plan 2 Task 3's contributions test asserts the sort order.
+- **Less duplication:** Plan 2's `syntheticEvents` reuses Plan 1's `rankWithOracle`; the Steam GetItems request body is built in one place for both `capture-fixtures.ts` and `src/worker/steam.ts`.
+- **Restore-safe scripts:** `db:migrate:local` (Plan 4) and `e2e:server` (Plan 5) apply migrations to the binding `DB`, like `deploy`, not the database name `versus`.
+- **Plan 5 keeps its own rules:** the confidence label is always shown (also below 5 ranked games), and `.tab` / `button.link` tap targets are at least 44 px.
+- **Plan 6 Task 3** writes the drill restore to `drill.restore.sql` (git-ignored), not `drill.sql`.
+- Noted, no change: replay's `merged` handling uses the raw `from` id and resolves `into` (safer than the §6.2 pseudocode); deviation 8's text lists `GET /api/sublists/:id`, but Plan 4 builds `GET /api/sublists` (the collection).
 
 ## Spec coverage
 
