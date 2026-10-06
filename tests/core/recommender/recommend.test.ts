@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { replay, scores } from '../../../src/core/ranking';
-import { recommend } from '../../../src/core/recommender';
+import { globalOrder, replay, scores } from '../../../src/core/ranking';
+import { buildFeatures, columnLabel, recommend, vectorize } from '../../../src/core/recommender';
 import { syntheticEvents, syntheticGames, syntheticUtility } from '../../fixtures/synthetic';
 
 describe('recommend', () => {
@@ -27,6 +27,25 @@ describe('recommend', () => {
       expect(p.similar).toHaveLength(3);
       expect(p.reasons.length).toBeGreaterThan(0);
       expect(p.reasons.length).toBeLessThanOrEqual(4);
+    }
+
+    // Every reason names a feature the candidate actually has (deviation 19). Rebuild the same
+    // feature space recommend() fitted on (the ranked games, best first), then list the labels of
+    // the candidate's non-zero columns, plus the rating label when the game has a rating.
+    const metaById = new Map(games.map((g) => [g.id, g]));
+    const trainMetas = globalOrder(state)
+      .filter((id) => metaById.has(id) && scoreMap.has(id))
+      .map((id) => metaById.get(id)!);
+    const space = buildFeatures(trainMetas);
+    for (const p of preds) {
+      const meta = metaById.get(p.gameId)!;
+      const x = vectorize(space, meta);
+      const has = new Set<string>();
+      space.columns.forEach((col, j) => {
+        if (x[j] !== 0) has.add(columnLabel(col));
+        if (col.block === 'consensus' && meta.totalRating !== null) has.add(columnLabel(col));
+      });
+      for (const r of p.reasons) expect(has, `game ${p.gameId}: "${r.label}"`).toContain(r.label);
     }
   });
 

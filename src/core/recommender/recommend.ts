@@ -31,7 +31,7 @@ export interface Prediction {
   above: { id: GameId; score: number } | null; // ranked game just above the prediction
   below: { id: GameId; score: number } | null; // ranked game just below it
   confidence: Confidence;
-  reasons: Reason[]; // top 3 positive + top 1 negative; empty in kNN mode
+  reasons: Reason[]; // top 3 positive + top 1 negative among the features the game has (deviation 19); empty in kNN mode
   similar: SimilarGame[]; // 3 most similar ranked games, disliked ones included
 }
 
@@ -73,8 +73,17 @@ export function recommend(
     if (model) {
       const p = predict(model, x);
       score = p.score;
-      const positive = p.contributions.filter((c) => c.value > 0).slice(0, 3);
-      const negative = p.contributions.filter((c) => c.value < 0).slice(0, 1);
+      // Explain only with features the game actually has. A missing feature (x = 0) still moves
+      // the score (by −w·mean), but naming it would read as if the game had it ("Theme: Comedy"
+      // for a game with no Comedy). The rating column is the exception: there 0 means "an average
+      // rating", a real value, so it stays whenever the game has a rating.
+      const hasFeature = (c: { column: number }): boolean => {
+        if (space.columns[c.column].block === 'consensus') return meta.totalRating !== null;
+        return x[c.column] !== 0;
+      };
+      const own = p.contributions.filter(hasFeature);
+      const positive = own.filter((c) => c.value > 0).slice(0, 3);
+      const negative = own.filter((c) => c.value < 0).slice(0, 1);
       reasons = [...positive, ...negative].map((c) => ({ label: columnLabel(space.columns[c.column]), value: c.value }));
     } else {
       score = clampScore(knnScore(neigh, (id) => scoreMap.get(id)!, meanScore));
