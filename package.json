@@ -11,7 +11,8 @@
   "scripts": {
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run",
-    "eval": "tsx scripts/eval.ts"
+    "eval": "tsx scripts/eval.ts",
+    "capture-fixtures": "tsx scripts/capture-fixtures.ts"
   },
   "devDependencies": {
     "@types/node": "26.6.4",

@@ -1,0 +1,2 @@
+// Public surface of the catalog module. Other modules import from here, not from the files inside.
+export * from './igdb-query';
