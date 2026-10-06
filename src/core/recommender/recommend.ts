@@ -47,7 +47,8 @@ export function recommend(
 
 /**
  * Fit once, predict many: the UI keeps the returned function until the event log or the game
- * metadata changes. All the slow work (feature space, choosing λ, fitting) happens here, once;
+ * metadata changes. Don't change `scoreMap` or `state` in place while holding it: it reads
+ * them on every call. All the slow work (feature space, choosing λ, fitting) happens here, once;
  * the returned function only does the per-candidate part.
  */
 export function prepareRecommender(
