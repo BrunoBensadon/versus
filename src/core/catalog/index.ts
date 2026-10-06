@@ -3,3 +3,4 @@ export * from './igdb-query';
 export * from './normalize';
 export * from './canonical';
 export * from './duplicates';
+export * from './search';
