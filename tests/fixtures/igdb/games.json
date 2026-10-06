@@ -1,0 +1,4391 @@
+[
+  {
+    "id": 20,
+    "cover": {
+      "id": 122598,
+      "image_id": "co2mli"
+    },
+    "first_release_date": 1187654400,
+    "franchises": [
+      {
+        "id": 1686,
+        "name": "Bioshock"
+      }
+    ],
+    "game_modes": [
+      {
+        "id": 1,
+        "name": "Single player"
+      }
+    ],
+    "genres": [
+      {
+        "id": 5,
+        "name": "Shooter"
+      },
+      {
+        "id": 9,
+        "name": "Puzzle"
+      },
+      {
+        "id": 12,
+        "name": "Role-playing (RPG)"
+      },
+      {
+        "id": 31,
+        "name": "Adventure"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 91804,
+        "company": {
+          "id": 13,
+          "name": "Demiurge Studios"
+        },
+        "developer": false
+      },
+      {
+        "id": 184943,
+        "company": {
+          "id": 649,
+          "name": "2K Boston"
+        },
+        "developer": true
+      },
+      {
+        "id": 184944,
+        "company": {
+          "id": 411,
+          "name": "Robosoft Technologies"
+        },
+        "developer": false
+      },
+      {
+        "id": 184942,
+        "company": {
+          "id": 2492,
+          "name": "2K Australia"
+        },
+        "developer": true
+      },
+      {
+        "id": 408123,
+        "company": {
+          "id": 2492,
+          "name": "2K Australia"
+        },
+        "developer": false
+      },
+      {
+        "id": 408124,
+        "company": {
+          "id": 17,
+          "name": "Digital Extremes"
+        },
+        "developer": false
+      },
+      {
+        "id": 408125,
+        "company": {
+          "id": 3142,
+          "name": "Plastic Wax"
+        },
+        "developer": false
+      },
+      {
+        "id": 408120,
+        "company": {
+          "id": 8,
+          "name": "2K Games"
+        },
+        "developer": false
+      },
+      {
+        "id": 408121,
+        "company": {
+          "id": 15,
+          "name": "2K Marin"
+        },
+        "developer": false
+      },
+      {
+        "id": 408122,
+        "company": {
+          "id": 649,
+          "name": "2K Boston"
+        },
+        "developer": false
+      }
+    ],
+    "keywords": [
+      {
+        "id": 16,
+        "name": "ghosts"
+      },
+      {
+        "id": 22,
+        "name": "assassin"
+      },
+      {
+        "id": 129,
+        "name": "bloody"
+      },
+      {
+        "id": 138,
+        "name": "underwater"
+      },
+      {
+        "id": 170,
+        "name": "time travel"
+      },
+      {
+        "id": 221,
+        "name": "murder"
+      },
+      {
+        "id": 250,
+        "name": "3d"
+      },
+      {
+        "id": 271,
+        "name": "photography"
+      },
+      {
+        "id": 274,
+        "name": "minigames"
+      },
+      {
+        "id": 429,
+        "name": "dystopian"
+      },
+      {
+        "id": 488,
+        "name": "guitar playing"
+      },
+      {
+        "id": 510,
+        "name": "crafting"
+      },
+      {
+        "id": 558,
+        "name": "death"
+      },
+      {
+        "id": 575,
+        "name": "robots"
+      },
+      {
+        "id": 623,
+        "name": "horse"
+      },
+      {
+        "id": 851,
+        "name": "1950s"
+      },
+      {
+        "id": 906,
+        "name": "steampunk"
+      },
+      {
+        "id": 962,
+        "name": "female protagonist"
+      },
+      {
+        "id": 1032,
+        "name": "insanity"
+      },
+      {
+        "id": 1033,
+        "name": "action-adventure"
+      },
+      {
+        "id": 1102,
+        "name": "religion"
+      },
+      {
+        "id": 1158,
+        "name": "steam"
+      },
+      {
+        "id": 1186,
+        "name": "multiple protagonists"
+      },
+      {
+        "id": 1212,
+        "name": "psychic abilities"
+      },
+      {
+        "id": 1228,
+        "name": "bird"
+      },
+      {
+        "id": 1289,
+        "name": "backtracking"
+      },
+      {
+        "id": 1293,
+        "name": "achievements"
+      },
+      {
+        "id": 1308,
+        "name": "gore"
+      },
+      {
+        "id": 1313,
+        "name": "multiple endings"
+      },
+      {
+        "id": 1345,
+        "name": "traps"
+      },
+      {
+        "id": 1423,
+        "name": "hacking"
+      },
+      {
+        "id": 1440,
+        "name": "artificial intelligence"
+      },
+      {
+        "id": 1494,
+        "name": "steam trading cards"
+      },
+      {
+        "id": 1675,
+        "name": "revenge"
+      },
+      {
+        "id": 1699,
+        "name": "dancing"
+      },
+      {
+        "id": 1779,
+        "name": "torture"
+      },
+      {
+        "id": 1834,
+        "name": "camera"
+      },
+      {
+        "id": 1836,
+        "name": "survival horror"
+      },
+      {
+        "id": 1887,
+        "name": "racism"
+      },
+      {
+        "id": 1898,
+        "name": "easter egg"
+      },
+      {
+        "id": 1928,
+        "name": "capitalism"
+      },
+      {
+        "id": 1986,
+        "name": "teleportation"
+      },
+      {
+        "id": 2002,
+        "name": "economy"
+      },
+      {
+        "id": 2040,
+        "name": "echolocation"
+      },
+      {
+        "id": 2052,
+        "name": "singing"
+      },
+      {
+        "id": 2115,
+        "name": "mad scientist"
+      },
+      {
+        "id": 2199,
+        "name": "silent protagonist"
+      },
+      {
+        "id": 2498,
+        "name": "cult"
+      },
+      {
+        "id": 3087,
+        "name": "one-man army"
+      },
+      {
+        "id": 3486,
+        "name": "boss fight"
+      },
+      {
+        "id": 3831,
+        "name": "explosion"
+      },
+      {
+        "id": 3898,
+        "name": "spiritual successor"
+      },
+      {
+        "id": 4004,
+        "name": "steam achievements"
+      },
+      {
+        "id": 4134,
+        "name": "digital distribution"
+      },
+      {
+        "id": 4135,
+        "name": "xbox controller support for pc"
+      },
+      {
+        "id": 4138,
+        "name": "single-player only"
+      },
+      {
+        "id": 4150,
+        "name": "steam cloud"
+      },
+      {
+        "id": 4221,
+        "name": "game critics awards"
+      },
+      {
+        "id": 4245,
+        "name": "playstation trophies"
+      },
+      {
+        "id": 4250,
+        "name": "rivaling factions"
+      },
+      {
+        "id": 4270,
+        "name": "playing cards"
+      },
+      {
+        "id": 4287,
+        "name": "voice acting"
+      },
+      {
+        "id": 4340,
+        "name": "corrupt government"
+      },
+      {
+        "id": 4345,
+        "name": "bink video"
+      },
+      {
+        "id": 4352,
+        "name": "mind control"
+      },
+      {
+        "id": 4353,
+        "name": "human"
+      },
+      {
+        "id": 4359,
+        "name": "polygonal 3d"
+      },
+      {
+        "id": 4388,
+        "name": "shopping"
+      },
+      {
+        "id": 4390,
+        "name": "skill points in game"
+      },
+      {
+        "id": 4392,
+        "name": "bow and arrow"
+      },
+      {
+        "id": 4396,
+        "name": "damsel in distress"
+      },
+      {
+        "id": 4397,
+        "name": "upgradeable weapons"
+      },
+      {
+        "id": 4398,
+        "name": "breaking the fourth wall"
+      },
+      {
+        "id": 4399,
+        "name": "loot gathering"
+      },
+      {
+        "id": 4400,
+        "name": "microtransaction"
+      },
+      {
+        "id": 4403,
+        "name": "pop culture reference"
+      },
+      {
+        "id": 4437,
+        "name": "playstation move support"
+      },
+      {
+        "id": 4438,
+        "name": "motion control"
+      },
+      {
+        "id": 4489,
+        "name": "priest"
+      },
+      {
+        "id": 4514,
+        "name": "full motion video"
+      },
+      {
+        "id": 4536,
+        "name": "racial stereotypes"
+      },
+      {
+        "id": 4580,
+        "name": "wasd movement"
+      },
+      {
+        "id": 4583,
+        "name": "white noise"
+      },
+      {
+        "id": 4613,
+        "name": "non-player character"
+      },
+      {
+        "id": 4623,
+        "name": "fake in-game advertising"
+      },
+      {
+        "id": 4680,
+        "name": "homage box art"
+      },
+      {
+        "id": 4681,
+        "name": "retail games with steam activation"
+      },
+      {
+        "id": 4709,
+        "name": "save point"
+      },
+      {
+        "id": 4726,
+        "name": "playstation plus"
+      },
+      {
+        "id": 4777,
+        "name": "checkpoints"
+      },
+      {
+        "id": 4791,
+        "name": "faceless protagonist"
+      },
+      {
+        "id": 4843,
+        "name": "saving the world"
+      },
+      {
+        "id": 4850,
+        "name": "moral decisions"
+      },
+      {
+        "id": 4857,
+        "name": "resistance"
+      },
+      {
+        "id": 4869,
+        "name": "downloadable content"
+      },
+      {
+        "id": 4891,
+        "name": "melee"
+      },
+      {
+        "id": 4897,
+        "name": "auto-saving"
+      },
+      {
+        "id": 4918,
+        "name": "real-time combat"
+      },
+      {
+        "id": 4928,
+        "name": "environmental puzzles"
+      },
+      {
+        "id": 4940,
+        "name": "underwater gameplay"
+      },
+      {
+        "id": 4956,
+        "name": "a.i. companion"
+      },
+      {
+        "id": 4974,
+        "name": "male antagonist"
+      },
+      {
+        "id": 4976,
+        "name": "retro future"
+      },
+      {
+        "id": 4991,
+        "name": "secret area"
+      },
+      {
+        "id": 4998,
+        "name": "betrayal"
+      },
+      {
+        "id": 4999,
+        "name": "vision obstruction"
+      },
+      {
+        "id": 5025,
+        "name": "games with gold"
+      },
+      {
+        "id": 5029,
+        "name": "difficulty level"
+      },
+      {
+        "id": 5110,
+        "name": "nonexistent light source"
+      },
+      {
+        "id": 5164,
+        "name": "self-referential humor"
+      },
+      {
+        "id": 5174,
+        "name": "scary children"
+      },
+      {
+        "id": 5176,
+        "name": "jump scare moment"
+      },
+      {
+        "id": 5210,
+        "name": "liberation"
+      },
+      {
+        "id": 5214,
+        "name": "movie reference"
+      },
+      {
+        "id": 5257,
+        "name": "audio logs"
+      },
+      {
+        "id": 5264,
+        "name": "vending machine interaction"
+      },
+      {
+        "id": 5287,
+        "name": "rock music"
+      },
+      {
+        "id": 5307,
+        "name": "political thriller"
+      },
+      {
+        "id": 5308,
+        "name": "rpg elements"
+      },
+      {
+        "id": 5310,
+        "name": "respawning"
+      },
+      {
+        "id": 5323,
+        "name": "mercenary"
+      },
+      {
+        "id": 5386,
+        "name": "falling sequence"
+      },
+      {
+        "id": 5387,
+        "name": "floating island"
+      },
+      {
+        "id": 5418,
+        "name": "christianity"
+      },
+      {
+        "id": 5422,
+        "name": "bread"
+      },
+      {
+        "id": 5437,
+        "name": "konami code"
+      },
+      {
+        "id": 5451,
+        "name": "cover system"
+      },
+      {
+        "id": 5466,
+        "name": "terrorists"
+      },
+      {
+        "id": 5480,
+        "name": "atheism"
+      },
+      {
+        "id": 5481,
+        "name": "communism"
+      },
+      {
+        "id": 5494,
+        "name": "scientist"
+      },
+      {
+        "id": 5542,
+        "name": "interactive environments"
+      },
+      {
+        "id": 5570,
+        "name": "film noir"
+      },
+      {
+        "id": 5575,
+        "name": "playstation now"
+      },
+      {
+        "id": 5587,
+        "name": "villain"
+      },
+      {
+        "id": 5593,
+        "name": "anti-hero"
+      },
+      {
+        "id": 5595,
+        "name": "changing sides"
+      },
+      {
+        "id": 5599,
+        "name": "been here before"
+      },
+      {
+        "id": 5633,
+        "name": "xbox one backwards compatibility"
+      },
+      {
+        "id": 5651,
+        "name": "physics manipulation"
+      },
+      {
+        "id": 5661,
+        "name": "item combination"
+      },
+      {
+        "id": 5675,
+        "name": "suicide"
+      },
+      {
+        "id": 5730,
+        "name": "controversy"
+      },
+      {
+        "id": 5735,
+        "name": "hallucination"
+      },
+      {
+        "id": 5783,
+        "name": "games on demand"
+      },
+      {
+        "id": 5812,
+        "name": "surveillance camera"
+      },
+      {
+        "id": 5850,
+        "name": "high definition graphics"
+      },
+      {
+        "id": 5905,
+        "name": "pre-order exclusive"
+      },
+      {
+        "id": 5909,
+        "name": "dolby digital"
+      },
+      {
+        "id": 5938,
+        "name": "dimension travel"
+      },
+      {
+        "id": 5963,
+        "name": "plot twist"
+      },
+      {
+        "id": 5971,
+        "name": "valuable garbage"
+      },
+      {
+        "id": 6020,
+        "name": "alternate reality"
+      },
+      {
+        "id": 6022,
+        "name": "horde mode"
+      },
+      {
+        "id": 6066,
+        "name": "poverty"
+      },
+      {
+        "id": 6169,
+        "name": "d.i.c.e. awards 2014"
+      },
+      {
+        "id": 6391,
+        "name": "new protagonist in sequel"
+      },
+      {
+        "id": 6457,
+        "name": "environmental kill"
+      },
+      {
+        "id": 6462,
+        "name": "psychopathy"
+      },
+      {
+        "id": 6471,
+        "name": "women in refrigerators syndrome"
+      },
+      {
+        "id": 6493,
+        "name": "finishing move"
+      },
+      {
+        "id": 6620,
+        "name": "scripted events"
+      },
+      {
+        "id": 6653,
+        "name": "fire manipulation"
+      },
+      {
+        "id": 6733,
+        "name": "lock picking"
+      },
+      {
+        "id": 6778,
+        "name": "whale"
+      },
+      {
+        "id": 6779,
+        "name": "telekinesis"
+      },
+      {
+        "id": 6813,
+        "name": "working for the enemy"
+      },
+      {
+        "id": 6827,
+        "name": "fireworks"
+      },
+      {
+        "id": 6828,
+        "name": "propaganda"
+      },
+      {
+        "id": 6852,
+        "name": "superpowers"
+      },
+      {
+        "id": 6863,
+        "name": "guided by radio"
+      },
+      {
+        "id": 6962,
+        "name": "aquarium"
+      },
+      {
+        "id": 7097,
+        "name": "censored version"
+      },
+      {
+        "id": 7106,
+        "name": "chinese accent"
+      },
+      {
+        "id": 7113,
+        "name": "fascism"
+      },
+      {
+        "id": 7116,
+        "name": "arrival by crash landing"
+      },
+      {
+        "id": 7215,
+        "name": "context sensitive"
+      },
+      {
+        "id": 7221,
+        "name": "reversible cover art"
+      },
+      {
+        "id": 7229,
+        "name": "game developers choice awards 2014"
+      },
+      {
+        "id": 7294,
+        "name": "the 1980s"
+      },
+      {
+        "id": 7304,
+        "name": "airship"
+      },
+      {
+        "id": 7305,
+        "name": "falling object"
+      },
+      {
+        "id": 7314,
+        "name": "cockroach"
+      },
+      {
+        "id": 7335,
+        "name": "anarchism"
+      },
+      {
+        "id": 7351,
+        "name": "sociopathy"
+      },
+      {
+        "id": 7355,
+        "name": "anti-villain"
+      },
+      {
+        "id": 7369,
+        "name": "secret achievements"
+      },
+      {
+        "id": 7402,
+        "name": "pax east 2012"
+      },
+      {
+        "id": 7555,
+        "name": "biotechnology"
+      },
+      {
+        "id": 7568,
+        "name": "swarming enemies"
+      },
+      {
+        "id": 7590,
+        "name": "bad parents"
+      },
+      {
+        "id": 7603,
+        "name": "foreshadowing"
+      },
+      {
+        "id": 7665,
+        "name": "verticality"
+      },
+      {
+        "id": 8150,
+        "name": "sex work"
+      },
+      {
+        "id": 8157,
+        "name": "playstation home tie-in"
+      },
+      {
+        "id": 8196,
+        "name": "slip cover packaging"
+      },
+      {
+        "id": 8784,
+        "name": "fictional currencies"
+      },
+      {
+        "id": 8841,
+        "name": "utopian civilization"
+      },
+      {
+        "id": 8974,
+        "name": "god complex"
+      },
+      {
+        "id": 8979,
+        "name": "respawn justification"
+      },
+      {
+        "id": 8981,
+        "name": "disfigurement"
+      },
+      {
+        "id": 8983,
+        "name": "tragic hero"
+      },
+      {
+        "id": 8993,
+        "name": "ghostly manifestation"
+      },
+      {
+        "id": 9000,
+        "name": "psychics"
+      },
+      {
+        "id": 9005,
+        "name": "redemption"
+      },
+      {
+        "id": 9006,
+        "name": "biblical quotes"
+      },
+      {
+        "id": 9007,
+        "name": "objectivism"
+      },
+      {
+        "id": 9156,
+        "name": "sneaking mission"
+      },
+      {
+        "id": 9258,
+        "name": "steam pre-purchase rewards"
+      },
+      {
+        "id": 9768,
+        "name": "surgery in game"
+      },
+      {
+        "id": 9952,
+        "name": "gamescom 2011"
+      },
+      {
+        "id": 10006,
+        "name": "monomyth"
+      },
+      {
+        "id": 10329,
+        "name": "southern american themes"
+      },
+      {
+        "id": 10756,
+        "name": "animal weaponry"
+      },
+      {
+        "id": 10792,
+        "name": "divine punishment"
+      },
+      {
+        "id": 11782,
+        "name": "pax prime 2011"
+      },
+      {
+        "id": 12042,
+        "name": "contest-driven development"
+      },
+      {
+        "id": 12189,
+        "name": "pax east 2011"
+      },
+      {
+        "id": 13033,
+        "name": "interactive achievement awards 2008"
+      },
+      {
+        "id": 14513,
+        "name": "game developers choice awards 2008"
+      },
+      {
+        "id": 17092,
+        "name": "immersive"
+      },
+      {
+        "id": 23856,
+        "name": "lgbtq+"
+      },
+      {
+        "id": 23933,
+        "name": "male protagonist"
+      },
+      {
+        "id": 24168,
+        "name": "political"
+      },
+      {
+        "id": 42064,
+        "name": "bees"
+      },
+      {
+        "id": 49306,
+        "name": "previously on - gametap"
+      },
+      {
+        "id": 49380,
+        "name": "previously on - iwin all access"
+      }
+    ],
+    "name": "BioShock",
+    "platforms": [
+      {
+        "id": 9,
+        "abbreviation": "PS3",
+        "name": "PlayStation 3"
+      },
+      {
+        "id": 6,
+        "abbreviation": "PC",
+        "name": "PC (Microsoft Windows)"
+      },
+      {
+        "id": 14,
+        "abbreviation": "Mac",
+        "name": "Mac"
+      },
+      {
+        "id": 12,
+        "abbreviation": "X360",
+        "name": "Xbox 360"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 1,
+        "name": "First person"
+      }
+    ],
+    "rating_count": 3223,
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 18,
+        "name": "Science fiction"
+      },
+      {
+        "id": 19,
+        "name": "Horror"
+      },
+      {
+        "id": 23,
+        "name": "Stealth"
+      },
+      {
+        "id": 38,
+        "name": "Open world"
+      }
+    ],
+    "total_rating": 89.64226256740655,
+    "collections": [
+      {
+        "id": 1,
+        "name": "Bioshock"
+      }
+    ],
+    "game_type": 0
+  },
+  {
+    "id": 241,
+    "cover": {
+      "id": 563843,
+      "image_id": "coc32b"
+    },
+    "first_release_date": 973728000,
+    "franchises": [
+      {
+        "id": 425,
+        "name": "Half-Life"
+      }
+    ],
+    "game_modes": [
+      {
+        "id": 2,
+        "name": "Multiplayer"
+      }
+    ],
+    "genres": [
+      {
+        "id": 5,
+        "name": "Shooter"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 369829,
+        "company": {
+          "id": 56,
+          "name": "Valve"
+        },
+        "developer": true
+      },
+      {
+        "id": 414822,
+        "company": {
+          "id": 24,
+          "name": "Sierra Entertainment"
+        },
+        "developer": false
+      }
+    ],
+    "keywords": [
+      {
+        "id": 1,
+        "name": "modern warfare"
+      },
+      {
+        "id": 129,
+        "name": "bloody"
+      },
+      {
+        "id": 137,
+        "name": "gravity"
+      },
+      {
+        "id": 286,
+        "name": "competitive"
+      },
+      {
+        "id": 558,
+        "name": "death"
+      },
+      {
+        "id": 562,
+        "name": "soldier"
+      },
+      {
+        "id": 563,
+        "name": "military"
+      },
+      {
+        "id": 1158,
+        "name": "steam"
+      },
+      {
+        "id": 1329,
+        "name": "special forces"
+      },
+      {
+        "id": 1333,
+        "name": "online"
+      },
+      {
+        "id": 1373,
+        "name": "hostages"
+      },
+      {
+        "id": 1396,
+        "name": "stacking"
+      },
+      {
+        "id": 1655,
+        "name": "esports"
+      },
+      {
+        "id": 3224,
+        "name": "user generated content"
+      },
+      {
+        "id": 3831,
+        "name": "explosion"
+      },
+      {
+        "id": 4134,
+        "name": "digital distribution"
+      },
+      {
+        "id": 4179,
+        "name": "throwing weapons"
+      },
+      {
+        "id": 4259,
+        "name": "modern military"
+      },
+      {
+        "id": 4290,
+        "name": "scatological humor"
+      },
+      {
+        "id": 4353,
+        "name": "human"
+      },
+      {
+        "id": 4359,
+        "name": "polygonal 3d"
+      },
+      {
+        "id": 4388,
+        "name": "shopping"
+      },
+      {
+        "id": 4580,
+        "name": "wasd movement"
+      },
+      {
+        "id": 4613,
+        "name": "non-player character"
+      },
+      {
+        "id": 4730,
+        "name": "sniping"
+      },
+      {
+        "id": 4781,
+        "name": "falling damage"
+      },
+      {
+        "id": 4891,
+        "name": "melee"
+      },
+      {
+        "id": 4984,
+        "name": "stat tracking"
+      },
+      {
+        "id": 4989,
+        "name": "in-game map editor"
+      },
+      {
+        "id": 4990,
+        "name": "instant kill"
+      },
+      {
+        "id": 4996,
+        "name": "friendly fire"
+      },
+      {
+        "id": 5310,
+        "name": "respawning"
+      },
+      {
+        "id": 5436,
+        "name": "cheat code"
+      },
+      {
+        "id": 5466,
+        "name": "terrorists"
+      },
+      {
+        "id": 5468,
+        "name": "banned"
+      },
+      {
+        "id": 5560,
+        "name": "multiplayer scoreboard"
+      },
+      {
+        "id": 5671,
+        "name": "hotkey"
+      },
+      {
+        "id": 5675,
+        "name": "suicide"
+      },
+      {
+        "id": 5730,
+        "name": "controversy"
+      },
+      {
+        "id": 5779,
+        "name": "mod origin"
+      },
+      {
+        "id": 5790,
+        "name": "valve anti-cheat"
+      },
+      {
+        "id": 5904,
+        "name": "particle system"
+      },
+      {
+        "id": 5941,
+        "name": "weapons swap"
+      },
+      {
+        "id": 5959,
+        "name": "multiplayer lan"
+      },
+      {
+        "id": 5987,
+        "name": "team deathmatch"
+      },
+      {
+        "id": 6021,
+        "name": "guerilla warfare"
+      },
+      {
+        "id": 6034,
+        "name": "camera control"
+      },
+      {
+        "id": 6049,
+        "name": "kill streak"
+      },
+      {
+        "id": 6137,
+        "name": "linear gameplay"
+      },
+      {
+        "id": 6189,
+        "name": "meme origin"
+      },
+      {
+        "id": 6298,
+        "name": "camping"
+      },
+      {
+        "id": 6315,
+        "name": "dedicated servers"
+      },
+      {
+        "id": 6339,
+        "name": "inverted controls"
+      },
+      {
+        "id": 6621,
+        "name": "vent crawling"
+      },
+      {
+        "id": 6716,
+        "name": "dual wielding"
+      },
+      {
+        "id": 7410,
+        "name": "text dialogue"
+      },
+      {
+        "id": 8959,
+        "name": "strafe-jumping"
+      },
+      {
+        "id": 9161,
+        "name": "no respawn"
+      },
+      {
+        "id": 9529,
+        "name": "greatest hits"
+      },
+      {
+        "id": 9530,
+        "name": "objective-based team gameplay"
+      },
+      {
+        "id": 9578,
+        "name": "machinima"
+      },
+      {
+        "id": 9853,
+        "name": "professional gaming"
+      },
+      {
+        "id": 10048,
+        "name": "pc to console port"
+      },
+      {
+        "id": 10460,
+        "name": "team killing"
+      },
+      {
+        "id": 10592,
+        "name": "bomb defusal mode"
+      },
+      {
+        "id": 13295,
+        "name": "xbox 360 backwards compatibility"
+      },
+      {
+        "id": 14003,
+        "name": "humiliation"
+      },
+      {
+        "id": 15070,
+        "name": "game developers choice awards 2001"
+      },
+      {
+        "id": 38289,
+        "name": "e-sports"
+      }
+    ],
+    "name": "Counter-Strike",
+    "platforms": [
+      {
+        "id": 3,
+        "abbreviation": "Linux",
+        "name": "Linux"
+      },
+      {
+        "id": 6,
+        "abbreviation": "PC",
+        "name": "PC (Microsoft Windows)"
+      },
+      {
+        "id": 14,
+        "abbreviation": "Mac",
+        "name": "Mac"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 1,
+        "name": "First person"
+      }
+    ],
+    "rating_count": 770,
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 39,
+        "name": "Warfare"
+      }
+    ],
+    "total_rating": 76.52634780141574,
+    "collections": [
+      {
+        "id": 58,
+        "name": "Counter-Strike"
+      }
+    ],
+    "game_type": 0
+  },
+  {
+    "id": 307,
+    "cover": {
+      "id": 85459,
+      "image_id": "co1txv"
+    },
+    "first_release_date": 1097107200,
+    "game_modes": [
+      {
+        "id": 2,
+        "name": "Multiplayer"
+      }
+    ],
+    "genres": [
+      {
+        "id": 5,
+        "name": "Shooter"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 313,
+        "company": {
+          "id": 56,
+          "name": "Valve"
+        },
+        "developer": true
+      },
+      {
+        "id": 314,
+        "company": {
+          "id": 150,
+          "name": "Hidden Path Entertainment"
+        },
+        "developer": true
+      },
+      {
+        "id": 376713,
+        "company": {
+          "id": 55,
+          "name": "Turtle Rock Studios"
+        },
+        "developer": true
+      }
+    ],
+    "keywords": [
+      {
+        "id": 1,
+        "name": "modern warfare"
+      },
+      {
+        "id": 129,
+        "name": "bloody"
+      },
+      {
+        "id": 137,
+        "name": "gravity"
+      },
+      {
+        "id": 558,
+        "name": "death"
+      },
+      {
+        "id": 562,
+        "name": "soldier"
+      },
+      {
+        "id": 563,
+        "name": "military"
+      },
+      {
+        "id": 879,
+        "name": "counter-terrorists"
+      },
+      {
+        "id": 917,
+        "name": "skiing"
+      },
+      {
+        "id": 1158,
+        "name": "steam"
+      },
+      {
+        "id": 1329,
+        "name": "special forces"
+      },
+      {
+        "id": 1333,
+        "name": "online"
+      },
+      {
+        "id": 1373,
+        "name": "hostages"
+      },
+      {
+        "id": 1396,
+        "name": "stacking"
+      },
+      {
+        "id": 1655,
+        "name": "esports"
+      },
+      {
+        "id": 2173,
+        "name": "team-based"
+      },
+      {
+        "id": 2180,
+        "name": "cross-platform multiplayer"
+      },
+      {
+        "id": 4004,
+        "name": "steam achievements"
+      },
+      {
+        "id": 4134,
+        "name": "digital distribution"
+      },
+      {
+        "id": 4150,
+        "name": "steam cloud"
+      },
+      {
+        "id": 4179,
+        "name": "throwing weapons"
+      },
+      {
+        "id": 4259,
+        "name": "modern military"
+      },
+      {
+        "id": 4353,
+        "name": "human"
+      },
+      {
+        "id": 4388,
+        "name": "shopping"
+      },
+      {
+        "id": 4580,
+        "name": "wasd movement"
+      },
+      {
+        "id": 4613,
+        "name": "non-player character"
+      },
+      {
+        "id": 4681,
+        "name": "retail games with steam activation"
+      },
+      {
+        "id": 4730,
+        "name": "sniping"
+      },
+      {
+        "id": 4770,
+        "name": "ragdoll physics"
+      },
+      {
+        "id": 4781,
+        "name": "falling damage"
+      },
+      {
+        "id": 4891,
+        "name": "melee"
+      },
+      {
+        "id": 4901,
+        "name": "kill feed"
+      },
+      {
+        "id": 4989,
+        "name": "in-game map editor"
+      },
+      {
+        "id": 4990,
+        "name": "instant kill"
+      },
+      {
+        "id": 4996,
+        "name": "friendly fire"
+      },
+      {
+        "id": 5151,
+        "name": "internet culture reference"
+      },
+      {
+        "id": 5262,
+        "name": "steam play"
+      },
+      {
+        "id": 5264,
+        "name": "vending machine interaction"
+      },
+      {
+        "id": 5310,
+        "name": "respawning"
+      },
+      {
+        "id": 5450,
+        "name": "digital rights management"
+      },
+      {
+        "id": 5466,
+        "name": "terrorists"
+      },
+      {
+        "id": 5560,
+        "name": "multiplayer scoreboard"
+      },
+      {
+        "id": 5651,
+        "name": "physics manipulation"
+      },
+      {
+        "id": 5671,
+        "name": "hotkey"
+      },
+      {
+        "id": 5790,
+        "name": "valve anti-cheat"
+      },
+      {
+        "id": 5941,
+        "name": "weapons swap"
+      },
+      {
+        "id": 5987,
+        "name": "team deathmatch"
+      },
+      {
+        "id": 6021,
+        "name": "guerilla warfare"
+      },
+      {
+        "id": 6034,
+        "name": "camera control"
+      },
+      {
+        "id": 6036,
+        "name": "voice chat"
+      },
+      {
+        "id": 6049,
+        "name": "kill streak"
+      },
+      {
+        "id": 6296,
+        "name": "griefing"
+      },
+      {
+        "id": 6298,
+        "name": "camping"
+      },
+      {
+        "id": 6315,
+        "name": "dedicated servers"
+      },
+      {
+        "id": 6339,
+        "name": "inverted controls"
+      },
+      {
+        "id": 6621,
+        "name": "vent crawling"
+      },
+      {
+        "id": 6716,
+        "name": "dual wielding"
+      },
+      {
+        "id": 7026,
+        "name": "bots"
+      },
+      {
+        "id": 7041,
+        "name": "in-game advertising"
+      },
+      {
+        "id": 7316,
+        "name": "outside of the map"
+      },
+      {
+        "id": 7410,
+        "name": "text dialogue"
+      },
+      {
+        "id": 7476,
+        "name": "fully customizable controls"
+      },
+      {
+        "id": 8959,
+        "name": "strafe-jumping"
+      },
+      {
+        "id": 9161,
+        "name": "no respawn"
+      },
+      {
+        "id": 9455,
+        "name": "blamed for real life murders"
+      },
+      {
+        "id": 9578,
+        "name": "machinima"
+      },
+      {
+        "id": 9853,
+        "name": "professional gaming"
+      },
+      {
+        "id": 9989,
+        "name": "novint falcon support"
+      },
+      {
+        "id": 10460,
+        "name": "team killing"
+      },
+      {
+        "id": 10592,
+        "name": "bomb defusal mode"
+      },
+      {
+        "id": 10613,
+        "name": "anti-cheat system"
+      },
+      {
+        "id": 14003,
+        "name": "humiliation"
+      },
+      {
+        "id": 38289,
+        "name": "e-sports"
+      }
+    ],
+    "name": "Counter-Strike: Source",
+    "parent_game": 241,
+    "platforms": [
+      {
+        "id": 3,
+        "abbreviation": "Linux",
+        "name": "Linux"
+      },
+      {
+        "id": 6,
+        "abbreviation": "PC",
+        "name": "PC (Microsoft Windows)"
+      },
+      {
+        "id": 14,
+        "abbreviation": "Mac",
+        "name": "Mac"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 1,
+        "name": "First person"
+      }
+    ],
+    "rating_count": 543,
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      }
+    ],
+    "total_rating": 84.19387849115625,
+    "collections": [
+      {
+        "id": 58,
+        "name": "Counter-Strike"
+      }
+    ],
+    "game_type": 8
+  },
+  {
+    "id": 472,
+    "cover": {
+      "id": 596217,
+      "image_id": "cocs1l"
+    },
+    "first_release_date": 1320883200,
+    "franchises": [
+      {
+        "id": 456,
+        "name": "The Elder Scrolls"
+      }
+    ],
+    "game_modes": [
+      {
+        "id": 1,
+        "name": "Single player"
+      }
+    ],
+    "genres": [
+      {
+        "id": 12,
+        "name": "Role-playing (RPG)"
+      },
+      {
+        "id": 31,
+        "name": "Adventure"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 3719,
+        "company": {
+          "id": 126,
+          "name": "Bethesda Game Studios"
+        },
+        "developer": true
+      },
+      {
+        "id": 95350,
+        "company": {
+          "id": 16565,
+          "name": "Bethesda Softworks"
+        },
+        "developer": false
+      }
+    ],
+    "keywords": [
+      {
+        "id": 22,
+        "name": "assassin"
+      },
+      {
+        "id": 96,
+        "name": "orcs"
+      },
+      {
+        "id": 129,
+        "name": "bloody"
+      },
+      {
+        "id": 151,
+        "name": "medieval"
+      },
+      {
+        "id": 159,
+        "name": "disease"
+      },
+      {
+        "id": 211,
+        "name": "vampire"
+      },
+      {
+        "id": 221,
+        "name": "murder"
+      },
+      {
+        "id": 226,
+        "name": "magic"
+      },
+      {
+        "id": 236,
+        "name": "grinding"
+      },
+      {
+        "id": 371,
+        "name": "guild"
+      },
+      {
+        "id": 497,
+        "name": "summoning support"
+      },
+      {
+        "id": 510,
+        "name": "crafting"
+      },
+      {
+        "id": 577,
+        "name": "procedural generation"
+      },
+      {
+        "id": 592,
+        "name": "elves"
+      },
+      {
+        "id": 623,
+        "name": "horse"
+      },
+      {
+        "id": 701,
+        "name": "archery"
+      },
+      {
+        "id": 758,
+        "name": "cooking"
+      },
+      {
+        "id": 1068,
+        "name": "skeleton"
+      },
+      {
+        "id": 1158,
+        "name": "steam"
+      },
+      {
+        "id": 1293,
+        "name": "achievements"
+      },
+      {
+        "id": 1302,
+        "name": "chosen one"
+      },
+      {
+        "id": 1320,
+        "name": "undead"
+      },
+      {
+        "id": 1322,
+        "name": "mutants"
+      },
+      {
+        "id": 1345,
+        "name": "traps"
+      },
+      {
+        "id": 1494,
+        "name": "steam trading cards"
+      },
+      {
+        "id": 1523,
+        "name": "dialogue trees"
+      },
+      {
+        "id": 1675,
+        "name": "revenge"
+      },
+      {
+        "id": 1710,
+        "name": "snow"
+      },
+      {
+        "id": 1716,
+        "name": "wolf"
+      },
+      {
+        "id": 1886,
+        "name": "slavery"
+      },
+      {
+        "id": 1887,
+        "name": "racism"
+      },
+      {
+        "id": 1953,
+        "name": "fox"
+      },
+      {
+        "id": 2071,
+        "name": "sequel"
+      },
+      {
+        "id": 2111,
+        "name": "giant insects"
+      },
+      {
+        "id": 2141,
+        "name": "slow-motion"
+      },
+      {
+        "id": 2177,
+        "name": "mining"
+      },
+      {
+        "id": 2229,
+        "name": "amiibo"
+      },
+      {
+        "id": 2452,
+        "name": "day/night cycle"
+      },
+      {
+        "id": 2488,
+        "name": "giants"
+      },
+      {
+        "id": 2628,
+        "name": "easy"
+      },
+      {
+        "id": 2668,
+        "name": "alchemy"
+      },
+      {
+        "id": 3222,
+        "name": "trolls"
+      },
+      {
+        "id": 3433,
+        "name": "horse riding"
+      },
+      {
+        "id": 3486,
+        "name": "boss fight"
+      },
+      {
+        "id": 3502,
+        "name": "trainer"
+      },
+      {
+        "id": 3586,
+        "name": "sexual content"
+      },
+      {
+        "id": 4132,
+        "name": "necromancy"
+      },
+      {
+        "id": 4135,
+        "name": "xbox controller support for pc"
+      },
+      {
+        "id": 4138,
+        "name": "single-player only"
+      },
+      {
+        "id": 4150,
+        "name": "steam cloud"
+      },
+      {
+        "id": 4221,
+        "name": "game critics awards"
+      },
+      {
+        "id": 4235,
+        "name": "spider"
+      },
+      {
+        "id": 4245,
+        "name": "playstation trophies"
+      },
+      {
+        "id": 4249,
+        "name": "attributes"
+      },
+      {
+        "id": 4275,
+        "name": "steam workshop"
+      },
+      {
+        "id": 4284,
+        "name": "leveling up"
+      },
+      {
+        "id": 4285,
+        "name": "world map"
+      },
+      {
+        "id": 4287,
+        "name": "voice acting"
+      },
+      {
+        "id": 4345,
+        "name": "bink video"
+      },
+      {
+        "id": 4357,
+        "name": "xbox one x enhanced"
+      },
+      {
+        "id": 4359,
+        "name": "polygonal 3d"
+      },
+      {
+        "id": 4392,
+        "name": "bow and arrow"
+      },
+      {
+        "id": 4399,
+        "name": "loot gathering"
+      },
+      {
+        "id": 4407,
+        "name": "skeletons"
+      },
+      {
+        "id": 4438,
+        "name": "motion control"
+      },
+      {
+        "id": 4486,
+        "name": "werewolves"
+      },
+      {
+        "id": 4580,
+        "name": "wasd movement"
+      },
+      {
+        "id": 4613,
+        "name": "non-player character"
+      },
+      {
+        "id": 4637,
+        "name": "corpse"
+      },
+      {
+        "id": 4681,
+        "name": "retail games with steam activation"
+      },
+      {
+        "id": 4711,
+        "name": "sprinting mechanics"
+      },
+      {
+        "id": 4776,
+        "name": "escort mission"
+      },
+      {
+        "id": 4781,
+        "name": "falling damage"
+      },
+      {
+        "id": 4787,
+        "name": "treasure chest"
+      },
+      {
+        "id": 4843,
+        "name": "saving the world"
+      },
+      {
+        "id": 4850,
+        "name": "moral decisions"
+      },
+      {
+        "id": 4855,
+        "name": "branching storyline"
+      },
+      {
+        "id": 4869,
+        "name": "downloadable content"
+      },
+      {
+        "id": 4878,
+        "name": "questing"
+      },
+      {
+        "id": 4879,
+        "name": "potion"
+      },
+      {
+        "id": 4891,
+        "name": "melee"
+      },
+      {
+        "id": 4918,
+        "name": "real-time combat"
+      },
+      {
+        "id": 4956,
+        "name": "a.i. companion"
+      },
+      {
+        "id": 5124,
+        "name": "spellcaster"
+      },
+      {
+        "id": 5209,
+        "name": "multiple gameplay perspectives"
+      },
+      {
+        "id": 5323,
+        "name": "mercenary"
+      },
+      {
+        "id": 5348,
+        "name": "kinect support"
+      },
+      {
+        "id": 5422,
+        "name": "bread"
+      },
+      {
+        "id": 5453,
+        "name": "destructible environment"
+      },
+      {
+        "id": 5488,
+        "name": "bribery"
+      },
+      {
+        "id": 5517,
+        "name": "theft"
+      },
+      {
+        "id": 5533,
+        "name": "no hud"
+      },
+      {
+        "id": 5542,
+        "name": "interactive environments"
+      },
+      {
+        "id": 5564,
+        "name": "british accent"
+      },
+      {
+        "id": 5659,
+        "name": "sleeping"
+      },
+      {
+        "id": 5730,
+        "name": "controversy"
+      },
+      {
+        "id": 5783,
+        "name": "games on demand"
+      },
+      {
+        "id": 5818,
+        "name": "merchants"
+      },
+      {
+        "id": 5820,
+        "name": "reptilian humanoid"
+      },
+      {
+        "id": 5836,
+        "name": "mod support"
+      },
+      {
+        "id": 5850,
+        "name": "high definition graphics"
+      },
+      {
+        "id": 5909,
+        "name": "dolby digital"
+      },
+      {
+        "id": 5911,
+        "name": "wrestling moves in non-wrestling games"
+      },
+      {
+        "id": 5999,
+        "name": "stealth kill"
+      },
+      {
+        "id": 6083,
+        "name": "super speed"
+      },
+      {
+        "id": 6189,
+        "name": "meme origin"
+      },
+      {
+        "id": 6210,
+        "name": "cannibalism"
+      },
+      {
+        "id": 6493,
+        "name": "finishing move"
+      },
+      {
+        "id": 6539,
+        "name": "kidnapping"
+      },
+      {
+        "id": 6653,
+        "name": "fire manipulation"
+      },
+      {
+        "id": 6687,
+        "name": "zero to hero"
+      },
+      {
+        "id": 6702,
+        "name": "pickpocketing"
+      },
+      {
+        "id": 6716,
+        "name": "dual wielding"
+      },
+      {
+        "id": 6733,
+        "name": "lock picking"
+      },
+      {
+        "id": 7048,
+        "name": "escaping imprisonment"
+      },
+      {
+        "id": 7080,
+        "name": "fast traveling"
+      },
+      {
+        "id": 7221,
+        "name": "reversible cover art"
+      },
+      {
+        "id": 7351,
+        "name": "sociopathy"
+      },
+      {
+        "id": 7396,
+        "name": "restoration"
+      },
+      {
+        "id": 7440,
+        "name": "dark elves"
+      },
+      {
+        "id": 7473,
+        "name": "invented language"
+      },
+      {
+        "id": 7476,
+        "name": "fully customizable controls"
+      },
+      {
+        "id": 7576,
+        "name": "behind the waterfall"
+      },
+      {
+        "id": 7610,
+        "name": "battle mage"
+      },
+      {
+        "id": 7698,
+        "name": "pseudo non-linear"
+      },
+      {
+        "id": 8099,
+        "name": "flower picking"
+      },
+      {
+        "id": 8196,
+        "name": "slip cover packaging"
+      },
+      {
+        "id": 9567,
+        "name": "conjuration"
+      },
+      {
+        "id": 9661,
+        "name": "comic relief"
+      },
+      {
+        "id": 9667,
+        "name": "illusion"
+      },
+      {
+        "id": 9738,
+        "name": "vampirism"
+      },
+      {
+        "id": 9900,
+        "name": "level scaling"
+      },
+      {
+        "id": 9952,
+        "name": "gamescom 2011"
+      },
+      {
+        "id": 9989,
+        "name": "novint falcon support"
+      },
+      {
+        "id": 10006,
+        "name": "monomyth"
+      },
+      {
+        "id": 10048,
+        "name": "pc to console port"
+      },
+      {
+        "id": 10269,
+        "name": "nomads"
+      },
+      {
+        "id": 10814,
+        "name": "tomb raiding"
+      },
+      {
+        "id": 11501,
+        "name": "game developers choice awards 2012"
+      },
+      {
+        "id": 11750,
+        "name": "interactive achievement awards 2012"
+      },
+      {
+        "id": 11782,
+        "name": "pax prime 2011"
+      },
+      {
+        "id": 12300,
+        "name": "dwemer"
+      },
+      {
+        "id": 12306,
+        "name": "spike video game awards 2010"
+      },
+      {
+        "id": 12311,
+        "name": "spike video game awards 2011"
+      },
+      {
+        "id": 17092,
+        "name": "immersive"
+      },
+      {
+        "id": 23856,
+        "name": "lgbtq+"
+      },
+      {
+        "id": 23933,
+        "name": "male protagonist"
+      },
+      {
+        "id": 42064,
+        "name": "bees"
+      }
+    ],
+    "name": "The Elder Scrolls V: Skyrim",
+    "platforms": [
+      {
+        "id": 9,
+        "abbreviation": "PS3",
+        "name": "PlayStation 3"
+      },
+      {
+        "id": 6,
+        "abbreviation": "PC",
+        "name": "PC (Microsoft Windows)"
+      },
+      {
+        "id": 12,
+        "abbreviation": "X360",
+        "name": "Xbox 360"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 1,
+        "name": "First person"
+      },
+      {
+        "id": 2,
+        "name": "Third person"
+      }
+    ],
+    "rating_count": 4350,
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 17,
+        "name": "Fantasy"
+      },
+      {
+        "id": 23,
+        "name": "Stealth"
+      },
+      {
+        "id": 33,
+        "name": "Sandbox"
+      },
+      {
+        "id": 38,
+        "name": "Open world"
+      }
+    ],
+    "total_rating": 83.8324900535655,
+    "collections": [
+      {
+        "id": 6,
+        "name": "The Elder Scrolls"
+      }
+    ],
+    "game_type": 0
+  },
+  {
+    "id": 1020,
+    "cover": {
+      "id": 120937,
+      "image_id": "co2lbd"
+    },
+    "first_release_date": 1379376000,
+    "franchises": [
+      {
+        "id": 493,
+        "name": "Grand Theft Auto"
+      }
+    ],
+    "game_modes": [
+      {
+        "id": 1,
+        "name": "Single player"
+      },
+      {
+        "id": 2,
+        "name": "Multiplayer"
+      },
+      {
+        "id": 3,
+        "name": "Co-operative"
+      }
+    ],
+    "genres": [
+      {
+        "id": 5,
+        "name": "Shooter"
+      },
+      {
+        "id": 10,
+        "name": "Racing"
+      },
+      {
+        "id": 31,
+        "name": "Adventure"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 20018,
+        "company": {
+          "id": 139,
+          "name": "Take-Two Interactive"
+        },
+        "developer": false
+      },
+      {
+        "id": 18071,
+        "company": {
+          "id": 29,
+          "name": "Rockstar Games"
+        },
+        "developer": false
+      },
+      {
+        "id": 18070,
+        "company": {
+          "id": 365,
+          "name": "Rockstar North"
+        },
+        "developer": true
+      },
+      {
+        "id": 246057,
+        "company": {
+          "id": 306,
+          "name": "Rockstar Toronto"
+        },
+        "developer": false
+      }
+    ],
+    "keywords": [
+      {
+        "id": 3,
+        "name": "aliens"
+      },
+      {
+        "id": 21,
+        "name": "helicopter"
+      },
+      {
+        "id": 22,
+        "name": "assassin"
+      },
+      {
+        "id": 25,
+        "name": "vehicular combat"
+      },
+      {
+        "id": 30,
+        "name": "golf"
+      },
+      {
+        "id": 57,
+        "name": "motorcycle"
+      },
+      {
+        "id": 64,
+        "name": "hunting"
+      },
+      {
+        "id": 72,
+        "name": "exploration"
+      },
+      {
+        "id": 109,
+        "name": "violence"
+      },
+      {
+        "id": 129,
+        "name": "bloody"
+      },
+      {
+        "id": 153,
+        "name": "animals"
+      },
+      {
+        "id": 155,
+        "name": "cars"
+      },
+      {
+        "id": 182,
+        "name": "character customization"
+      },
+      {
+        "id": 193,
+        "name": "training"
+      },
+      {
+        "id": 221,
+        "name": "murder"
+      },
+      {
+        "id": 222,
+        "name": "drugs"
+      },
+      {
+        "id": 243,
+        "name": "heist"
+      },
+      {
+        "id": 274,
+        "name": "minigames"
+      },
+      {
+        "id": 284,
+        "name": "organized crime"
+      },
+      {
+        "id": 311,
+        "name": "tennis"
+      },
+      {
+        "id": 394,
+        "name": "mascot"
+      },
+      {
+        "id": 403,
+        "name": "shark"
+      },
+      {
+        "id": 427,
+        "name": "police"
+      },
+      {
+        "id": 488,
+        "name": "guitar playing"
+      },
+      {
+        "id": 558,
+        "name": "death"
+      },
+      {
+        "id": 623,
+        "name": "horse"
+      },
+      {
+        "id": 642,
+        "name": "exercise"
+      },
+      {
+        "id": 661,
+        "name": "bmx"
+      },
+      {
+        "id": 703,
+        "name": "skydiving"
+      },
+      {
+        "id": 732,
+        "name": "ufo"
+      },
+      {
+        "id": 735,
+        "name": "street racing"
+      },
+      {
+        "id": 789,
+        "name": "doctor"
+      },
+      {
+        "id": 816,
+        "name": "pets"
+      },
+      {
+        "id": 839,
+        "name": "dolphin"
+      },
+      {
+        "id": 889,
+        "name": "gangs"
+      },
+      {
+        "id": 926,
+        "name": "deer"
+      },
+      {
+        "id": 977,
+        "name": "hand-to-hand combat"
+      },
+      {
+        "id": 1032,
+        "name": "insanity"
+      },
+      {
+        "id": 1033,
+        "name": "action-adventure"
+      },
+      {
+        "id": 1158,
+        "name": "steam"
+      },
+      {
+        "id": 1186,
+        "name": "multiple protagonists"
+      },
+      {
+        "id": 1188,
+        "name": "bromance"
+      },
+      {
+        "id": 1293,
+        "name": "achievements"
+      },
+      {
+        "id": 1299,
+        "name": "time limit"
+      },
+      {
+        "id": 1309,
+        "name": "bullet time"
+      },
+      {
+        "id": 1313,
+        "name": "multiple endings"
+      },
+      {
+        "id": 1333,
+        "name": "online"
+      },
+      {
+        "id": 1373,
+        "name": "hostages"
+      },
+      {
+        "id": 1379,
+        "name": "campaign"
+      },
+      {
+        "id": 1403,
+        "name": "building"
+      },
+      {
+        "id": 1440,
+        "name": "artificial intelligence"
+      },
+      {
+        "id": 1572,
+        "name": "scuba diving"
+      },
+      {
+        "id": 1669,
+        "name": "crime"
+      },
+      {
+        "id": 1678,
+        "name": "drifting"
+      },
+      {
+        "id": 1710,
+        "name": "snow"
+      },
+      {
+        "id": 1754,
+        "name": "dark humor"
+      },
+      {
+        "id": 1779,
+        "name": "torture"
+      },
+      {
+        "id": 1821,
+        "name": "tank"
+      },
+      {
+        "id": 1834,
+        "name": "camera"
+      },
+      {
+        "id": 1887,
+        "name": "racism"
+      },
+      {
+        "id": 1898,
+        "name": "easter egg"
+      },
+      {
+        "id": 1928,
+        "name": "capitalism"
+      },
+      {
+        "id": 1935,
+        "name": "dog"
+      },
+      {
+        "id": 1961,
+        "name": "nudity"
+      },
+      {
+        "id": 1971,
+        "name": "over the shoulder"
+      },
+      {
+        "id": 2002,
+        "name": "economy"
+      },
+      {
+        "id": 2069,
+        "name": "pizza"
+      },
+      {
+        "id": 2071,
+        "name": "sequel"
+      },
+      {
+        "id": 2141,
+        "name": "slow-motion"
+      },
+      {
+        "id": 2280,
+        "name": "climbing"
+      },
+      {
+        "id": 2324,
+        "name": "swimming"
+      },
+      {
+        "id": 2452,
+        "name": "day/night cycle"
+      },
+      {
+        "id": 2841,
+        "name": "airplane"
+      },
+      {
+        "id": 2949,
+        "name": "hip-hop"
+      },
+      {
+        "id": 3586,
+        "name": "sexual content"
+      },
+      {
+        "id": 3627,
+        "name": "vehicle combat"
+      },
+      {
+        "id": 3831,
+        "name": "explosion"
+      },
+      {
+        "id": 4134,
+        "name": "digital distribution"
+      },
+      {
+        "id": 4215,
+        "name": "challenges"
+      },
+      {
+        "id": 4272,
+        "name": "customizable characters"
+      },
+      {
+        "id": 4273,
+        "name": "customization"
+      },
+      {
+        "id": 4285,
+        "name": "world map"
+      },
+      {
+        "id": 4287,
+        "name": "voice acting"
+      },
+      {
+        "id": 4341,
+        "name": "cow"
+      },
+      {
+        "id": 4345,
+        "name": "bink video"
+      },
+      {
+        "id": 4353,
+        "name": "human"
+      },
+      {
+        "id": 4359,
+        "name": "polygonal 3d"
+      },
+      {
+        "id": 4360,
+        "name": "color customization"
+      },
+      {
+        "id": 4368,
+        "name": "mouse"
+      },
+      {
+        "id": 4388,
+        "name": "shopping"
+      },
+      {
+        "id": 4452,
+        "name": "licensed soundtrack"
+      },
+      {
+        "id": 4473,
+        "name": "photo mode"
+      },
+      {
+        "id": 4530,
+        "name": "lion"
+      },
+      {
+        "id": 4613,
+        "name": "non-player character"
+      },
+      {
+        "id": 4614,
+        "name": "extreme violence"
+      },
+      {
+        "id": 4622,
+        "name": "descendants of other characters"
+      },
+      {
+        "id": 4623,
+        "name": "fake in-game advertising"
+      },
+      {
+        "id": 4647,
+        "name": "vehicle customization"
+      },
+      {
+        "id": 4709,
+        "name": "save point"
+      },
+      {
+        "id": 4711,
+        "name": "sprinting mechanics"
+      },
+      {
+        "id": 4730,
+        "name": "sniping"
+      },
+      {
+        "id": 4777,
+        "name": "checkpoints"
+      },
+      {
+        "id": 4781,
+        "name": "falling damage"
+      },
+      {
+        "id": 4823,
+        "name": "character creation"
+      },
+      {
+        "id": 4852,
+        "name": "side quests"
+      },
+      {
+        "id": 4869,
+        "name": "downloadable content"
+      },
+      {
+        "id": 4884,
+        "name": "black market"
+      },
+      {
+        "id": 4885,
+        "name": "auto-aim"
+      },
+      {
+        "id": 4891,
+        "name": "melee"
+      },
+      {
+        "id": 4901,
+        "name": "kill feed"
+      },
+      {
+        "id": 4918,
+        "name": "real-time combat"
+      },
+      {
+        "id": 4927,
+        "name": "useable vehicles"
+      },
+      {
+        "id": 4956,
+        "name": "a.i. companion"
+      },
+      {
+        "id": 4961,
+        "name": "adultery"
+      },
+      {
+        "id": 4974,
+        "name": "male antagonist"
+      },
+      {
+        "id": 4984,
+        "name": "stat tracking"
+      },
+      {
+        "id": 4989,
+        "name": "in-game map editor"
+      },
+      {
+        "id": 4998,
+        "name": "betrayal"
+      },
+      {
+        "id": 5023,
+        "name": "animal companions"
+      },
+      {
+        "id": 5150,
+        "name": "wilhelm scream"
+      },
+      {
+        "id": 5181,
+        "name": "quicksaving"
+      },
+      {
+        "id": 5187,
+        "name": "conveniently obscured nudity"
+      },
+      {
+        "id": 5264,
+        "name": "vending machine interaction"
+      },
+      {
+        "id": 5287,
+        "name": "rock music"
+      },
+      {
+        "id": 5308,
+        "name": "rpg elements"
+      },
+      {
+        "id": 5323,
+        "name": "mercenary"
+      },
+      {
+        "id": 5377,
+        "name": "robbery"
+      },
+      {
+        "id": 5408,
+        "name": "video game characters that play video games"
+      },
+      {
+        "id": 5436,
+        "name": "cheat code"
+      },
+      {
+        "id": 5451,
+        "name": "cover system"
+      },
+      {
+        "id": 5453,
+        "name": "destructible environment"
+      },
+      {
+        "id": 5468,
+        "name": "banned"
+      },
+      {
+        "id": 5471,
+        "name": "law"
+      },
+      {
+        "id": 5474,
+        "name": "in-game radio"
+      },
+      {
+        "id": 5514,
+        "name": "addiction"
+      },
+      {
+        "id": 5517,
+        "name": "theft"
+      },
+      {
+        "id": 5542,
+        "name": "interactive environments"
+      },
+      {
+        "id": 5593,
+        "name": "anti-hero"
+      },
+      {
+        "id": 5599,
+        "name": "been here before"
+      },
+      {
+        "id": 5656,
+        "name": "facebook games"
+      },
+      {
+        "id": 5690,
+        "name": "banshee"
+      },
+      {
+        "id": 5730,
+        "name": "controversy"
+      },
+      {
+        "id": 5812,
+        "name": "surveillance camera"
+      },
+      {
+        "id": 5825,
+        "name": "submarine"
+      },
+      {
+        "id": 5850,
+        "name": "high definition graphics"
+      },
+      {
+        "id": 5896,
+        "name": "dynamic soundtrack"
+      },
+      {
+        "id": 5963,
+        "name": "plot twist"
+      },
+      {
+        "id": 5987,
+        "name": "team deathmatch"
+      },
+      {
+        "id": 5999,
+        "name": "stealth kill"
+      },
+      {
+        "id": 6036,
+        "name": "voice chat"
+      },
+      {
+        "id": 6066,
+        "name": "poverty"
+      },
+      {
+        "id": 6075,
+        "name": "banter during gameplay"
+      },
+      {
+        "id": 6134,
+        "name": "game console"
+      },
+      {
+        "id": 6169,
+        "name": "d.i.c.e. awards 2014"
+      },
+      {
+        "id": 6214,
+        "name": "day one patch"
+      },
+      {
+        "id": 6246,
+        "name": "weapon modification"
+      },
+      {
+        "id": 6248,
+        "name": "animal cruelty"
+      },
+      {
+        "id": 6273,
+        "name": "motorcycle helmet"
+      },
+      {
+        "id": 6326,
+        "name": "ambient music"
+      },
+      {
+        "id": 6368,
+        "name": "overweight character"
+      },
+      {
+        "id": 6391,
+        "name": "new protagonist in sequel"
+      },
+      {
+        "id": 6469,
+        "name": "fake tv show"
+      },
+      {
+        "id": 6539,
+        "name": "kidnapping"
+      },
+      {
+        "id": 6587,
+        "name": "companion app"
+      },
+      {
+        "id": 6642,
+        "name": "random encounter"
+      },
+      {
+        "id": 6736,
+        "name": "burning"
+      },
+      {
+        "id": 6747,
+        "name": "time stopping"
+      },
+      {
+        "id": 6832,
+        "name": "upgradeable vehicles"
+      },
+      {
+        "id": 7097,
+        "name": "censored version"
+      },
+      {
+        "id": 7107,
+        "name": "italian accent"
+      },
+      {
+        "id": 7185,
+        "name": "innocent people die"
+      },
+      {
+        "id": 7229,
+        "name": "game developers choice awards 2014"
+      },
+      {
+        "id": 7335,
+        "name": "anarchism"
+      },
+      {
+        "id": 7351,
+        "name": "sociopathy"
+      },
+      {
+        "id": 7353,
+        "name": "vigilante"
+      },
+      {
+        "id": 7464,
+        "name": "off-road racing"
+      },
+      {
+        "id": 7530,
+        "name": "phoenix"
+      },
+      {
+        "id": 7558,
+        "name": "on-the-fly character switching"
+      },
+      {
+        "id": 7693,
+        "name": "birthday acknowledgement"
+      },
+      {
+        "id": 8150,
+        "name": "sex work"
+      },
+      {
+        "id": 8157,
+        "name": "playstation home tie-in"
+      },
+      {
+        "id": 8172,
+        "name": "renovation"
+      },
+      {
+        "id": 8263,
+        "name": "car chase"
+      },
+      {
+        "id": 8272,
+        "name": "police chase"
+      },
+      {
+        "id": 8275,
+        "name": "shooting range"
+      },
+      {
+        "id": 8281,
+        "name": "sports cars"
+      },
+      {
+        "id": 8828,
+        "name": "notoriety system"
+      },
+      {
+        "id": 9066,
+        "name": "carjacking"
+      },
+      {
+        "id": 9174,
+        "name": "bounty hunting"
+      },
+      {
+        "id": 9328,
+        "name": "dark past"
+      },
+      {
+        "id": 9455,
+        "name": "blamed for real life murders"
+      },
+      {
+        "id": 9722,
+        "name": "tiered exploration"
+      },
+      {
+        "id": 10192,
+        "name": "arm wrestling"
+      },
+      {
+        "id": 11214,
+        "name": "yoga"
+      },
+      {
+        "id": 11635,
+        "name": "bully mode"
+      },
+      {
+        "id": 11643,
+        "name": "cheetah"
+      },
+      {
+        "id": 11680,
+        "name": "phantom"
+      },
+      {
+        "id": 11696,
+        "name": "rhino"
+      },
+      {
+        "id": 11704,
+        "name": "journey"
+      },
+      {
+        "id": 11712,
+        "name": "psg1"
+      },
+      {
+        "id": 12087,
+        "name": "the game awards 2017"
+      },
+      {
+        "id": 12556,
+        "name": "the game awards - nominee"
+      },
+      {
+        "id": 23856,
+        "name": "lgbtq+"
+      },
+      {
+        "id": 24168,
+        "name": "political"
+      },
+      {
+        "id": 38555,
+        "name": "you play as the villain"
+      },
+      {
+        "id": 39036,
+        "name": "the game awards - best ongoing game - nominee"
+      },
+      {
+        "id": 39709,
+        "name": "cloud gaming"
+      }
+    ],
+    "name": "Grand Theft Auto V",
+    "platforms": [
+      {
+        "id": 169,
+        "abbreviation": "Series X|S",
+        "name": "Xbox Series X|S"
+      },
+      {
+        "id": 9,
+        "abbreviation": "PS3",
+        "name": "PlayStation 3"
+      },
+      {
+        "id": 48,
+        "abbreviation": "PS4",
+        "name": "PlayStation 4"
+      },
+      {
+        "id": 6,
+        "abbreviation": "PC",
+        "name": "PC (Microsoft Windows)"
+      },
+      {
+        "id": 167,
+        "abbreviation": "PS5",
+        "name": "PlayStation 5"
+      },
+      {
+        "id": 12,
+        "abbreviation": "X360",
+        "name": "Xbox 360"
+      },
+      {
+        "id": 49,
+        "abbreviation": "XONE",
+        "name": "Xbox One"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 1,
+        "name": "First person"
+      },
+      {
+        "id": 2,
+        "name": "Third person"
+      }
+    ],
+    "rating_count": 5973,
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 27,
+        "name": "Comedy"
+      },
+      {
+        "id": 33,
+        "name": "Sandbox"
+      },
+      {
+        "id": 38,
+        "name": "Open world"
+      }
+    ],
+    "total_rating": 88.8925000289035,
+    "collections": [
+      {
+        "id": 847,
+        "name": "Grand Theft Auto"
+      }
+    ],
+    "game_type": 0
+  },
+  {
+    "id": 11737,
+    "cover": {
+      "id": 286788,
+      "image_id": "co65ac"
+    },
+    "first_release_date": 1559001600,
+    "game_modes": [
+      {
+        "id": 1,
+        "name": "Single player"
+      }
+    ],
+    "genres": [
+      {
+        "id": 9,
+        "name": "Puzzle"
+      },
+      {
+        "id": 13,
+        "name": "Simulator"
+      },
+      {
+        "id": 31,
+        "name": "Adventure"
+      },
+      {
+        "id": 32,
+        "name": "Indie"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 144456,
+        "company": {
+          "id": 11662,
+          "name": "Annapurna Interactive"
+        },
+        "developer": false
+      },
+      {
+        "id": 145321,
+        "company": {
+          "id": 11662,
+          "name": "Annapurna Interactive"
+        },
+        "developer": false
+      },
+      {
+        "id": 145322,
+        "company": {
+          "id": 6209,
+          "name": "Mobius Digital"
+        },
+        "developer": true
+      },
+      {
+        "id": 318852,
+        "company": {
+          "id": 31592,
+          "name": "Limited Run Games"
+        },
+        "developer": false
+      }
+    ],
+    "keywords": [
+      {
+        "id": 23,
+        "name": "space simulation"
+      },
+      {
+        "id": 72,
+        "name": "exploration"
+      },
+      {
+        "id": 170,
+        "name": "time travel"
+      },
+      {
+        "id": 4090,
+        "name": "astronaut"
+      }
+    ],
+    "name": "Outer Wilds",
+    "platforms": [
+      {
+        "id": 169,
+        "abbreviation": "Series X|S",
+        "name": "Xbox Series X|S"
+      },
+      {
+        "id": 48,
+        "abbreviation": "PS4",
+        "name": "PlayStation 4"
+      },
+      {
+        "id": 6,
+        "abbreviation": "PC",
+        "name": "PC (Microsoft Windows)"
+      },
+      {
+        "id": 167,
+        "abbreviation": "PS5",
+        "name": "PlayStation 5"
+      },
+      {
+        "id": 49,
+        "abbreviation": "XONE",
+        "name": "Xbox One"
+      },
+      {
+        "id": 130,
+        "abbreviation": "Switch",
+        "name": "Nintendo Switch"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 1,
+        "name": "First person"
+      }
+    ],
+    "rating_count": 887,
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 18,
+        "name": "Science fiction"
+      },
+      {
+        "id": 38,
+        "name": "Open world"
+      },
+      {
+        "id": 43,
+        "name": "Mystery"
+      }
+    ],
+    "total_rating": 86.99736217786904,
+    "collections": [
+      {
+        "id": 6980,
+        "name": "Outer Wilds"
+      }
+    ],
+    "game_type": 0
+  },
+  {
+    "id": 19457,
+    "cover": {
+      "id": 87288,
+      "image_id": "co1vco"
+    },
+    "first_release_date": 1477526400,
+    "franchises": [
+      {
+        "id": 456,
+        "name": "The Elder Scrolls"
+      }
+    ],
+    "game_modes": [
+      {
+        "id": 1,
+        "name": "Single player"
+      }
+    ],
+    "genres": [
+      {
+        "id": 12,
+        "name": "Role-playing (RPG)"
+      },
+      {
+        "id": 31,
+        "name": "Adventure"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 68141,
+        "company": {
+          "id": 126,
+          "name": "Bethesda Game Studios"
+        },
+        "developer": true
+      },
+      {
+        "id": 95357,
+        "company": {
+          "id": 16565,
+          "name": "Bethesda Softworks"
+        },
+        "developer": false
+      }
+    ],
+    "keywords": [
+      {
+        "id": 72,
+        "name": "exploration"
+      },
+      {
+        "id": 4357,
+        "name": "xbox one x enhanced"
+      },
+      {
+        "id": 5836,
+        "name": "mod support"
+      },
+      {
+        "id": 16826,
+        "name": "4k ultra hd"
+      }
+    ],
+    "name": "The Elder Scrolls V: Skyrim - Special Edition",
+    "parent_game": 472,
+    "platforms": [
+      {
+        "id": 169,
+        "abbreviation": "Series X|S",
+        "name": "Xbox Series X|S"
+      },
+      {
+        "id": 48,
+        "abbreviation": "PS4",
+        "name": "PlayStation 4"
+      },
+      {
+        "id": 6,
+        "abbreviation": "PC",
+        "name": "PC (Microsoft Windows)"
+      },
+      {
+        "id": 167,
+        "abbreviation": "PS5",
+        "name": "PlayStation 5"
+      },
+      {
+        "id": 49,
+        "abbreviation": "XONE",
+        "name": "Xbox One"
+      },
+      {
+        "id": 130,
+        "abbreviation": "Switch",
+        "name": "Nintendo Switch"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 1,
+        "name": "First person"
+      },
+      {
+        "id": 2,
+        "name": "Third person"
+      }
+    ],
+    "rating_count": 428,
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 17,
+        "name": "Fantasy"
+      },
+      {
+        "id": 22,
+        "name": "Historical"
+      },
+      {
+        "id": 33,
+        "name": "Sandbox"
+      },
+      {
+        "id": 38,
+        "name": "Open world"
+      }
+    ],
+    "total_rating": 84.64331775506491,
+    "collections": [
+      {
+        "id": 6,
+        "name": "The Elder Scrolls"
+      }
+    ],
+    "game_type": 9
+  },
+  {
+    "id": 34293,
+    "cover": {
+      "id": 239718,
+      "image_id": "co54yu"
+    },
+    "first_release_date": 1473811200,
+    "franchises": [
+      {
+        "id": 1686,
+        "name": "Bioshock"
+      }
+    ],
+    "game_modes": [
+      {
+        "id": 1,
+        "name": "Single player"
+      }
+    ],
+    "genres": [
+      {
+        "id": 5,
+        "name": "Shooter"
+      },
+      {
+        "id": 12,
+        "name": "Role-playing (RPG)"
+      },
+      {
+        "id": 31,
+        "name": "Adventure"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 185040,
+        "company": {
+          "id": 8,
+          "name": "2K Games"
+        },
+        "developer": false
+      },
+      {
+        "id": 185041,
+        "company": {
+          "id": 2492,
+          "name": "2K Australia"
+        },
+        "developer": true
+      },
+      {
+        "id": 185042,
+        "company": {
+          "id": 649,
+          "name": "2K Boston"
+        },
+        "developer": true
+      },
+      {
+        "id": 185043,
+        "company": {
+          "id": 13,
+          "name": "Demiurge Studios"
+        },
+        "developer": false
+      },
+      {
+        "id": 185044,
+        "company": {
+          "id": 3308,
+          "name": "Blind Squirrel Games"
+        },
+        "developer": false
+      },
+      {
+        "id": 205549,
+        "company": {
+          "id": 23,
+          "name": "Feral Interactive"
+        },
+        "developer": true
+      }
+    ],
+    "keywords": [
+      {
+        "id": 49326,
+        "name": "previously on - prime gaming"
+      }
+    ],
+    "name": "BioShock Remastered",
+    "parent_game": 20,
+    "platforms": [
+      {
+        "id": 48,
+        "abbreviation": "PS4",
+        "name": "PlayStation 4"
+      },
+      {
+        "id": 6,
+        "abbreviation": "PC",
+        "name": "PC (Microsoft Windows)"
+      },
+      {
+        "id": 14,
+        "abbreviation": "Mac",
+        "name": "Mac"
+      },
+      {
+        "id": 49,
+        "abbreviation": "XONE",
+        "name": "Xbox One"
+      },
+      {
+        "id": 130,
+        "abbreviation": "Switch",
+        "name": "Nintendo Switch"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 1,
+        "name": "First person"
+      }
+    ],
+    "rating_count": 270,
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 18,
+        "name": "Science fiction"
+      },
+      {
+        "id": 19,
+        "name": "Horror"
+      }
+    ],
+    "total_rating": 83.34763521313545,
+    "collections": [
+      {
+        "id": 1,
+        "name": "Bioshock"
+      }
+    ],
+    "game_type": 9
+  },
+  {
+    "id": 113112,
+    "cover": {
+      "id": 525627,
+      "image_id": "cob9kr"
+    },
+    "first_release_date": 1600300800,
+    "game_modes": [
+      {
+        "id": 1,
+        "name": "Single player"
+      }
+    ],
+    "genres": [
+      {
+        "id": 12,
+        "name": "Role-playing (RPG)"
+      },
+      {
+        "id": 25,
+        "name": "Hack and slash/Beat 'em up"
+      },
+      {
+        "id": 31,
+        "name": "Adventure"
+      },
+      {
+        "id": 32,
+        "name": "Indie"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 258983,
+        "company": {
+          "id": 928,
+          "name": "Supergiant Games"
+        },
+        "developer": true
+      },
+      {
+        "id": 258984,
+        "company": {
+          "id": 27224,
+          "name": "Netflix"
+        },
+        "developer": false
+      },
+      {
+        "id": 265600,
+        "company": {
+          "id": 9691,
+          "name": "Secret 6"
+        },
+        "developer": false
+      }
+    ],
+    "keywords": [
+      {
+        "id": 35,
+        "name": "greek mythology"
+      },
+      {
+        "id": 416,
+        "name": "roguelike"
+      },
+      {
+        "id": 905,
+        "name": "difficult"
+      },
+      {
+        "id": 953,
+        "name": "mythology"
+      },
+      {
+        "id": 1105,
+        "name": "supernatural"
+      },
+      {
+        "id": 1204,
+        "name": "stylized"
+      },
+      {
+        "id": 2228,
+        "name": "dungeon crawler"
+      },
+      {
+        "id": 2426,
+        "name": "story rich"
+      },
+      {
+        "id": 12083,
+        "name": "the game awards - best score or music - nominee"
+      },
+      {
+        "id": 17292,
+        "name": "roguelite"
+      },
+      {
+        "id": 17686,
+        "name": "netflix"
+      },
+      {
+        "id": 27054,
+        "name": "you can pet the dog"
+      },
+      {
+        "id": 39006,
+        "name": "the game awards - best action game - winner"
+      },
+      {
+        "id": 39009,
+        "name": "the game awards - best art direction - nominee"
+      },
+      {
+        "id": 39024,
+        "name": "the game awards - best game direction - nominee"
+      },
+      {
+        "id": 39029,
+        "name": "the game awards - best independent game - winner"
+      },
+      {
+        "id": 39034,
+        "name": "the game awards - best narrative - nominee"
+      },
+      {
+        "id": 39038,
+        "name": "the game awards - best performance - nominee"
+      },
+      {
+        "id": 39049,
+        "name": "the game awards - game of the year - nominee"
+      },
+      {
+        "id": 41459,
+        "name": "weapons"
+      }
+    ],
+    "name": "Hades",
+    "platforms": [
+      {
+        "id": 169,
+        "abbreviation": "Series X|S",
+        "name": "Xbox Series X|S"
+      },
+      {
+        "id": 48,
+        "abbreviation": "PS4",
+        "name": "PlayStation 4"
+      },
+      {
+        "id": 6,
+        "abbreviation": "PC",
+        "name": "PC (Microsoft Windows)"
+      },
+      {
+        "id": 39,
+        "abbreviation": "iOS",
+        "name": "iOS"
+      },
+      {
+        "id": 167,
+        "abbreviation": "PS5",
+        "name": "PlayStation 5"
+      },
+      {
+        "id": 14,
+        "abbreviation": "Mac",
+        "name": "Mac"
+      },
+      {
+        "id": 49,
+        "abbreviation": "XONE",
+        "name": "Xbox One"
+      },
+      {
+        "id": 130,
+        "abbreviation": "Switch",
+        "name": "Nintendo Switch"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 3,
+        "name": "Bird view / Isometric"
+      }
+    ],
+    "rating_count": 1763,
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 17,
+        "name": "Fantasy"
+      },
+      {
+        "id": 31,
+        "name": "Drama"
+      }
+    ],
+    "total_rating": 91.4821249222362,
+    "collections": [
+      {
+        "id": 8454,
+        "name": "Hades"
+      }
+    ],
+    "game_type": 0
+  },
+  {
+    "id": 165192,
+    "cover": {
+      "id": 479294,
+      "image_id": "coa9tq"
+    },
+    "first_release_date": 1636588800,
+    "franchises": [
+      {
+        "id": 456,
+        "name": "The Elder Scrolls"
+      }
+    ],
+    "game_modes": [
+      {
+        "id": 1,
+        "name": "Single player"
+      }
+    ],
+    "genres": [
+      {
+        "id": 12,
+        "name": "Role-playing (RPG)"
+      },
+      {
+        "id": 31,
+        "name": "Adventure"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 145759,
+        "company": {
+          "id": 126,
+          "name": "Bethesda Game Studios"
+        },
+        "developer": true
+      },
+      {
+        "id": 145760,
+        "company": {
+          "id": 16565,
+          "name": "Bethesda Softworks"
+        },
+        "developer": false
+      },
+      {
+        "id": 145761,
+        "company": {
+          "id": 17966,
+          "name": "Xbox Game Studios"
+        },
+        "developer": false
+      }
+    ],
+    "keywords": [
+      {
+        "id": 49376,
+        "name": "available on - luna plus"
+      }
+    ],
+    "name": "The Elder Scrolls V: Skyrim - Anniversary Edition",
+    "parent_game": 19457,
+    "platforms": [
+      {
+        "id": 169,
+        "abbreviation": "Series X|S",
+        "name": "Xbox Series X|S"
+      },
+      {
+        "id": 48,
+        "abbreviation": "PS4",
+        "name": "PlayStation 4"
+      },
+      {
+        "id": 508,
+        "abbreviation": "Switch 2",
+        "name": "Nintendo Switch 2"
+      },
+      {
+        "id": 6,
+        "abbreviation": "PC",
+        "name": "PC (Microsoft Windows)"
+      },
+      {
+        "id": 167,
+        "abbreviation": "PS5",
+        "name": "PlayStation 5"
+      },
+      {
+        "id": 49,
+        "abbreviation": "XONE",
+        "name": "Xbox One"
+      },
+      {
+        "id": 130,
+        "abbreviation": "Switch",
+        "name": "Nintendo Switch"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 1,
+        "name": "First person"
+      },
+      {
+        "id": 2,
+        "name": "Third person"
+      }
+    ],
+    "rating_count": 77,
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 17,
+        "name": "Fantasy"
+      },
+      {
+        "id": 38,
+        "name": "Open world"
+      }
+    ],
+    "total_rating": 90.43190290426321,
+    "collections": [
+      {
+        "id": 6,
+        "name": "The Elder Scrolls"
+      }
+    ],
+    "game_type": 10
+  },
+  {
+    "id": 334647,
+    "cover": {
+      "id": 443628,
+      "image_id": "co9ib0"
+    },
+    "first_release_date": 1741046400,
+    "franchises": [
+      {
+        "id": 493,
+        "name": "Grand Theft Auto"
+      }
+    ],
+    "game_modes": [
+      {
+        "id": 1,
+        "name": "Single player"
+      },
+      {
+        "id": 2,
+        "name": "Multiplayer"
+      },
+      {
+        "id": 3,
+        "name": "Co-operative"
+      }
+    ],
+    "genres": [
+      {
+        "id": 10,
+        "name": "Racing"
+      },
+      {
+        "id": 31,
+        "name": "Adventure"
+      }
+    ],
+    "involved_companies": [
+      {
+        "id": 310739,
+        "company": {
+          "id": 365,
+          "name": "Rockstar North"
+        },
+        "developer": true
+      },
+      {
+        "id": 310740,
+        "company": {
+          "id": 29,
+          "name": "Rockstar Games"
+        },
+        "developer": false
+      }
+    ],
+    "name": "Grand Theft Auto V Enhanced",
+    "platforms": [
+      {
+        "id": 6,
+        "abbreviation": "PC",
+        "name": "PC (Microsoft Windows)"
+      }
+    ],
+    "player_perspectives": [
+      {
+        "id": 1,
+        "name": "First person"
+      },
+      {
+        "id": 2,
+        "name": "Third person"
+      }
+    ],
+    "rating_count": 16,
+    "themes": [
+      {
+        "id": 1,
+        "name": "Action"
+      },
+      {
+        "id": 33,
+        "name": "Sandbox"
+      },
+      {
+        "id": 38,
+        "name": "Open world"
+      }
+    ],
+    "total_rating": 99.59905591233047,
+    "game_type": 3
+  }
+]

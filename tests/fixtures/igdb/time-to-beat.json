@@ -1,0 +1,18 @@
+[
+  {
+    "id": 2005,
+    "game_id": 113112,
+    "hastily": 139240,
+    "normally": 253600,
+    "completely": 542700,
+    "count": 13
+  },
+  {
+    "id": 1758,
+    "game_id": 11737,
+    "hastily": 43200,
+    "normally": 68400,
+    "completely": 115200,
+    "count": 7
+  }
+]

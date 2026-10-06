@@ -1,0 +1,1103 @@
+{
+  "response": {
+    "store_items": [
+      {
+        "item_type": 0,
+        "id": 753640,
+        "success": 1,
+        "visible": true,
+        "name": "Outer Wilds",
+        "store_url_path": "app/753640/Outer_Wilds",
+        "store_url_slug": "Outer_Wilds",
+        "appid": 753640,
+        "type": 0,
+        "tagids": [
+          3834,
+          1755,
+          5716,
+          1742,
+          21,
+          1756,
+          4166,
+          1664,
+          1695,
+          4182,
+          492,
+          3942,
+          1667,
+          3839,
+          5411,
+          1721,
+          3965,
+          4191,
+          599,
+          19
+        ],
+        "categories": {
+          "supported_player_categoryids": [
+            2
+          ],
+          "feature_categoryids": [
+            22,
+            29,
+            64,
+            66,
+            67,
+            68,
+            69,
+            70,
+            74,
+            75,
+            23,
+            41,
+            42,
+            43,
+            62
+          ],
+          "controller_categoryids": [
+            28,
+            55,
+            56,
+            57,
+            58,
+            60
+          ]
+        },
+        "tags": [
+          {
+            "tagid": 3834,
+            "weight": 927
+          },
+          {
+            "tagid": 1755,
+            "weight": 799
+          },
+          {
+            "tagid": 5716,
+            "weight": 720
+          },
+          {
+            "tagid": 1742,
+            "weight": 706
+          },
+          {
+            "tagid": 21,
+            "weight": 632
+          },
+          {
+            "tagid": 1756,
+            "weight": 621
+          },
+          {
+            "tagid": 4166,
+            "weight": 598
+          },
+          {
+            "tagid": 1664,
+            "weight": 588
+          },
+          {
+            "tagid": 1695,
+            "weight": 540
+          },
+          {
+            "tagid": 4182,
+            "weight": 523
+          },
+          {
+            "tagid": 492,
+            "weight": 469
+          },
+          {
+            "tagid": 3942,
+            "weight": 451
+          },
+          {
+            "tagid": 1667,
+            "weight": 448
+          },
+          {
+            "tagid": 3839,
+            "weight": 411
+          },
+          {
+            "tagid": 5411,
+            "weight": 406
+          },
+          {
+            "tagid": 1721,
+            "weight": 316
+          },
+          {
+            "tagid": 3965,
+            "weight": 258
+          },
+          {
+            "tagid": 4191,
+            "weight": 230
+          },
+          {
+            "tagid": 599,
+            "weight": 203
+          },
+          {
+            "tagid": 19,
+            "weight": 144
+          }
+        ],
+        "best_purchase_option": {
+          "packageid": 221672,
+          "purchase_option_name": "Outer Wilds",
+          "final_price_in_cents": "1249",
+          "original_price_in_cents": "2499",
+          "formatted_final_price": "$12.49",
+          "formatted_original_price": "$24.99",
+          "discount_pct": 50,
+          "active_discounts": [
+            {
+              "discount_amount": "1250",
+              "discount_description": "#discount_desc_preset_special",
+              "discount_end_date": 1791478800
+            }
+          ],
+          "user_can_purchase_as_gift": true,
+          "hide_discount_pct_for_compliance": false,
+          "included_game_count": 1,
+          "must_purchase_as_set": false,
+          "package_group": "default",
+          "price_cannot_be_displayed_as_discount": false
+        }
+      },
+      {
+        "item_type": 0,
+        "id": 1145360,
+        "success": 1,
+        "visible": true,
+        "name": "Hades",
+        "store_url_path": "app/1145360/Hades",
+        "store_url_slug": "Hades",
+        "appid": 1145360,
+        "type": 0,
+        "tagids": [
+          42804,
+          3959,
+          1646,
+          492,
+          16094,
+          19,
+          1716,
+          4182,
+          1756,
+          1742,
+          1720,
+          122,
+          4711,
+          5851,
+          4026,
+          6815,
+          4231,
+          4166,
+          1759,
+          44868
+        ],
+        "categories": {
+          "supported_player_categoryids": [
+            2
+          ],
+          "feature_categoryids": [
+            22,
+            29,
+            13,
+            23,
+            41,
+            42,
+            43,
+            62
+          ],
+          "controller_categoryids": [
+            28
+          ]
+        },
+        "tags": [
+          {
+            "tagid": 42804,
+            "weight": 1051
+          },
+          {
+            "tagid": 3959,
+            "weight": 766
+          },
+          {
+            "tagid": 1646,
+            "weight": 749
+          },
+          {
+            "tagid": 492,
+            "weight": 735
+          },
+          {
+            "tagid": 16094,
+            "weight": 730
+          },
+          {
+            "tagid": 19,
+            "weight": 636
+          },
+          {
+            "tagid": 1716,
+            "weight": 620
+          },
+          {
+            "tagid": 4182,
+            "weight": 579
+          },
+          {
+            "tagid": 1756,
+            "weight": 555
+          },
+          {
+            "tagid": 1742,
+            "weight": 545
+          },
+          {
+            "tagid": 1720,
+            "weight": 511
+          },
+          {
+            "tagid": 122,
+            "weight": 500
+          },
+          {
+            "tagid": 4711,
+            "weight": 462
+          },
+          {
+            "tagid": 5851,
+            "weight": 360
+          },
+          {
+            "tagid": 4026,
+            "weight": 328
+          },
+          {
+            "tagid": 6815,
+            "weight": 239
+          },
+          {
+            "tagid": 4231,
+            "weight": 235
+          },
+          {
+            "tagid": 4166,
+            "weight": 231
+          },
+          {
+            "tagid": 1759,
+            "weight": 80
+          },
+          {
+            "tagid": 44868,
+            "weight": 79
+          }
+        ],
+        "best_purchase_option": {
+          "packageid": 415372,
+          "purchase_option_name": "Hades",
+          "final_price_in_cents": "624",
+          "original_price_in_cents": "2499",
+          "formatted_final_price": "$6.24",
+          "formatted_original_price": "$24.99",
+          "discount_pct": 75,
+          "active_discounts": [
+            {
+              "discount_amount": "1875",
+              "discount_description": "#discount_desc_preset_special",
+              "discount_end_date": 1791478800
+            }
+          ],
+          "user_can_purchase_as_gift": true,
+          "hide_discount_pct_for_compliance": false,
+          "included_game_count": 1,
+          "must_purchase_as_set": false,
+          "package_group": "default",
+          "price_cannot_be_displayed_as_discount": false
+        }
+      },
+      {
+        "item_type": 0,
+        "id": 7670,
+        "success": 1,
+        "visible": true,
+        "name": "BioShock™",
+        "store_url_path": "app/7670/BioShock",
+        "store_url_slug": "BioShock",
+        "appid": 7670,
+        "type": 0,
+        "related_items": {
+          "demo_appid": [
+            7710
+          ],
+          "demos": [
+            {
+              "appid": 7710,
+              "show_above_purchase": false
+            }
+          ]
+        },
+        "tagids": [
+          1663,
+          4166,
+          1742,
+          19,
+          4182,
+          1667,
+          1777,
+          3839,
+          1774,
+          3942,
+          1693,
+          122,
+          5030,
+          21,
+          9157,
+          3934,
+          4342,
+          1756,
+          4598,
+          9204
+        ],
+        "categories": {
+          "supported_player_categoryids": [
+            2
+          ],
+          "feature_categoryids": [
+            62
+          ],
+          "controller_categoryids": [
+            18
+          ]
+        },
+        "tags": [
+          {
+            "tagid": 1663,
+            "weight": 1124
+          },
+          {
+            "tagid": 4166,
+            "weight": 878
+          },
+          {
+            "tagid": 1742,
+            "weight": 846
+          },
+          {
+            "tagid": 19,
+            "weight": 815
+          },
+          {
+            "tagid": 4182,
+            "weight": 767
+          },
+          {
+            "tagid": 1667,
+            "weight": 641
+          },
+          {
+            "tagid": 1777,
+            "weight": 585
+          },
+          {
+            "tagid": 3839,
+            "weight": 551
+          },
+          {
+            "tagid": 1774,
+            "weight": 510
+          },
+          {
+            "tagid": 3942,
+            "weight": 427
+          },
+          {
+            "tagid": 1693,
+            "weight": 388
+          },
+          {
+            "tagid": 122,
+            "weight": 375
+          },
+          {
+            "tagid": 5030,
+            "weight": 352
+          },
+          {
+            "tagid": 21,
+            "weight": 343
+          },
+          {
+            "tagid": 9157,
+            "weight": 319
+          },
+          {
+            "tagid": 3934,
+            "weight": 305
+          },
+          {
+            "tagid": 4342,
+            "weight": 276
+          },
+          {
+            "tagid": 1756,
+            "weight": 197
+          },
+          {
+            "tagid": 4598,
+            "weight": 172
+          },
+          {
+            "tagid": 9204,
+            "weight": 117
+          }
+        ],
+        "best_purchase_option": {
+          "packageid": 451,
+          "purchase_option_name": "Bioshock",
+          "final_price_in_cents": "499",
+          "original_price_in_cents": "1999",
+          "formatted_final_price": "$4.99",
+          "formatted_original_price": "$19.99",
+          "discount_pct": 75,
+          "active_discounts": [
+            {
+              "discount_amount": "1500",
+              "discount_description": "#discount_desc_preset_special",
+              "discount_end_date": 1791478800
+            }
+          ],
+          "user_can_purchase_as_gift": true,
+          "hide_discount_pct_for_compliance": false,
+          "included_game_count": 2,
+          "must_purchase_as_set": false,
+          "package_group": "default",
+          "price_cannot_be_displayed_as_discount": false
+        }
+      },
+      {
+        "item_type": 0,
+        "id": 409710,
+        "success": 1,
+        "visible": true,
+        "name": "BioShock™ Remastered",
+        "store_url_path": "app/409710/BioShock_Remastered",
+        "store_url_slug": "BioShock_Remastered",
+        "appid": 409710,
+        "type": 0,
+        "tagids": [
+          1663,
+          1742,
+          4166,
+          1667,
+          4182,
+          3839,
+          19,
+          5030,
+          1774,
+          9157,
+          1777,
+          3942,
+          4342,
+          1693,
+          21,
+          9204,
+          1756,
+          4598,
+          122,
+          5708
+        ],
+        "categories": {
+          "supported_player_categoryids": [
+            2
+          ],
+          "feature_categoryids": [
+            22,
+            29,
+            23,
+            14,
+            41,
+            42,
+            43,
+            62
+          ],
+          "controller_categoryids": [
+            28
+          ]
+        },
+        "tags": [
+          {
+            "tagid": 1663,
+            "weight": 936
+          },
+          {
+            "tagid": 1742,
+            "weight": 827
+          },
+          {
+            "tagid": 4166,
+            "weight": 793
+          },
+          {
+            "tagid": 1667,
+            "weight": 744
+          },
+          {
+            "tagid": 4182,
+            "weight": 725
+          },
+          {
+            "tagid": 3839,
+            "weight": 634
+          },
+          {
+            "tagid": 19,
+            "weight": 593
+          },
+          {
+            "tagid": 5030,
+            "weight": 563
+          },
+          {
+            "tagid": 1774,
+            "weight": 512
+          },
+          {
+            "tagid": 9157,
+            "weight": 502
+          },
+          {
+            "tagid": 1777,
+            "weight": 421
+          },
+          {
+            "tagid": 3942,
+            "weight": 414
+          },
+          {
+            "tagid": 4342,
+            "weight": 370
+          },
+          {
+            "tagid": 1693,
+            "weight": 302
+          },
+          {
+            "tagid": 21,
+            "weight": 295
+          },
+          {
+            "tagid": 9204,
+            "weight": 280
+          },
+          {
+            "tagid": 1756,
+            "weight": 278
+          },
+          {
+            "tagid": 4598,
+            "weight": 274
+          },
+          {
+            "tagid": 122,
+            "weight": 266
+          },
+          {
+            "tagid": 5708,
+            "weight": 259
+          }
+        ],
+        "best_purchase_option": {
+          "packageid": 451,
+          "purchase_option_name": "Bioshock",
+          "final_price_in_cents": "499",
+          "original_price_in_cents": "1999",
+          "formatted_final_price": "$4.99",
+          "formatted_original_price": "$19.99",
+          "discount_pct": 75,
+          "active_discounts": [
+            {
+              "discount_amount": "1500",
+              "discount_description": "#discount_desc_preset_special",
+              "discount_end_date": 1791478800
+            }
+          ],
+          "user_can_purchase_as_gift": true,
+          "hide_discount_pct_for_compliance": false,
+          "included_game_count": 2,
+          "must_purchase_as_set": false,
+          "package_group": "default",
+          "price_cannot_be_displayed_as_discount": false
+        }
+      },
+      {
+        "item_type": 0,
+        "id": 489830,
+        "success": 1,
+        "visible": true,
+        "name": "The Elder Scrolls V: Skyrim Special Edition",
+        "store_url_path": "app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition",
+        "store_url_slug": "The_Elder_Scrolls_V_Skyrim_Special_Edition",
+        "appid": 489830,
+        "type": 0,
+        "content_descriptorids": [
+          1,
+          5
+        ],
+        "tagids": [
+          1695,
+          122,
+          1684,
+          21,
+          4182,
+          4747,
+          1669,
+          4046,
+          1742,
+          4057,
+          3839,
+          19,
+          4166,
+          1756,
+          1697,
+          1687,
+          1693,
+          5708,
+          7208,
+          5900
+        ],
+        "categories": {
+          "supported_player_categoryids": [
+            2
+          ],
+          "feature_categoryids": [
+            22,
+            69,
+            70,
+            74,
+            79,
+            23,
+            41,
+            42,
+            62
+          ],
+          "controller_categoryids": [
+            18
+          ]
+        },
+        "tags": [
+          {
+            "tagid": 1695,
+            "weight": 1222
+          },
+          {
+            "tagid": 122,
+            "weight": 1052
+          },
+          {
+            "tagid": 1684,
+            "weight": 760
+          },
+          {
+            "tagid": 21,
+            "weight": 759
+          },
+          {
+            "tagid": 4182,
+            "weight": 755
+          },
+          {
+            "tagid": 4747,
+            "weight": 675
+          },
+          {
+            "tagid": 1669,
+            "weight": 535
+          },
+          {
+            "tagid": 4046,
+            "weight": 516
+          },
+          {
+            "tagid": 1742,
+            "weight": 477
+          },
+          {
+            "tagid": 4057,
+            "weight": 468
+          },
+          {
+            "tagid": 3839,
+            "weight": 423
+          },
+          {
+            "tagid": 19,
+            "weight": 387
+          },
+          {
+            "tagid": 4166,
+            "weight": 377
+          },
+          {
+            "tagid": 1756,
+            "weight": 356
+          },
+          {
+            "tagid": 1697,
+            "weight": 288
+          },
+          {
+            "tagid": 1687,
+            "weight": 257
+          },
+          {
+            "tagid": 1693,
+            "weight": 240
+          },
+          {
+            "tagid": 5708,
+            "weight": 176
+          },
+          {
+            "tagid": 7208,
+            "weight": 134
+          },
+          {
+            "tagid": 5900,
+            "weight": 132
+          }
+        ],
+        "best_purchase_option": {
+          "packageid": 110687,
+          "purchase_option_name": "The Elder Scrolls V: Skyrim Special Edition",
+          "final_price_in_cents": "399",
+          "original_price_in_cents": "3999",
+          "formatted_final_price": "$3.99",
+          "formatted_original_price": "$39.99",
+          "discount_pct": 90,
+          "active_discounts": [
+            {
+              "discount_amount": "3600",
+              "discount_description": "#discount_desc_preset_special",
+              "discount_end_date": 1791478800
+            }
+          ],
+          "user_can_purchase_as_gift": true,
+          "hide_discount_pct_for_compliance": false,
+          "included_game_count": 1,
+          "must_purchase_as_set": false,
+          "package_group": "default",
+          "price_cannot_be_displayed_as_discount": false
+        }
+      },
+      {
+        "item_type": 0,
+        "id": 271590,
+        "success": 1,
+        "visible": true,
+        "name": "Grand Theft Auto V Legacy",
+        "store_url_path": "app/271590/Grand_Theft_Auto_V_Legacy",
+        "store_url_slug": "Grand_Theft_Auto_V_Legacy",
+        "appid": 271590,
+        "type": 0,
+        "content_descriptorids": [
+          5
+        ],
+        "tagids": [
+          1695,
+          19,
+          3859,
+          6378,
+          1100687,
+          1697,
+          3839,
+          1774,
+          21,
+          4182,
+          3814,
+          699,
+          1685,
+          3810,
+          4166,
+          4136,
+          1756,
+          1719,
+          1669,
+          122
+        ],
+        "categories": {
+          "supported_player_categoryids": [
+            2,
+            1,
+            49,
+            36,
+            9,
+            38
+          ],
+          "feature_categoryids": [
+            22,
+            41,
+            42,
+            43
+          ],
+          "controller_categoryids": [
+            28
+          ]
+        },
+        "tags": [
+          {
+            "tagid": 1695,
+            "weight": 1140
+          },
+          {
+            "tagid": 19,
+            "weight": 821
+          },
+          {
+            "tagid": 3859,
+            "weight": 758
+          },
+          {
+            "tagid": 6378,
+            "weight": 678
+          },
+          {
+            "tagid": 1100687,
+            "weight": 654
+          },
+          {
+            "tagid": 1697,
+            "weight": 650
+          },
+          {
+            "tagid": 3839,
+            "weight": 636
+          },
+          {
+            "tagid": 1774,
+            "weight": 522
+          },
+          {
+            "tagid": 21,
+            "weight": 476
+          },
+          {
+            "tagid": 4182,
+            "weight": 437
+          },
+          {
+            "tagid": 3814,
+            "weight": 418
+          },
+          {
+            "tagid": 699,
+            "weight": 404
+          },
+          {
+            "tagid": 1685,
+            "weight": 358
+          },
+          {
+            "tagid": 3810,
+            "weight": 349
+          },
+          {
+            "tagid": 4166,
+            "weight": 347
+          },
+          {
+            "tagid": 4136,
+            "weight": 328
+          },
+          {
+            "tagid": 1756,
+            "weight": 305
+          },
+          {
+            "tagid": 1719,
+            "weight": 300
+          },
+          {
+            "tagid": 1669,
+            "weight": 249
+          },
+          {
+            "tagid": 122,
+            "weight": 162
+          }
+        ],
+        "unlisted": true
+      },
+      {
+        "item_type": 0,
+        "id": 3240220,
+        "success": 1,
+        "visible": true,
+        "name": "Grand Theft Auto V Enhanced",
+        "store_url_path": "app/3240220/Grand_Theft_Auto_V_Enhanced",
+        "store_url_slug": "Grand_Theft_Auto_V_Enhanced",
+        "appid": 3240220,
+        "type": 0,
+        "content_descriptorids": [
+          1,
+          2,
+          5
+        ],
+        "tagids": [
+          1695,
+          12095,
+          19,
+          3859,
+          6378,
+          1774,
+          1697,
+          21,
+          3839,
+          699,
+          1100687,
+          3810,
+          3814,
+          4136,
+          1669,
+          6650,
+          1685,
+          4166,
+          1775,
+          1719
+        ],
+        "categories": {
+          "supported_player_categoryids": [
+            2,
+            1,
+            49,
+            36,
+            9,
+            38
+          ],
+          "feature_categoryids": [
+            22,
+            35,
+            41,
+            42
+          ],
+          "controller_categoryids": [
+            57,
+            58,
+            18
+          ]
+        },
+        "tags": [
+          {
+            "tagid": 1695,
+            "weight": 1032
+          },
+          {
+            "tagid": 12095,
+            "weight": 796
+          },
+          {
+            "tagid": 19,
+            "weight": 767
+          },
+          {
+            "tagid": 3859,
+            "weight": 718
+          },
+          {
+            "tagid": 6378,
+            "weight": 687
+          },
+          {
+            "tagid": 1774,
+            "weight": 604
+          },
+          {
+            "tagid": 1697,
+            "weight": 536
+          },
+          {
+            "tagid": 21,
+            "weight": 476
+          },
+          {
+            "tagid": 3839,
+            "weight": 467
+          },
+          {
+            "tagid": 699,
+            "weight": 417
+          },
+          {
+            "tagid": 1100687,
+            "weight": 415
+          },
+          {
+            "tagid": 3810,
+            "weight": 392
+          },
+          {
+            "tagid": 3814,
+            "weight": 382
+          },
+          {
+            "tagid": 4136,
+            "weight": 355
+          },
+          {
+            "tagid": 1669,
+            "weight": 351
+          },
+          {
+            "tagid": 6650,
+            "weight": 330
+          },
+          {
+            "tagid": 1685,
+            "weight": 320
+          },
+          {
+            "tagid": 4166,
+            "weight": 319
+          },
+          {
+            "tagid": 1775,
+            "weight": 315
+          },
+          {
+            "tagid": 1719,
+            "weight": 310
+          }
+        ],
+        "best_purchase_option": {
+          "packageid": 1148516,
+          "purchase_option_name": "Grand Theft Auto V Enhanced",
+          "final_price_in_cents": "1499",
+          "original_price_in_cents": "2999",
+          "formatted_final_price": "$14.99",
+          "formatted_original_price": "$29.99",
+          "discount_pct": 50,
+          "active_discounts": [
+            {
+              "discount_amount": "1500",
+              "discount_description": "#discount_desc_preset_special",
+              "discount_end_date": 1791478800
+            }
+          ],
+          "user_can_purchase_as_gift": true,
+          "hide_discount_pct_for_compliance": false,
+          "included_game_count": 1,
+          "must_purchase_as_set": false,
+          "package_group": "default",
+          "price_cannot_be_displayed_as_discount": false
+        }
+      }
+    ]
+  }
+}
