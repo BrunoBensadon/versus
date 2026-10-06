@@ -2,3 +2,4 @@
 export * from './features';
 export * from './metrics';
 export * from './ridge';
+export * from './predict';
