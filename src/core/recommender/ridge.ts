@@ -80,11 +80,13 @@ export function chooseLambda(
     const testC = testRows.map((i) => X[i].map((v, j) => v - xMean[j]));
 
     // 2. Training kernel: K[i][k] = (x_i − x̄)·(x_k − x̄), how alike two training games are.
-    const K = trainC.map((a) => {
-      const row = new Float64Array(nTrain);
-      for (let k = 0; k < nTrain; k++) row[k] = dot(a, trainC[k]);
-      return row;
-    });
+    const K = trainC.map(() => new Float64Array(nTrain));
+    // K is symmetric: compute each pair once and mirror it
+    for (let i = 0; i < nTrain; i++) {
+      for (let k = 0; k <= i; k++) {
+        K[i][k] = K[k][i] = dot(trainC[i], trainC[k]);
+      }
+    }
     // 3. Cross kernel: C[t][i] = (x_t − x̄)·(x_i − x̄), each held-out game against each training game.
     const C = testC.map((a) => {
       const row = new Float64Array(nTrain);
