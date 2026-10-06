@@ -1,6 +1,6 @@
 # versus — Design spec (v1)
 
-Status: **draft for Bruno's review** · Date: 2026-10-06 · Supersedes nothing
+Status: **approved by Bruno, 2026-10-06** · Date: 2026-10-06 · Supersedes nothing
 Inputs: `docs/PRD.md` v0.1 · `docs/requirements-map.md` · `docs/data-source-verification.md` ·
 throwaway spikes and simulations in `spikes/` (results in `spikes/results/`)
 
@@ -422,9 +422,11 @@ CI: GitHub Actions on push (typecheck, vitest, playwright).
 | D20 | Three backup layers incl. a private git repo | D1 Time Travel alone | NF-5: "losing the log is the worst failure"; the 7-day window is too short alone |
 | D21 | Online-required ranking in v1 | offline outbox | answers are posted immediately and sessions resume from the server; the outbox is Later |
 
-## 14. Bruno's setup tasks (cannot be done from here)
+## 14. Bruno's setup tasks
 
-1. Create a free Cloudflare account; run `npx wrangler login` once on this machine.
-2. Create the private GitHub repo `versus-backup`.
-3. Choose the app passphrase (it goes into `wrangler secret put APP_PASSPHRASE`).
+1. ✅ Done 2026-10-06: Cloudflare account created; wrangler credentials present on this machine.
+2. ✅ Done 2026-10-06: private repo `BrunoBensadon/versus-backup` created (empty; the backup workflow is added during implementation).
+3. ✅ Done 2026-10-06: app passphrase chosen, stored as `APP_PASSPHRASE` in the git-ignored `.env`. It's pushed with `wrangler secret put APP_PASSPHRASE` at first deploy.
 4. Keep the Steam profile's *Game details* public (✅ it is today).
+
+Note: the app repo `BrunoBensadon/versus` is **public**, so no export, fixture with personal data, or `.dev.vars` may ever be committed there.
