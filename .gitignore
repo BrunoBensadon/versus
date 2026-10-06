@@ -25,3 +25,18 @@ node_modules/
 Thumbs.db
 .vscode/
 .idea/
+
+# Build output and local tool state
+dist/
+.wrangler/
+coverage/
+test-results/
+playwright-report/
+
+# Local Worker secrets (copied from .env, never committed)
+.dev.vars
+.dev.vars.*
+
+# Exports hold personal data (rankings, playtimes): never commit them to this PUBLIC repo
+exports/
+*.export.json

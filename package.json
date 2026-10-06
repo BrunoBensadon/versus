@@ -1,0 +1,20 @@
+{
+  "name": "versus",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rank the games you've played, head to head; predict how you'd rank the ones you haven't.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.4",
+    "typescript": "6.0.3",
+    "vitest": "4.1.11"
+  }
+}
