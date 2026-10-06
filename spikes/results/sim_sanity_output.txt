@@ -1,0 +1,10 @@
+flip eps=0.05: mean τ after seeding and after N extra questions (30 reps)
+   adjacent                  +0  → 0.947  +50 → 0.950  +100→ 0.953  +200→ 0.959
+   far_pair                  +0  → 0.947  +50 → 0.951  +100→ 0.953  +200→ 0.958
+   reinsert_random           +0  → 0.947  +50 → 0.947  +100→ 0.947  +200→ 0.949
+   reinsert_least_supported  +0  → 0.947  +50 → 0.948  +100→ 0.947  +200→ 0.950
+flip eps=0.1: mean τ after seeding and after N extra questions (30 reps)
+   adjacent                  +0  → 0.907  +50 → 0.910  +100→ 0.912  +200→ 0.920
+   far_pair                  +0  → 0.907  +50 → 0.911  +100→ 0.913  +200→ 0.917
+   reinsert_random           +0  → 0.907  +50 → 0.908  +100→ 0.907  +200→ 0.905
+   reinsert_least_supported  +0  → 0.907  +50 → 0.908  +100→ 0.909  +200→ 0.912

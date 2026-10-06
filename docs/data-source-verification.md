@@ -76,7 +76,7 @@ Terms: <https://steamcommunity.com/dev/apiterms>
 
 The PRD says "Store `appdetails` gives genres/categories but **not** user tags". That's true of `appdetails`, but it isn't the whole story:
 
-- ✅ **`IStoreBrowseService/GetItems/v1`** (on `api.steampowered.com`, the same host as the Web API) with `data_request.include_tag_count=20` returns the **top-20 user tags with weights** for 50 apps per call (the batch size I tested), plus review summary, release info and categories. **121/121 of my apps returned 20 tags** (one returned 0).
+- ✅ **`IStoreBrowseService/GetItems/v1`** (on `api.steampowered.com`, the same host as the Web API) with `data_request.include_tag_count=20` returns the **top-20 user tags with weights** for 50 apps per call (the batch size I tested), plus review summary, release info and categories. **120/121 of my apps returned tags: 114 have the full 20, 6 have 1–18, and 1 has none.**
 - ✅ `IStoreService/GetTagList/v1` maps tag IDs to names. The vocabulary has **446 tags**; my library uses 282 of them (77 used by only one game).
 - ⚠️ `GetItems` is **not in the public Steamworks Web API reference** I could find (searched partner.steamgames.com). It's what the Steam store itself uses and is widely used by third parties, but Valve could change it without notice. Mitigation: keep SteamSpy as the fallback adapter.
 - ⚠️ The weights are on a different scale from SteamSpy's vote counts (Outer Wilds "Exploration": 927 vs. 1,255). The ordering is the same in my sample. Treat weights as **relative within a game** (normalize per game).

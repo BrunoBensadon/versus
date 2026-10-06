@@ -1,0 +1,5 @@
+Cold start (IGDB+Steam, signal 0.6, 10 reps): pairwise acc / tau
+  n=10 genre_avg 0.539  knn 0.671  ridge_score 0.734  logit_allorder 0.716
+  n=15 genre_avg 0.563  knn 0.688  ridge_score 0.749  logit_allorder 0.743
+  n=20 genre_avg 0.542  knn 0.702  ridge_score 0.747  logit_allorder 0.743
+  n=30 genre_avg 0.565  knn 0.679  ridge_score 0.743  logit_allorder 0.749

@@ -1,0 +1,39 @@
+Q1. Seeding cost (no noise)
+   n buckets  sim cost  /game  Σceil(log2)  log2(n!)
+  60       1       276   4.60          297       272
+  60       3       188   3.13          208       186
+ 100       1       530   5.30          573       525
+ 100       3       383   3.83          420       378
+ 200       1      1258   6.29         1345      1245
+ 200       3       956   4.78         1037       945
+  marginal cost of the NEXT game once seeded (3 buckets, worst bucket = liked, 45%):
+    n=60: liked bucket ~27 games → 5 questions max
+    n=100: liked bucket ~45 games → 6 questions max
+    n=200: liked bucket ~90 games → 7 questions max
+
+Q2. Noise → order quality (n=100, 3 buckets, perfect bucket choice). tau = Kendall τ vs truth
+                 noise  τ insert   τ p10    τ BT  max displ.
+                  none     1.000     1.000     0.995         0.0
+         flip eps=0.05     0.954   0.936   0.958        16.4
+          flip eps=0.1     0.910   0.882   0.915        22.7
+          flip eps=0.2     0.833   0.801   0.836        28.7
+       logistic T=0.05     0.964   0.956   0.966         8.1
+       logistic T=0.15     0.901   0.883   0.907        18.1
+        logistic T=0.3     0.844   0.816   0.848        25.0
+  same, 1 bucket (no buckets):
+         flip eps=0.05     0.848   0.770   0.882        45.1
+          flip eps=0.1     0.747   0.691   0.789        55.2
+  bucket mistakes (5% of n around each boundary may land in the neighbour bucket), flip 0.05:
+ flip .05 + bucket err     0.941   0.924   0.945        19.9
+
+Q3. 'Too close' (n=100, 3 buckets, logistic T=0.15). delta = gap under which user taps 'too close'
+  delta=0.02 neighbour: cost 372 (3.72/game), τ 0.900, τ BT 0.908
+  delta=0.02     place: cost 351 (3.51/game), τ 0.903, τ BT 0.911
+  delta=0.05 neighbour: cost 362 (3.62/game), τ 0.905, τ BT 0.916
+  delta=0.05     place: cost 316 (3.16/game), τ 0.902, τ BT 0.909
+
+Q5. Sanity checks after seeding (n=100, 3 buckets, flip eps=0.10)
+  budget   0: τ seed 0.911
+  budget  25: τ seed 0.911, τ after 0.913 (+28 questions incl. re-inserts)
+  budget  50: τ seed 0.911, τ after 0.915 (+53 questions incl. re-inserts)
+  budget 100: τ seed 0.911, τ after 0.919 (+102 questions incl. re-inserts)

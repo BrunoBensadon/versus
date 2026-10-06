@@ -72,6 +72,8 @@ Legend — **MVP** = needed for the first usable version · **Later** = after MV
 
 ## 6. Contradictions, gaps and ambiguous requirements
 
+> **Resolved 2026-10-06:** the items below were decided in the design session. Each final decision is in `docs/specs/2026-10-06-versus-design.md` (§2 PRD amendments, §13 decision log). Where a reading here differs from the spec, the spec wins.
+
 Each item has the reading I propose. Items marked **❓** need a decision from you in Phase 2.
 
 **A1. Predicted 0–10 score vs. bucket bands (R-REC-1 × R-RANK-4).** A score only exists for a position inside a bucket.

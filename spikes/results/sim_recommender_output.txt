@@ -1,0 +1,19 @@
+
+Features (IGDB + Steam tags): 673 after min_df>=3 & stop-list  {'genre': 13, 'kw': 469, 'mode': 6, 'persp': 6, 'tag': 161, 'theme': 18}; games=115; nonzeros/game median 37
+  n=40  signal=0.3:  genre_avg 0.559/0.05  knn 0.633/0.09  ridge_score 0.719/0.16  logit_log 0.557/0.03  logit_log+bucket 0.731/0.19  logit_allorder 0.741/0.19
+  n=40  signal=0.6:  genre_avg 0.553/0.11  knn 0.656/0.15  ridge_score 0.732/0.24  logit_log 0.568/0.08  logit_log+bucket 0.738/0.25  logit_allorder 0.752/0.23
+  n=65  signal=0.3:  genre_avg 0.558/0.06  knn 0.614/0.04  ridge_score 0.716/0.13  logit_log 0.580/0.04  logit_log+bucket 0.714/0.12  logit_allorder 0.727/0.09
+  n=65  signal=0.6:  genre_avg 0.557/0.07  knn 0.641/0.10  ridge_score 0.729/0.18  logit_log 0.558/0.02  logit_log+bucket 0.722/0.16  logit_allorder 0.743/0.17
+  n=100 signal=0.3:  genre_avg 0.559/0.09  knn 0.638/0.09  ridge_score 0.711/0.15  logit_log 0.571/0.02  logit_log+bucket 0.707/0.12  logit_allorder 0.727/0.12
+  n=100 signal=0.6:  genre_avg 0.560/0.09  knn 0.653/0.14  ridge_score 0.727/0.21  logit_log 0.589/0.07  logit_log+bucket 0.730/0.20  logit_allorder 0.747/0.19
+
+Features (IGDB only): 512 after min_df>=3 & stop-list  {'genre': 13, 'kw': 469, 'mode': 6, 'persp': 6, 'theme': 18}; games=115; nonzeros/game median 20
+  (synthetic taste below is generated from IGDB-only features too — see caveat)
+  n=40  signal=0.3:  genre_avg 0.552/0.09  knn 0.649/0.09  ridge_score 0.713/0.16  logit_log 0.586/0.21  logit_log+bucket 0.717/0.18  logit_allorder 0.728/0.15
+  n=40  signal=0.6:  genre_avg 0.557/0.09  knn 0.678/0.18  ridge_score 0.745/0.20  logit_log 0.587/0.09  logit_log+bucket 0.733/0.18  logit_allorder 0.764/0.20
+  n=65  signal=0.3:  genre_avg 0.588/0.20  knn 0.619/0.11  ridge_score 0.707/0.16  logit_log 0.581/0.11  logit_log+bucket 0.708/0.15  logit_allorder 0.728/0.12
+  n=65  signal=0.6:  genre_avg 0.618/0.21  knn 0.659/0.20  ridge_score 0.739/0.28  logit_log 0.617/0.15  logit_log+bucket 0.739/0.25  logit_allorder 0.763/0.25
+  n=100 signal=0.3:  genre_avg 0.571/0.12  knn 0.636/0.10  ridge_score 0.703/0.18  logit_log 0.586/0.07  logit_log+bucket 0.713/0.17  logit_allorder 0.733/0.17
+  n=100 signal=0.6:  genre_avg 0.600/0.16  knn 0.676/0.20  ridge_score 0.741/0.29  logit_log 0.614/0.13  logit_log+bucket 0.747/0.28  logit_allorder 0.769/0.30
+
+  cells = held-out pairwise accuracy / Kendall τ among held-out games. 0.5 = chance.
