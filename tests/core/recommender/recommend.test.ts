@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { globalOrder, replay, scores } from '../../../src/core/ranking';
-import { buildFeatures, columnLabel, recommend, vectorize } from '../../../src/core/recommender';
+import { buildFeatures, columnLabel, prepareRecommender, recommend, vectorize } from '../../../src/core/recommender';
 import { syntheticEvents, syntheticGames, syntheticUtility } from '../../fixtures/synthetic';
 
 describe('recommend', () => {
@@ -47,6 +47,13 @@ describe('recommend', () => {
       });
       for (const r of p.reasons) expect(has, `game ${p.gameId}: "${r.label}"`).toContain(r.label);
     }
+
+    // Fit once, predict many: the prepared function gives what recommend() gives, call after call.
+    const [a, b, c, d] = candidates;
+    const prepared = prepareRecommender(state, scoreMap, games);
+    expect(prepared([a, b])).toEqual(recommend(state, scoreMap, games, [a, b]));
+    expect(prepared([c, d, a])).toEqual(recommend(state, scoreMap, games, [c, d, a]));
+    expect(prepared([b])).toEqual(recommend(state, scoreMap, games, [b]));
   });
 
   it('kNN mode gives the same shape without reasons', () => {
