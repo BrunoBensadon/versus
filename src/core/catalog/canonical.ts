@@ -16,12 +16,18 @@ export const GAME_TYPE = {
 const FOLLOW_PARENT: ReadonlySet<number> = new Set([GAME_TYPE.remaster, GAME_TYPE.expandedGame, GAME_TYPE.port]);
 
 /**
- * Walk up the edition/remaster chain, at most 5 steps. `lookup` must already know the ancestors
- * (the Worker fetches them first); a missing ancestor ends the walk where it is.
+ * The longest edition/remaster chain canonicalWork() follows (spec §8). The Worker fetches this
+ * many levels of ancestors before calling it, so the walk never stops at a game it doesn't know.
+ */
+export const MAX_CHAIN_STEPS = 5;
+
+/**
+ * Walk up the edition/remaster chain, at most MAX_CHAIN_STEPS steps. `lookup` must already know the
+ * ancestors (the Worker fetches them first); a missing ancestor ends the walk where it is.
  */
 export function canonicalWork(id: GameId, lookup: (id: GameId) => GameMeta | undefined): GameId {
   let current = id;
-  for (let steps = 0; steps < 5; steps++) {
+  for (let steps = 0; steps < MAX_CHAIN_STEPS; steps++) {
     const g = lookup(current);
     if (!g) return current;
     if (g.versionParent !== null) current = g.versionParent; // editions
