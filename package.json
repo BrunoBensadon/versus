@@ -10,10 +10,12 @@
   },
   "scripts": {
     "typecheck": "tsc -p tsconfig.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "eval": "tsx scripts/eval.ts"
   },
   "devDependencies": {
     "@types/node": "26.6.4",
+    "tsx": "4.23.15",
     "typescript": "6.0.3",
     "vitest": "4.1.11"
   }

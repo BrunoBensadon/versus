@@ -5,3 +5,4 @@ export * from './ridge';
 export * from './predict';
 export * from './config';
 export * from './recommend';
+export * from './evaluate';
