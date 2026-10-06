@@ -29,9 +29,12 @@ describe('scores', () => {
   it('bandOf maps a score back to its bucket; gaps go to the lower bucket', () => {
     expect(bandOf(9)).toBe('loved');
     expect(bandOf(6.7)).toBe('loved');
-    expect(bandOf(6.65)).toBe('liked');
+    expect(bandOf(6.66)).toBe('loved');
+    expect(bandOf(6.64)).toBe('liked');
+    expect(bandOf(6.699999999999999)).toBe('loved');
     expect(bandOf(3.4)).toBe('liked');
-    expect(bandOf(3.35)).toBe('disliked');
+    expect(bandOf(3.36)).toBe('liked');
+    expect(bandOf(3.34)).toBe('disliked');
     expect(bandOf(0)).toBe('disliked');
   });
 
