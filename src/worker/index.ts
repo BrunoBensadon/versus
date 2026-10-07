@@ -5,13 +5,14 @@ import { hasBackupToken, hasValidSession, login } from './auth';
 import { realDeps, type Ctx, type Deps, type Env } from './env';
 import { errorResponse, HttpError, json, readJson } from './http';
 import type { Route } from './router';
+import { catalogRoutes } from './routes/catalog';
 import { eventRoutes } from './routes/events';
 import { libraryRoutes } from './routes/library';
 import { sessionRoutes } from './routes/session';
 
 export type { Env } from './env';
 
-const ROUTES: Route[] = [...sessionRoutes, ...eventRoutes, ...libraryRoutes];
+const ROUTES: Route[] = [...sessionRoutes, ...eventRoutes, ...libraryRoutes, ...catalogRoutes];
 
 export async function handle(req: Request, env: Env, deps: Deps = realDeps): Promise<Response> {
   const ctx: Ctx = { env, deps };
