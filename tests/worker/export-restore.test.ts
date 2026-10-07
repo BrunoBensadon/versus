@@ -61,4 +61,22 @@ describe('export and restore', () => {
   it('refuses an unknown export version', () => {
     expect(() => restoreStatements({ ...sampleExport(), version: 2 as 1 }, NOW.toISOString())).toThrow(/version/);
   });
+
+  it('a game whose parent is not in the export is restored as its own root, like the live Worker does', async () => {
+    // A remaster (game type 9, which canonicalWork follows) of game 9000, which was never fetched.
+    // Ids 9000/9001 are not used by the other tests in this file.
+    const [base] = syntheticGames({ games: 1, seed: 5, noise: 0 });
+    const remaster = { ...base, id: 9001, name: 'Remaster', gameType: 9, parentGame: 9000 };
+    const file: ExportFile = {
+      version: 1, exportedAt: NOW.toISOString(), events: [], library: [], games: [remaster], externalIds: [], sublists: [],
+    };
+    const statements = restoreStatements(file, NOW.toISOString());
+    await env.DB.batch(statements.map((sql) => env.DB.prepare(sql)));
+
+    const row = await env.DB.prepare('SELECT root_id FROM games WHERE id = ?').bind(9001).first<{ root_id: number }>();
+    expect(row?.root_id).toBe(9001);
+    const cookie = await loginCookie();
+    const lib = (await (await call('/api/library', { cookie })).json()) as { games: { id: number }[] };
+    expect(lib.games.map((g) => g.id)).toContain(9001);
+  });
 });

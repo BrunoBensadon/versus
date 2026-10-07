@@ -3,7 +3,7 @@
 // Events keep their original seq numbers, so the order derived from them is identical.
 // Pure string building, so it runs in Node (scripts/restore.ts) and in the Worker tests.
 
-import { canonicalWork } from '../src/core/catalog';
+import { canonicalWorkKnown } from '../src/core/catalog';
 import type { ExportFile, GameMeta } from '../src/core/types';
 
 function lit(v: string | number | null): string {
@@ -21,9 +21,10 @@ export function restoreStatements(file: ExportFile, nowIso: string): string[] {
     );
   }
   // root_id isn't in the export; recompute it from the exported games (ancestors are exported too).
+  // canonicalWorkKnown stops at the last exported game, exactly like the Worker's rootOf().
   const byId = new Map<number, GameMeta>(file.games.map((g) => [g.id, g]));
   for (const g of file.games) {
-    const root = canonicalWork(g.id, (id) => byId.get(id));
+    const root = canonicalWorkKnown(g.id, (id) => byId.get(id));
     out.push(`INSERT INTO games (id, root_id, meta, fetched_at) VALUES (${lit(g.id)}, ${lit(root)}, ${lit(JSON.stringify(g))}, ${lit(nowIso)});`);
   }
   for (const x of file.externalIds) {

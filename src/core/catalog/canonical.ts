@@ -37,6 +37,20 @@ export function canonicalWork(id: GameId, lookup: (id: GameId) => GameMeta | und
   return current;
 }
 
+/**
+ * canonicalWork() over the games we actually have: the walk stops at the last game `lookup` knows,
+ * instead of returning an ancestor id we never fetched. The Worker and the restore script both use
+ * this, so a game gets the same root id live and after a restore.
+ */
+export function canonicalWorkKnown(id: GameId, lookup: (id: GameId) => GameMeta | undefined): GameId {
+  return canonicalWork(id, (x) => {
+    const g = lookup(x);
+    if (!g) return undefined;
+    const next = parentIds(g)[0];
+    return next !== undefined && !lookup(next) ? undefined : g; // parent unknown: stop on this game
+  });
+}
+
 /** Ids of the games canonicalWork() would visit next, so the Worker can fetch them before calling it. */
 export function parentIds(g: GameMeta): GameId[] {
   if (g.versionParent !== null) return [g.versionParent];
