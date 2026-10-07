@@ -3,7 +3,7 @@
 
 import { attachSteam, canonicalWork, MAX_CHAIN_STEPS, normalizeIgdb, parentIds } from '../core/catalog';
 import type { GameId, GameMeta } from '../core/types';
-import { putGameStatement, type GameRow } from './db/games';
+import { getGameRow, getSteamAppids, putGameStatement, type GameRow } from './db/games';
 import type { Ctx } from './env';
 import { HttpError } from './http';
 import { igdbGames, igdbSteamAppids, igdbTimeToBeat } from './igdb';
@@ -65,14 +65,36 @@ export async function refreshGame(ctx: Ctx, id: GameId): Promise<{ requestedId: 
   if (!fetched.meta.has(id)) throw new HttpError(404, `IGDB has no game ${id}`);
   const rootId = rootOf(fetched, id);
   const ttb = await igdbTimeToBeat(ctx, [rootId]);
-  const appids = await igdbSteamAppids(ctx, rootId);
-  let items = new Map<number, unknown>();
-  let tagNames = new Map<number, string>();
-  if (appids.length > 0) {
-    items = await steamStoreItems(ctx, appids.slice(0, 1));
-    tagNames = await steamTagList(ctx);
+
+  // Which Steam appid to take the root's tags from. The import links the appids Bruno OWNS to the
+  // root (e.g. Skyrim SE 489830 → Skyrim 472), and IGDB often links none to the root itself.
+  const storedAppids = await getSteamAppids(ctx.env.DB, rootId);
+  let tagAppid: number | undefined;
+  if (storedAppids.length === 1) {
+    tagAppid = storedAppids[0];
+  } else if (storedAppids.length === 0) {
+    // Never imported: ask IGDB, and take the smallest appid so the choice is always the same.
+    const igdbAppids = await igdbSteamAppids(ctx, rootId);
+    tagAppid = igdbAppids.length > 0 ? Math.min(...igdbAppids) : undefined;
   }
-  const rows = gameRows(fetched, ttb, () => (appids.length > 0 ? items.get(appids[0]) : undefined), tagNames, nowIso);
+  // More than one stored appid: the import chose the tags by playtime, which a refresh can't know
+  // per appid, so tagAppid stays undefined and the stored tags are kept (below).
+
+  let item: unknown;
+  let tagNames = new Map<number, string>();
+  if (tagAppid !== undefined) {
+    item = (await steamStoreItems(ctx, [tagAppid])).get(tagAppid);
+    if (item !== undefined) tagNames = await steamTagList(ctx);
+  }
+  // Read the stored root before overwriting it, to keep its tags when there is no new store item.
+  const storedRoot = await getGameRow(ctx.env.DB, rootId);
+
+  const rows = gameRows(fetched, ttb, () => item, tagNames, nowIso);
+  const rootRow = rows.find((r) => r.meta.id === rootId)!;
+  if (item === undefined && storedRoot) {
+    // No fresh tags: copy the stored ones instead of writing none (nothing to keep for a new game).
+    rootRow.meta = { ...rootRow.meta, steamTags: storedRoot.meta.steamTags };
+  }
   await ctx.env.DB.batch(rows.map((r) => putGameStatement(ctx.env.DB, r)));
-  return { requestedId: id, rootId, meta: rows.find((r) => r.meta.id === rootId)!.meta };
+  return { requestedId: id, rootId, meta: rootRow.meta };
 }

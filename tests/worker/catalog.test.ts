@@ -85,4 +85,20 @@ describe('POST /api/import/steam', () => {
     const { rows } = (await (await call('/api/library', { cookie })).json()) as { rows: LibraryRow[] };
     expect(rows.find((r) => r.gameId === 11737)).toMatchObject({ status: 'played', bucket: 'loved' });
   });
+
+  it('a refresh keeps the Steam tags the import attached (Skyrim SE tags on root Skyrim)', async () => {
+    const cookie = await loginCookie();
+    await call('/api/import/steam', { method: 'POST', cookie });
+    const before = (await storedMeta(472)).steamTags;
+    expect(before?.length).toBeGreaterThan(0);
+    // IGDB links no Steam appid to 472 itself; the tags came from the owned appid 489830.
+    expect((await call('/api/games/472', { method: 'POST', cookie })).status).toBe(200);
+    expect((await storedMeta(472)).steamTags).toEqual(before);
+  });
 });
+
+/** The stored meta of one game, straight from D1. */
+async function storedMeta(id: number): Promise<GameMeta> {
+  const row = await env.DB.prepare('SELECT meta FROM games WHERE id = ?').bind(id).first<{ meta: string }>();
+  return JSON.parse(row!.meta) as GameMeta;
+}

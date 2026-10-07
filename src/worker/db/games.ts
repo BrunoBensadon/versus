@@ -49,6 +49,12 @@ export function putExternalIdStatement(db: D1Database, x: ExternalId): D1Prepare
     .bind(x.source, x.uid, x.gameId);
 }
 
+/** The Steam appids the import linked to one game, smallest first. */
+export async function getSteamAppids(db: D1Database, gameId: GameId): Promise<number[]> {
+  const { results } = await db.prepare("SELECT uid FROM external_ids WHERE source = 'steam' AND game_id = ?").bind(gameId).all<{ uid: string }>();
+  return results.map((r) => Number(r.uid)).sort((a, b) => a - b);
+}
+
 export async function getExternalIds(db: D1Database): Promise<ExternalId[]> {
   const { results } = await db.prepare('SELECT source, uid, game_id FROM external_ids ORDER BY source, uid').all<{ source: string; uid: string; game_id: number }>();
   return results.map((r) => ({ source: r.source, uid: r.uid, gameId: r.game_id }));
