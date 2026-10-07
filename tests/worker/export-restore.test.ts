@@ -5,8 +5,10 @@ import { env } from 'cloudflare:workers';
 import { describe, expect, it } from 'vitest';
 import type { ExportFile } from '../../src/core/types';
 import { restoreStatements } from '../../scripts/restore-sql';
+import { kvGet } from '../../src/worker/db/kv';
+import { exportRoutes } from '../../src/worker/routes/export';
 import { syntheticGames } from '../fixtures/synthetic';
-import { call, loginCookie, NOW } from './helpers';
+import { call, loginCookie, NOW, testDeps } from './helpers';
 
 function sampleExport(): ExportFile {
   const games = syntheticGames({ games: 4, seed: 3, noise: 0 });
@@ -56,6 +58,23 @@ describe('export and restore', () => {
     const cookie = await loginCookie();
     const status = await (await call('/api/status', { cookie })).json();
     expect(status).toEqual({ lastBackupAt: NOW.toISOString(), eventCount: 3 });
+  });
+
+  it('a failed export does not record last_backup_at', async () => {
+    // Start without a recorded backup (the test above set one), so "not recorded" means null.
+    await env.DB.prepare("DELETE FROM kv WHERE key = 'last_backup_at'").run();
+    // A database whose events table can't be read: exportAll() fails part-way through.
+    const brokenDb = {
+      prepare: (sql: string) => {
+        if (sql.includes('FROM events')) throw new Error('events table unusable');
+        return env.DB.prepare(sql);
+      },
+    } as unknown as D1Database;
+    const ctx = { env: { ...env, DB: brokenDb }, deps: testDeps() };
+    const req = new Request('https://versus.test/api/export');
+    const run = exportRoutes[0].run({ req, url: new URL(req.url), ctx, params: [], nowIso: NOW.toISOString(), viaBackupToken: true });
+    await expect(run).rejects.toThrow('events table unusable');
+    expect(await kvGet(env.DB, 'last_backup_at', NOW.toISOString())).toBeNull();
   });
 
   it('refuses an unknown export version', () => {

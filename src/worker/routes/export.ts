@@ -11,8 +11,10 @@ export const exportRoutes: Route[] = [
     method: 'GET',
     path: /^\/api\/export$/,
     run: async ({ ctx, nowIso, viaBackupToken }) => {
+      const file = await exportAll(ctx.env.DB, nowIso);
+      // Only a backup that was actually built counts (spec §10: Settings turns red after 3 days without one).
       if (viaBackupToken) await kvPut(ctx.env.DB, 'last_backup_at', nowIso);
-      return json(await exportAll(ctx.env.DB, nowIso), 200, {
+      return json(file, 200, {
         'content-disposition': `attachment; filename="versus-export-${nowIso.slice(0, 10)}.json"`,
       });
     },
