@@ -132,6 +132,29 @@ describe('POST /api/import/steam', () => {
     const remastered = getItems.response.store_items.find((i) => i.appid === 409710)!;
     expect((await storedMeta(20)).steamTags?.map((t) => t.tagId)).toEqual(remastered.tags.map((t) => t.tagid));
   });
+
+  it('an import with nothing to store returns its summary with a hint, not a 500', async () => {
+    const cookie = await loginCookie();
+    // Steam answers like this when the profile's "Game details" are private: no games list at all.
+    const privateProfile = testDeps({
+      fetch: (async (input: RequestInfo | URL, init?: RequestInit) => {
+        if (String(input).includes('GetOwnedGames')) {
+          return new Response(JSON.stringify({ response: {} }), { headers: { 'content-type': 'application/json' } });
+        }
+        return fakeUpstream(input, init);
+      }) as typeof fetch,
+    });
+    const res = await call('/api/import/steam', { method: 'POST', cookie }, privateProfile);
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({
+      owned: 0,
+      mapped: 0,
+      added: 0,
+      updated: 0,
+      unmapped: [],
+      hint: 'Steam returned no games. Is your Steam profile\'s "Game details" set to Public?',
+    });
+  });
 });
 
 /** The stored meta of one game, straight from D1. */

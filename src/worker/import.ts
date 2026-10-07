@@ -17,6 +17,9 @@ export interface ImportSummary {
   added: number; // new library rows (inbox)
   updated: number; // existing rows whose playtime was refreshed
   unmapped: { appid: number; name: string }[]; // usually software, not games
+  // Set when Steam returned no games at all: that almost always means the profile's game details are
+  // private (Steam then answers with an empty list instead of an error), so the PWA can say so.
+  hint?: string;
 }
 
 export async function importSteam(ctx: Ctx): Promise<ImportSummary> {
@@ -66,17 +69,21 @@ export async function importSteam(ctx: Ctx): Promise<ImportSummary> {
   });
 
   const db = ctx.env.DB;
-  await db.batch([
+  const statements = [
     ...rows.map((r) => putGameStatement(db, r)),
     ...[...rootOfApp].map(([appid, gameId]) => putExternalIdStatement(db, { source: 'steam', uid: String(appid), gameId })),
     ...libraryRows.map((r) => upsertLibraryStatement(db, r)),
-  ]);
+  ];
+  // D1 rejects an empty batch ("No SQL statements detected"), so only send one when there is something to store.
+  if (statements.length > 0) await db.batch(statements);
 
-  return {
+  const summary: ImportSummary = {
     owned: owned.length,
     mapped: mapped.length,
     added: libraryRows.filter((r) => !existing.has(r.gameId)).length,
     updated: libraryRows.filter((r) => existing.has(r.gameId)).length,
     unmapped: owned.filter((g) => !igdbOf.has(g.appid)).map((g) => ({ appid: g.appid, name: g.name })),
   };
+  if (owned.length === 0) summary.hint = 'Steam returned no games. Is your Steam profile\'s "Game details" set to Public?';
+  return summary;
 }
