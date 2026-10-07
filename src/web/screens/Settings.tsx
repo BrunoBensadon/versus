@@ -11,10 +11,25 @@ export function SettingsScreen({ onLogout }: { onLogout: () => void }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [lastBackupAt, setLastBackupAt] = useState<string | null | undefined>(undefined);
+  // True when the status request itself failed (different from "no backup recorded").
+  const [statusFailed, setStatusFailed] = useState(false);
 
   useEffect(() => {
-    api.status().then((s) => setLastBackupAt(s.lastBackupAt)).catch(() => setLastBackupAt(null));
+    api.status().then((s) => setLastBackupAt(s.lastBackupAt)).catch(() => setStatusFailed(true));
   }, []);
+
+  async function logout() {
+    setError(null);
+    try {
+      await api.logout();
+    } catch (e) {
+      // Do not call onLogout(): if the server logout failed the session cookie is still valid,
+      // so showing the login screen would pretend we are logged out when we are not.
+      setError(e instanceof Error ? e.message : String(e));
+      return;
+    }
+    onLogout();
+  }
 
   async function importSteam() {
     setBusy(true);
@@ -40,7 +55,7 @@ export function SettingsScreen({ onLogout }: { onLogout: () => void }) {
   }
 
   const age = lastBackupAt === undefined ? undefined : backupAgeDays(lastBackupAt, new Date());
-  const backupOld = age === null || (age !== undefined && age > 3);
+  const backupOld = !statusFailed && (age === null || (age !== undefined && age > 3));
 
   return (
     <section>
@@ -65,19 +80,12 @@ export function SettingsScreen({ onLogout }: { onLogout: () => void }) {
           <button onClick={downloadCsv}>Ranked list (CSV)</button>
         </div>
         <p className={backupOld ? 'error small' : 'muted small'} data-testid="backup-age">
-          {age === undefined ? 'Checking backups…' : age === null ? 'No nightly backup recorded yet.' : `Last nightly backup: ${age} day${age === 1 ? '' : 's'} ago.`}
+          {statusFailed ? 'Could not check backups.' : age === undefined ? 'Checking backups…' : age === null ? 'No nightly backup recorded yet.' : `Last nightly backup: ${age} day${age === 1 ? '' : 's'} ago.`}
         </p>
       </div>
 
       <div className="card">
-        <button
-          onClick={async () => {
-            await api.logout();
-            onLogout();
-          }}
-        >
-          Log out
-        </button>
+        <button onClick={logout}>Log out</button>
       </div>
     </section>
   );

@@ -12,6 +12,8 @@ import { useStore } from '../store';
 export function RankedScreen({ listId }: { listId: string | null }) {
   const store = useStore();
   const [filter, setFilter] = useState<SublistFilter>({});
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const sublist = listId ? store.sublists.find((s) => s.id === listId) : undefined;
   const order = globalOrder(store.state);
   const rankOf = new Map(order.map((id, i) => [id, i + 1]));
@@ -24,18 +26,33 @@ export function RankedScreen({ listId }: { listId: string | null }) {
     return matchesFilter(meta, row, filter);
   };
 
+  // Runs a save/delete: busy is always reset, and a failure is shown instead of being lost.
+  async function act(work: () => Promise<void>) {
+    setBusy(true);
+    setError(null);
+    try {
+      await work();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function saveFilter() {
     const name = window.prompt('Name this sub-list');
     if (!name) return;
     const id = crypto.randomUUID();
-    await store.saveSublist({ id, name, kind: 'filter', filter, items: [], createdAt: new Date().toISOString() });
-    navigate(`/ranked?list=${id}`);
+    await act(async () => {
+      await store.saveSublist({ id, name, kind: 'filter', filter, items: [], createdAt: new Date().toISOString() });
+      navigate(`/ranked?list=${id}`);
+    });
   }
 
   async function newSet() {
     const name = window.prompt('Name the new hand-picked list (add games from their page)');
     if (!name) return;
-    await store.saveSublist({ id: crypto.randomUUID(), name, kind: 'set', filter: null, items: [], createdAt: new Date().toISOString() });
+    await act(() => store.saveSublist({ id: crypto.randomUUID(), name, kind: 'set', filter: null, items: [], createdAt: new Date().toISOString() }));
   }
 
   const genres = [...new Set([...store.games.values()].flatMap((g) => g.genres))].sort();
@@ -49,7 +66,7 @@ export function RankedScreen({ listId }: { listId: string | null }) {
         {store.sublists.map((s) => (
           <a key={s.id} className={s.id === listId ? 'tab active' : 'tab'} href={`#/ranked?list=${s.id}`}>{s.name}</a>
         ))}
-        <button className="tab" onClick={newSet}>+ list</button>
+        <button className="tab" disabled={busy} onClick={newSet}>+ list</button>
       </div>
       <details className="filters">
         <summary>Filter</summary>
@@ -68,12 +85,19 @@ export function RankedScreen({ listId }: { listId: string | null }) {
             <option value="">Any status</option>
             {STATUSES.map((s) => <option key={s}>{s}</option>)}
           </select>
-          <button onClick={saveFilter} disabled={Object.keys(filter).every((k) => filter[k as keyof SublistFilter] === undefined)}>Save as sub-list</button>
+          <button onClick={saveFilter} disabled={busy || Object.keys(filter).every((k) => filter[k as keyof SublistFilter] === undefined)}>Save as sub-list</button>
         </div>
       </details>
       {sublist ? (
-        <button className="link" onClick={async () => { await store.removeSublist(sublist.id); navigate('/ranked'); }}>Delete this sub-list</button>
+        <button
+          className="link"
+          disabled={busy}
+          onClick={() => act(async () => { await store.removeSublist(sublist.id); navigate('/ranked'); })}
+        >
+          Delete this sub-list
+        </button>
       ) : null}
+      {error ? <p className="error" role="alert">{error}</p> : null}
       <p className="muted small">Scores (0–10) come from positions inside each bucket, so they shift as you rank more games.</p>
 
       {BUCKETS.map((bucket) => {

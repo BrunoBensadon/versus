@@ -16,6 +16,7 @@ export function SearchScreen() {
     const q = query.trim();
     if (q.length < 2) {
       setResults([]);
+      setError(null); // an old error must not linger once there is no search to blame it on
       return;
     }
     let cancelled = false;
