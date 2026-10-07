@@ -20,6 +20,14 @@ const PROTECTED: [string, string][] = [
 ];
 
 describe('auth', () => {
+  it('runs on the fake test secrets, never the real ones', () => {
+    // vitest.worker.config.ts overrides every secret; if this fails, real secrets may be leaking in.
+    expect(env.APP_PASSPHRASE === 'test-passphrase').toBe(true);
+    expect(env.STEAM_API_KEY.startsWith('TEST')).toBe(true);
+    expect(env.STEAM_ID64 === '76561190000000000').toBe(true);
+    expect(env.TWITCH_CLIENT_SECRET === 'test-twitch-secret').toBe(true);
+  });
+
   it.each(PROTECTED)('%s %s needs the session cookie', async (method, path) => {
     const res = await call(path, { method, body: method === 'GET' || method === 'DELETE' ? undefined : '{}' });
     expect(res.status).toBe(401);
