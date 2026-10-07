@@ -16,6 +16,7 @@
     "capture-fixtures": "tsx scripts/capture-fixtures.ts",
     "restore": "tsx scripts/restore.ts",
     "dev-vars": "tsx scripts/make-dev-vars.ts",
+    "icons": "tsx scripts/make-icons.ts",
     "db:migrate:local": "wrangler d1 migrations apply DB --local",
     "build": "vite build",
     "dev:web": "vite",
