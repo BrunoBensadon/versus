@@ -3,12 +3,17 @@
 
 import { useMemo, useState } from 'react';
 import { duplicateHints } from '../../core/catalog';
+import { positionOf } from '../../core/ranking';
 import type { Bucket, GameId, Status } from '../../core/types';
+import { ApiError } from '../api';
 import { BUCKET_LABEL, Cover, gameName } from '../components';
 import { inboxQueue } from '../derive';
 import { useStore } from '../store';
 
 const DISMISSED_KEY = 'versus.dismissedHints';
+
+/** Shown under the buttons when a save fails, so a tap never silently does nothing. */
+const SAVE_ERROR = "Couldn't save — check your connection and try again.";
 
 function readDismissed(): string[] {
   try {
@@ -23,6 +28,7 @@ export function TriageScreen() {
   const [busy, setBusy] = useState(false);
   const [dropped, setDropped] = useState(false);
   const [dismissed, setDismissed] = useState(readDismissed);
+  const [error, setError] = useState<string | null>(null);
 
   const queue = inboxQueue(store.rows, store.state);
   const current = queue[0];
@@ -40,10 +46,15 @@ export function TriageScreen() {
   const hints = useMemo(() => duplicateHints(visible), [visible]);
   const hint = hints.find(([a, b]) => !dismissed.includes(`${a}-${b}`));
 
+  // Every button goes through here: buttons are disabled while saving, and a failed save shows a message.
   async function act(work: () => Promise<void>) {
     setBusy(true);
+    setError(null);
     try {
       await work();
+    } catch (e) {
+      // A 401 (logged out) is already handled by the store: it sends the user to the login page.
+      if (!(e instanceof ApiError && e.status === 401)) setError(SAVE_ERROR);
     } finally {
       setBusy(false);
       setDropped(false);
@@ -53,9 +64,16 @@ export function TriageScreen() {
   const setStatus = (id: GameId, status: Status, bucket: Bucket | null = null) => act(() => store.patchLibrary(id, { status, bucket }));
 
   async function merge(keep: GameId, drop: GameId) {
+    // Read both rows before saving anything: the dropped row is about to become `ignored`.
+    const keepRow = store.rowOf.get(keep);
+    const dropRow = store.rowOf.get(drop);
     await act(async () => {
       await store.append([{ type: 'merged', gameId: drop, data: { into: keep } }]);
       await store.patchLibrary(drop, { status: 'ignored' });
+      // If the kept game hasn't been triaged yet, give it what was already decided for the dropped one.
+      if (keepRow?.status === 'inbox' && dropRow) {
+        await store.patchLibrary(keep, { status: dropRow.status, bucket: dropRow.bucket });
+      }
     });
   }
 
@@ -69,12 +87,21 @@ export function TriageScreen() {
     }
   }
 
-  // Keep the one with more playtime; merge the other into it.
+  // Which game survives a merge (extends roadmap deviation 14):
+  // - if exactly one of the two has a ranked place, keep that one (the game you ranked stays the one you see);
+  // - otherwise keep the one with more Steam playtime.
+  // The other one is merged into it.
   let banner = null;
   if (hint) {
     const [a, b] = hint;
     const playtime = (id: GameId) => store.rowOf.get(id)?.steamPlaytimeMin ?? 0;
-    const [keep, drop] = playtime(a) >= playtime(b) ? [a, b] : [b, a];
+    const aRanked = positionOf(store.state, a) !== null;
+    const bRanked = positionOf(store.state, b) !== null;
+    let keep: GameId;
+    let drop: GameId;
+    if (aRanked && !bRanked) [keep, drop] = [a, b];
+    else if (bRanked && !aRanked) [keep, drop] = [b, a];
+    else [keep, drop] = playtime(a) >= playtime(b) ? [a, b] : [b, a];
     banner = (
       <div className="card banner" data-testid="duplicate-hint">
         <p>
@@ -88,10 +115,13 @@ export function TriageScreen() {
     );
   }
 
+  const errorLine = error ? <p className="error" role="alert">{error}</p> : null;
+
   if (!current) {
     return (
       <section>
         {banner}
+        {errorLine}
         <h2>Triage done</h2>
         <p className="muted">Nothing left in the inbox.</p>
         <a className="button" href="#/queue?left=10">Rank 10</a>
@@ -126,6 +156,7 @@ export function TriageScreen() {
         <button disabled={busy} onClick={() => setStatus(current.gameId, 'playing')}>Playing</button>
         <button disabled={busy} onClick={() => setStatus(current.gameId, 'ignored')}>Ignore</button>
       </div>
+      {errorLine}
     </section>
   );
 }
