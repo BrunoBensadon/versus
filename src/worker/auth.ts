@@ -38,7 +38,16 @@ export async function constantTimeEqual(a: string, b: string): Promise<boolean> 
   return diff === 0;
 }
 
+/** A session key shorter than this (or missing) means the server isn't configured. */
+const MIN_SESSION_KEY_LENGTH = 16;
+
+function hasSessionKey(ctx: Ctx): boolean {
+  return Boolean(ctx.env.SESSION_KEY) && ctx.env.SESSION_KEY.length >= MIN_SESSION_KEY_LENGTH;
+}
+
 export async function makeSessionCookie(ctx: Ctx): Promise<string> {
+  // Never sign with a missing or weak key: anyone could forge a cookie signed with an empty one.
+  if (!hasSessionKey(ctx)) throw new HttpError(500, 'server not configured');
   const expires = Math.floor(ctx.deps.now().getTime() / 1000) + SESSION_SECONDS;
   const signature = base64url(await hmac(ctx.env.SESSION_KEY, `v1:${expires}`));
   return `${COOKIE_NAME}=${expires}.${signature}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=${SESSION_SECONDS}`;
@@ -55,6 +64,7 @@ function readCookie(req: Request, name: string): string | null {
 }
 
 export async function hasValidSession(req: Request, ctx: Ctx): Promise<boolean> {
+  if (!hasSessionKey(ctx)) return false; // same guard as makeSessionCookie: no key, no session
   const value = readCookie(req, COOKIE_NAME);
   if (!value) return false;
   const [expiresText, signature] = value.split('.');

@@ -82,4 +82,22 @@ describe('sub-lists', () => {
       expect((await call('/api/sublists/x', { method: 'PUT', cookie, body: JSON.stringify(body) })).status).toBe(400);
     }
   });
+
+  it('answers 400 for a sub-list id with a malformed %-escape', async () => {
+    const cookie = await loginCookie();
+    // "%FF" is not valid UTF-8, so decodeURIComponent throws a URIError.
+    const put = await call('/api/sublists/%FF', { method: 'PUT', cookie, body: JSON.stringify({ name: 'x', kind: 'set' }) });
+    expect(put.status).toBe(400);
+    expect((await call('/api/sublists/%FF', { method: 'DELETE', cookie })).status).toBe(400);
+  });
+
+  it('drops duplicate items, keeping the first occurrence order', async () => {
+    const cookie = await loginCookie();
+    const res = await call('/api/sublists/dups', {
+      method: 'PUT', cookie, body: JSON.stringify({ name: 'Dups', kind: 'set', items: [113112, 11737, 113112] }),
+    });
+    expect(res.status).toBe(200);
+    const { sublist } = (await res.json()) as { sublist: Sublist };
+    expect(sublist.items).toEqual([113112, 11737]);
+  });
 });

@@ -98,6 +98,41 @@ describe('auth', () => {
     expect(res.headers.get('set-cookie')).toBeNull();
   });
 
+  it('answers 400 when the login body is JSON but not an object', async () => {
+    for (const body of ['null', '[]', '"test-passphrase"']) {
+      const res = await call('/api/login', { method: 'POST', body });
+      expect(res.status).toBe(400);
+      expect(await res.json()).toHaveProperty('error');
+      expect(res.headers.get('set-cookie')).toBeNull();
+    }
+  });
+
+  it('refuses sessions when SESSION_KEY is missing or too short', async () => {
+    // Its own clock hour, so these logins don't count against the other tests.
+    const hour = testDeps({ now: () => new Date('2026-10-07T18:00:00.000Z') });
+    const login = (sessionKey: string) =>
+      handle(
+        new Request('https://versus.test/api/login', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ passphrase: env.APP_PASSPHRASE }),
+        }),
+        { ...env, SESSION_KEY: sessionKey },
+        hour,
+      );
+    for (const sessionKey of ['', 'too-short-key']) {
+      const res = await login(sessionKey);
+      expect(res.status).toBe(500);
+      expect(res.headers.get('set-cookie')).toBeNull();
+    }
+    // A cookie is never accepted while the key is missing (401, not a crash).
+    const cookie = await loginCookie(hour);
+    const status = new Request('https://versus.test/api/status', { headers: { cookie } });
+    expect((await handle(status, { ...env, SESSION_KEY: '' }, hour)).status).toBe(401);
+    // The test key, 'test-session-key', is exactly 16 characters and still works.
+    expect((await login(env.SESSION_KEY)).status).toBe(200);
+  });
+
   it('logout clears the cookie', async () => {
     const cookie = await loginCookie();
     const res = await call('/api/logout', { method: 'POST', cookie });

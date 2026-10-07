@@ -10,6 +10,7 @@ import { eventRoutes } from './routes/events';
 import { exportRoutes } from './routes/export';
 import { libraryRoutes } from './routes/library';
 import { sessionRoutes } from './routes/session';
+import { isObject } from './validate';
 
 export type { Env } from './env';
 
@@ -23,7 +24,10 @@ export async function handle(req: Request, env: Env, deps: Deps = realDeps): Pro
 
     // The only public route.
     if (req.method === 'POST' && url.pathname === '/api/login') {
-      const body = (await readJson(req)) as { passphrase?: unknown };
+      const body = await readJson(req);
+      // JSON that isn't an object (null, a list, a bare string) is a malformed request: 400, and not
+      // a login attempt, so it doesn't count against the hourly limit.
+      if (!isObject(body)) throw new HttpError(400, 'body must be an object with a passphrase');
       return json({ ok: true }, 200, { 'set-cookie': await login(body.passphrase, ctx) });
     }
 

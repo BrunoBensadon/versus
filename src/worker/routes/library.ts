@@ -55,7 +55,20 @@ export function parseSublist(id: string, body: unknown, nowIso: string): Sublist
   const items = body.items ?? [];
   if (!Array.isArray(items) || !items.every(isGameId)) fail('items must be a list of game ids');
   const createdAt = typeof body.createdAt === 'string' ? body.createdAt : nowIso;
-  return { id, name: body.name, kind: body.kind, filter, items: items as number[], createdAt };
+  // Drop repeated ids (a Set keeps the first occurrence, in order): storing one twice would break
+  // the (sublist_id, game_id) primary key.
+  const uniqueItems = [...new Set(items as number[])];
+  return { id, name: body.name, kind: body.kind, filter, items: uniqueItems, createdAt };
+}
+
+/** The :id of a sub-list route, decoded. A malformed %-escape (e.g. "%FF") → 400 instead of a crash. */
+function sublistIdParam(raw: string): string {
+  try {
+    return decodeURIComponent(raw);
+  } catch (e) {
+    if (e instanceof URIError) fail('sub-list id is not a valid URL-encoded string');
+    throw e;
+  }
 }
 
 export const libraryRoutes: Route[] = [
@@ -94,7 +107,7 @@ export const libraryRoutes: Route[] = [
     method: 'PUT',
     path: /^\/api\/sublists\/([^/]+)$/,
     run: async ({ req, ctx, params, nowIso }) => {
-      const sublist = parseSublist(decodeURIComponent(params[0]), await readJson(req), nowIso);
+      const sublist = parseSublist(sublistIdParam(params[0]), await readJson(req), nowIso);
       await putSublist(ctx.env.DB, sublist);
       return json({ sublist });
     },
@@ -103,7 +116,7 @@ export const libraryRoutes: Route[] = [
     method: 'DELETE',
     path: /^\/api\/sublists\/([^/]+)$/,
     run: async ({ ctx, params }) => {
-      await deleteSublist(ctx.env.DB, decodeURIComponent(params[0]));
+      await deleteSublist(ctx.env.DB, sublistIdParam(params[0]));
       return json({ ok: true });
     },
   },
