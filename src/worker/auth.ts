@@ -66,13 +66,19 @@ export async function hasValidSession(req: Request, ctx: Ctx): Promise<boolean> 
 }
 
 export async function hasBackupToken(req: Request, ctx: Ctx): Promise<boolean> {
+  // Never authenticate against a missing secret: an unset token would let "Bearer " through.
+  if (!ctx.env.BACKUP_TOKEN || ctx.env.BACKUP_TOKEN.length < 8) return false;
   const header = req.headers.get('authorization') ?? '';
   if (!header.startsWith('Bearer ')) return false;
   return constantTimeEqual(header.slice('Bearer '.length), ctx.env.BACKUP_TOKEN);
 }
 
-/** POST /api/login. Returns the Set-Cookie value; throws 401 or 429. */
+/** POST /api/login. Returns the Set-Cookie value; throws 401, 429, or 500 if the secret is missing. */
 export async function login(passphrase: unknown, ctx: Ctx): Promise<string> {
+  // Never authenticate against a missing secret: an unset passphrase would let an empty one log in.
+  if (!ctx.env.APP_PASSPHRASE || ctx.env.APP_PASSPHRASE.length < 8) {
+    throw new HttpError(500, 'server not configured');
+  }
   const now = ctx.deps.now();
   const hourKey = `login_failures:${now.toISOString().slice(0, 13)}`; // e.g. login_failures:2026-10-06T14
   const expiresAt = new Date(now.getTime() + 2 * 3600 * 1000).toISOString();

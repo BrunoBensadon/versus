@@ -1,5 +1,6 @@
 import { env } from 'cloudflare:workers';
 import { describe, expect, it } from 'vitest';
+import { handle } from '../../src/worker/index';
 import { call, loginCookie, NOW, testDeps } from './helpers';
 
 const PROTECTED: [string, string][] = [
@@ -73,6 +74,20 @@ describe('auth', () => {
     // The limit was reached, so even the right passphrase is refused for the rest of this hour.
     const blocked = await call('/api/login', { method: 'POST', body: JSON.stringify({ passphrase: env.APP_PASSPHRASE }) }, hour);
     expect(blocked.status).toBe(429);
+  });
+
+  it('refuses to log anyone in when the passphrase secret is missing', async () => {
+    // The helpers always use the test env, so build the request by hand with an empty secret.
+    const noSecret = { ...env, APP_PASSPHRASE: '' };
+    const hour = testDeps({ now: () => new Date('2026-10-07T17:00:00.000Z') });
+    const req = new Request('https://versus.test/api/login', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ passphrase: '' }), // an empty passphrase must not match the empty secret
+    });
+    const res = await handle(req, noSecret, hour);
+    expect(res.status).toBe(500);
+    expect(res.headers.get('set-cookie')).toBeNull();
   });
 
   it('logout clears the cookie', async () => {
