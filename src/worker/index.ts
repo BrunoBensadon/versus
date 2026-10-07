@@ -7,12 +7,13 @@ import { errorResponse, HttpError, json, readJson } from './http';
 import type { Route } from './router';
 import { catalogRoutes } from './routes/catalog';
 import { eventRoutes } from './routes/events';
+import { exportRoutes } from './routes/export';
 import { libraryRoutes } from './routes/library';
 import { sessionRoutes } from './routes/session';
 
 export type { Env } from './env';
 
-const ROUTES: Route[] = [...sessionRoutes, ...eventRoutes, ...libraryRoutes, ...catalogRoutes];
+const ROUTES: Route[] = [...sessionRoutes, ...eventRoutes, ...libraryRoutes, ...catalogRoutes, ...exportRoutes];
 
 export async function handle(req: Request, env: Env, deps: Deps = realDeps): Promise<Response> {
   const ctx: Ctx = { env, deps };

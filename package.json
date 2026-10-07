@@ -13,7 +13,8 @@
     "test": "vitest run && vitest run -c vitest.worker.config.ts",
     "test:worker": "vitest run -c vitest.worker.config.ts",
     "eval": "tsx scripts/eval.ts",
-    "capture-fixtures": "tsx scripts/capture-fixtures.ts"
+    "capture-fixtures": "tsx scripts/capture-fixtures.ts",
+    "restore": "tsx scripts/restore.ts"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "0.22.0",
