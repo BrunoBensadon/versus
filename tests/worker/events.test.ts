@@ -52,6 +52,22 @@ describe('events', () => {
     expect(row?.bucket).toBe('loved');
   });
 
+  it('a retried old placed event does not roll the bucket back', async () => {
+    const cookie = await loginCookie();
+    await env.DB.prepare(
+      "INSERT INTO library (game_id, status, bucket, platforms, source, added_at, updated_at) VALUES (78, 'played', 'disliked', '[]', 'manual', 'x', 'x')",
+    ).run();
+    const batch1 = [newEvent({ type: 'placed', gameId: 78, data: { session: 's78', bucket: 'loved', below: null } })];
+    const batch2 = [newEvent({ type: 'placed', gameId: 78, data: { session: 's78', bucket: 'liked', below: null } })];
+    await post(cookie, batch1);
+    await post(cookie, batch2);
+    await post(cookie, batch1); // late retry of the first POST (same event ids)
+    const row = await env.DB.prepare('SELECT bucket FROM library WHERE game_id = 78').first<{ bucket: string }>();
+    expect(row?.bucket).toBe('liked');
+    const count = await env.DB.prepare("SELECT count(*) AS n FROM events WHERE type = 'placed' AND game_id = 78").first<{ n: number }>();
+    expect(count?.n).toBe(2);
+  });
+
   it.each([
     ['no events array', {}],
     ['empty batch', { events: [] }],

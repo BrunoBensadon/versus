@@ -19,7 +19,8 @@ function toEvent(r: EventRow): RankEvent {
 
 /**
  * Append events. A retry with the same client UUIDs inserts nothing (idempotent).
- * A `placed` event also sets the library row's bucket (spec §5, bucket rule).
+ * A `placed` event also sets the library row's bucket — always from the
+ * game's latest `placed` event, so a retried old event can't undo a newer one (spec §5).
  * Returns the stored events (with their seq), in log order.
  */
 export async function insertEvents(db: D1Database, events: NewEvent[], nowIso: string): Promise<RankEvent[]> {
@@ -29,11 +30,20 @@ export async function insertEvents(db: D1Database, events: NewEvent[], nowIso: s
       db.prepare('INSERT INTO events (id, ts, list_id, type, game_id, data) VALUES (?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO NOTHING')
         .bind(e.id, e.ts, e.listId, e.type, e.gameId, JSON.stringify(e.data)),
     );
-    if (e.type === 'placed') {
-      statements.push(
-        db.prepare('UPDATE library SET bucket = ?, updated_at = ? WHERE game_id = ?').bind(e.data.bucket, nowIso, e.gameId),
-      );
-    }
+  }
+  // One bucket update per game that has a `placed` event in this request. It reads the bucket
+  // from the game's latest stored `placed` event, so a duplicate (retried) old event changes nothing.
+  const placedGameIds = new Set(events.filter((e) => e.type === 'placed').map((e) => e.gameId));
+  for (const gameId of placedGameIds) {
+    statements.push(
+      db.prepare(
+        `UPDATE library
+         SET bucket = (SELECT json_extract(data, '$.bucket') FROM events
+                       WHERE type = 'placed' AND game_id = ? ORDER BY seq DESC LIMIT 1),
+             updated_at = ?
+         WHERE game_id = ?`,
+      ).bind(gameId, nowIso, gameId),
+    );
   }
   if (statements.length > 0) await db.batch(statements);
   const stored: RankEvent[] = [];
