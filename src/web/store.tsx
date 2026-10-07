@@ -83,7 +83,8 @@ export function StoreProvider({ children, onUnauthorized }: { children: ReactNod
     const onVisible = () => {
       if (document.visibilityState !== 'visible') return;
       const last = data.events.at(-1)?.seq ?? 0;
-      api.events(last)
+      // Through guard, so a 401 sends the user to login; other (network) errors are ignored.
+      guard(() => api.events(last))
         .then(({ events }) => {
           if (events.length > 0) setData((d) => ({ ...d, events: mergeEvents(d.events, events), rows: withPlacedBuckets(d.rows, events) }));
         })
@@ -91,7 +92,7 @@ export function StoreProvider({ children, onUnauthorized }: { children: ReactNod
     };
     document.addEventListener('visibilitychange', onVisible);
     return () => document.removeEventListener('visibilitychange', onVisible);
-  }, [data.events]);
+  }, [data.events, guard]);
 
   const append = useCallback(
     async (bodies: EventBody[]) => {
@@ -152,7 +153,19 @@ export function StoreProvider({ children, onUnauthorized }: { children: ReactNod
   }, [state, scoreMap, gameList]);
   const rowOf = useMemo(() => new Map(data.rows.map((r) => [r.gameId, r])), [data.rows]);
 
-  if (error) return <p className="error">Could not load your data: {error}</p>;
+  if (error) {
+    // Clearing the error (loaded is still false) shows "Loading…" while reload() runs again.
+    const retry = () => {
+      setError(null);
+      void reload();
+    };
+    return (
+      <div>
+        <p className="error">Could not load your data: {error}</p>
+        <button onClick={retry}>Retry</button>
+      </div>
+    );
+  }
   if (!loaded) return <p className="muted">Loading…</p>;
 
   const store: Store = { ...data, state, scoreMap, rowOf, predict, append, patchLibrary, fetchGame, reload, saveSublist, removeSublist };

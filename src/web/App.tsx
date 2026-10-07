@@ -1,6 +1,6 @@
 // The app shell: login gate, bottom navigation, and the hash-route switch.
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Footer } from './components';
 import { useRoute } from './router';
 import { HomeScreen } from './screens/Home';
@@ -22,7 +22,21 @@ export function App() {
   const [loggedIn, setLoggedIn] = useState(true);
   const [generation, setGeneration] = useState(0); // remount the store after logging in again
 
-  if (route.parts[0] === 'privacy' && !loggedIn) return <PrivacyScreen />;
+  // Stable, so the store loads once per login (not on every navigation).
+  const onUnauthorized = useCallback(() => setLoggedIn(false), []);
+
+  // Logged-out privacy page: same container as the login page, plus a way back to it.
+  if (route.parts[0] === 'privacy' && !loggedIn) {
+    return (
+      <main className="app">
+        <PrivacyScreen />
+        <p>
+          <a href="#/">Back to login</a>
+        </p>
+        <Footer />
+      </main>
+    );
+  }
   if (!loggedIn) {
     return (
       <main className="app">
@@ -39,7 +53,7 @@ export function App() {
 
   return (
     <main className="app">
-      <StoreProvider key={generation} onUnauthorized={() => setLoggedIn(false)}>
+      <StoreProvider key={generation} onUnauthorized={onUnauthorized}>
         <div className="content">
           <Screen onLogout={() => setLoggedIn(false)} />
         </div>

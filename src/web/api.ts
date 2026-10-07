@@ -35,6 +35,7 @@ export interface ImportSummary {
   added: number;
   updated: number;
   unmapped: { appid: number; name: string }[];
+  hint?: string; // set when Steam returned no games (private profile?)
 }
 
 export const api = {
