@@ -94,6 +94,17 @@ A read-through of all six plans before execution found these; each is applied wh
 - `MAX_CHAIN_STEPS = 5` is exported from `canonical.ts`; **Plan 4's `fetchWithAncestors` fetches that many ancestor levels** (the plan text had 2, which would stop 3+-hop chains early and give the wrong root).
 - `duplicateHints` compares only games with the same normalized name (identical output on 403 test libraries; 396 → 1.8 ms at 500 games); **Plan 5's triage screen memoizes it**.
 
+## Changes made during Plan 4 (approved by Bruno, 2026-10-07)
+
+Per-task and final reviews found these in the plan's own Worker code; each fix has a test that failed first.
+
+- **Auth:** the login failure counter is reserved atomically (one upsert … RETURNING), so a burst of parallel guesses can't skip the 5-per-hour limit; login refuses (500 "server not configured") when `APP_PASSPHRASE` or `SESSION_KEY` is missing or short, and the backup token is ignored when unset; a test asserts Worker tests run on fake secrets (Bruno's real `.env` sits in the repo root); fetch traces are off (`observability.traces.enabled: false`) because Steam URLs carry the key.
+- **Events:** a `placed` event sets the library bucket from the game's latest stored `placed`, so a retried old POST can't roll it back.
+- **Catalog:** Refresh keeps the Steam tags the import attached (uses the stored appids; more than one → keeps the import's choice); the canonical walk stops at the last fetched ancestor (`canonicalWorkKnown`, shared by the Worker and the restore script so `root_id` is identical live and after a restore); tags come from the highest-playtime appid that has a store item; IGDB 401 token refresh is tested.
+- **Export/import:** `last_backup_at` is recorded only after the export is built; an import with nothing to store returns its summary with a "is your Steam profile public?" hint instead of a 500; malformed input gets 400 (null login body, bad `%`-escape, duplicate sub-list items are de-duplicated).
+- Worker tests: 71 (the plan's 55 + 16 for the above).
+- ⚠️ **Unverified, check in Plan 6 Task 2:** whether each statement inside a `db.batch()` counts toward Workers Free's 50 D1 queries per invocation. The Steam import batches ~400 statements and a large event POST up to ~1000. If the limit trips, switch those writes to set-based `INSERT … SELECT FROM json_each(?)`.
+
 ## Spec coverage
 
 | Spec | Where |

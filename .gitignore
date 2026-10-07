@@ -40,3 +40,7 @@ playwright-report/
 # Exports hold personal data (rankings, playtimes): never commit them to this PUBLIC repo
 exports/
 *.export.json
+
+# Restore SQL contains the whole event log
+*.restore.sql
+restore.sql
