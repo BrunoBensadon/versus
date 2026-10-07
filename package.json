@@ -17,15 +17,26 @@
     "restore": "tsx scripts/restore.ts",
     "dev-vars": "tsx scripts/make-dev-vars.ts",
     "db:migrate:local": "wrangler d1 migrations apply DB --local",
+    "build": "vite build",
+    "dev:web": "vite",
+    "dev": "vite build && wrangler dev --ip 127.0.0.1 --port 8787",
     "dev:worker": "wrangler dev --ip 127.0.0.1 --port 8787"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "0.22.0",
     "@cloudflare/workers-types": "5.20261006.1",
     "@types/node": "26.6.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
     "tsx": "4.23.15",
     "typescript": "6.0.3",
+    "vite": "8.3.3",
     "vitest": "4.1.11",
     "wrangler": "4.147.0"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   }
 }
