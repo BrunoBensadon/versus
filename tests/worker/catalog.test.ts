@@ -1,7 +1,8 @@
 import { env } from 'cloudflare:workers';
 import { describe, expect, it } from 'vitest';
 import type { GameMeta, LibraryRow } from '../../src/core/types';
-import { call, loginCookie } from './helpers';
+import { fakeUpstream } from '../fixtures/fake-upstream';
+import { call, loginCookie, testDeps } from './helpers';
 
 describe('search', () => {
   it('proxies IGDB and reranks: "hades" → Supergiant\'s Hades first', async () => {
@@ -44,6 +45,23 @@ describe('POST /api/games/:id', () => {
   it('answers 404 for an id IGDB does not know', async () => {
     const cookie = await loginCookie();
     expect((await call('/api/games/999999999', { method: 'POST', cookie })).status).toBe(404);
+  });
+
+  it('stops at the last fetched game when IGDB does not return an ancestor', async () => {
+    const cookie = await loginCookie();
+    // Counter-Strike: Source (307) made to say it is an edition of 999999001, which the fake IGDB doesn't have.
+    const brokenChain = testDeps({
+      fetch: (async (input: RequestInfo | URL, init?: RequestInit) => {
+        const res = await fakeUpstream(input, init);
+        if (!String(input).includes('/v4/games')) return res;
+        const games = (await res.json()) as { id: number }[];
+        const changed = games.map((g) => (g.id === 307 ? { ...g, version_parent: 999999001 } : g));
+        return new Response(JSON.stringify(changed), { headers: { 'content-type': 'application/json' } });
+      }) as typeof fetch,
+    });
+    const res = await call('/api/games/307', { method: 'POST', cookie }, brokenChain);
+    expect(res.status).toBe(200);
+    expect(await res.json()).toMatchObject({ requestedId: 307, rootId: 307 });
   });
 });
 

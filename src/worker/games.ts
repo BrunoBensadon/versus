@@ -30,8 +30,19 @@ export async function fetchWithAncestors(ctx: Ctx, ids: GameId[]): Promise<Fetch
   return fetched;
 }
 
+/**
+ * The root work of a fetched game. If IGDB didn't return an ancestor, the walk stops at the last
+ * game that WAS fetched: the lookup answers `undefined` for a game whose next parent is missing,
+ * and canonicalWork() ends the walk on that game. So the root is always a game we can store.
+ */
 export function rootOf(fetched: Fetched, id: GameId): GameId {
-  return canonicalWork(id, (x) => fetched.meta.get(x));
+  return canonicalWork(id, (x) => {
+    const g = fetched.meta.get(x);
+    if (g === undefined) return undefined;
+    const next = parentIds(g)[0];
+    if (next !== undefined && !fetched.meta.has(next)) return undefined; // parent never fetched: stop here
+    return g;
+  });
 }
 
 /**
