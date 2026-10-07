@@ -2,6 +2,7 @@ import { env } from 'cloudflare:workers';
 import { describe, expect, it } from 'vitest';
 import type { GameMeta, LibraryRow } from '../../src/core/types';
 import { fakeUpstream } from '../fixtures/fake-upstream';
+import getItems from '../fixtures/steam/get-items.json';
 import { call, loginCookie, testDeps } from './helpers';
 
 describe('search', () => {
@@ -112,6 +113,24 @@ describe('POST /api/import/steam', () => {
     // IGDB links no Steam appid to 472 itself; the tags came from the owned appid 489830.
     expect((await call('/api/games/472', { method: 'POST', cookie })).status).toBe(200);
     expect((await storedMeta(472)).steamTags).toEqual(before);
+  });
+
+  it('takes tags from the highest-playtime appid that has a store item', async () => {
+    const cookie = await loginCookie();
+    // BioShock (7670, 600 min) and BioShock Remastered (409710, 300 min) both collapse to 20.
+    // Here Steam returns no store item for 7670 (as if delisted), so 20 must get 409710's tags.
+    const delisted = testDeps({
+      fetch: (async (input: RequestInfo | URL, init?: RequestInit) => {
+        const res = await fakeUpstream(input, init);
+        if (!String(input).includes('GetItems')) return res;
+        const body = (await res.json()) as { response: { store_items: { appid: number }[] } };
+        const kept = body.response.store_items.filter((i) => i.appid !== 7670);
+        return new Response(JSON.stringify({ response: { store_items: kept } }), { headers: { 'content-type': 'application/json' } });
+      }) as typeof fetch,
+    });
+    expect((await call('/api/import/steam', { method: 'POST', cookie }, delisted)).status).toBe(200);
+    const remastered = getItems.response.store_items.find((i) => i.appid === 409710)!;
+    expect((await storedMeta(20)).steamTags?.map((t) => t.tagId)).toEqual(remastered.tags.map((t) => t.tagid));
   });
 });
 

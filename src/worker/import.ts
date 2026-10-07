@@ -37,13 +37,14 @@ export async function importSteam(ctx: Ctx): Promise<ImportSummary> {
   }
   const roots = [...new Set(rootOfApp.values())];
 
-  // 3. Steam tags + time-to-beat. When two appids collapse into one root, the higher-playtime appid's tags win.
+  // 3. Steam tags + time-to-beat. When two appids collapse into one root, the tags come from the
+  //    highest-playtime appid that HAS a store item (a delisted appid has none, so it is skipped).
   const items = await steamStoreItems(ctx, [...rootOfApp.keys()]);
   const tagNames = await steamTagList(ctx);
   const ttb = await igdbTimeToBeat(ctx, roots);
   const appsByPlaytime = [...mapped].sort((a, b) => b.playtimeMin - a.playtimeMin);
   const itemFor = (rootId: GameId) => {
-    const app = appsByPlaytime.find((g) => rootOfApp.get(g.appid) === rootId);
+    const app = appsByPlaytime.find((g) => rootOfApp.get(g.appid) === rootId && items.has(g.appid));
     return app ? items.get(app.appid) : undefined;
   };
   const rows = gameRows(fetched, ttb, itemFor, tagNames, nowIso);
