@@ -52,12 +52,12 @@ export function TriageScreen() {
     setError(null);
     try {
       await work();
+      setDropped(false); // only after a successful save, so a retry still saves `dropped`
     } catch (e) {
       // A 401 (logged out) is already handled by the store: it sends the user to the login page.
       if (!(e instanceof ApiError && e.status === 401)) setError(SAVE_ERROR);
     } finally {
       setBusy(false);
-      setDropped(false);
     }
   }
 
@@ -72,7 +72,9 @@ export function TriageScreen() {
       await store.patchLibrary(drop, { status: 'ignored' });
       // If the kept game hasn't been triaged yet, give it what was already decided for the dropped one.
       if (keepRow?.status === 'inbox' && dropRow) {
-        await store.patchLibrary(keep, { status: dropRow.status, bucket: dropRow.bucket });
+        // A kept game that already has a ranked place keeps its own bucket; copy only the status.
+        const patch = positionOf(store.state, keep) !== null ? { status: dropRow.status } : { status: dropRow.status, bucket: dropRow.bucket };
+        await store.patchLibrary(keep, patch);
       }
     });
   }
