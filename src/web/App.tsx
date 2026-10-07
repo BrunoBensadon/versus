@@ -3,8 +3,14 @@
 import { useCallback, useState } from 'react';
 import { Footer } from './components';
 import { useRoute } from './router';
+import { GameScreen } from './screens/Game';
 import { HomeScreen } from './screens/Home';
+import { LibraryScreen } from './screens/Library';
+import { PickScreen } from './screens/Pick';
 import { QueueScreen, RankScreen, RankStartScreen } from './screens/Rank';
+import { RankedScreen } from './screens/Ranked';
+import { SearchScreen } from './screens/Search';
+import { SettingsScreen } from './screens/Settings';
 import { LoginScreen, PrivacyScreen } from './screens/Static';
 import { TriageScreen } from './screens/Triage';
 import { StoreProvider } from './store';
@@ -14,10 +20,16 @@ function Screen({ onLogout }: { onLogout: () => void }) {
   const [first, second, third] = parts;
   const id = (raw: string | undefined) => Number(raw);
 
+  if (first === 'game' && second) return <GameScreen key={second} gameId={id(second)} />;
   if (first === 'rank' && second === 'new' && third) return <RankStartScreen key={third} gameId={id(third)} />;
   if (first === 'rank' && second) return <RankScreen key={second} sessionId={second} left={Number(query.get('left') ?? '0')} />;
   if (first === 'queue') return <QueueScreen left={Number(query.get('left') ?? '10')} />;
   if (first === 'triage') return <TriageScreen />;
+  if (first === 'ranked') return <RankedScreen listId={query.get('list')} />;
+  if (first === 'library') return <LibraryScreen />;
+  if (first === 'search') return <SearchScreen />;
+  if (first === 'pick') return <PickScreen />;
+  if (first === 'settings') return <SettingsScreen onLogout={onLogout} />;
   if (first === 'privacy') return <PrivacyScreen />;
   return <HomeScreen />;
 }
