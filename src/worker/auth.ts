@@ -1,7 +1,7 @@
 // Single-user auth (spec §10, NF-4): a passphrase → an HMAC-signed session cookie valid 90 days.
 // After 5 failed logins in the same clock hour, logins are refused until the next hour.
 
-import { kvGet, kvPut } from './db/kv';
+import { kvDecrement, kvIncrement } from './db/kv';
 import type { Ctx } from './env';
 import { HttpError } from './http';
 
@@ -75,12 +75,14 @@ export async function hasBackupToken(req: Request, ctx: Ctx): Promise<boolean> {
 export async function login(passphrase: unknown, ctx: Ctx): Promise<string> {
   const now = ctx.deps.now();
   const hourKey = `login_failures:${now.toISOString().slice(0, 13)}`; // e.g. login_failures:2026-10-06T14
-  const failures = Number((await kvGet(ctx.env.DB, hourKey, now.toISOString())) ?? '0');
-  if (failures >= MAX_FAILURES_PER_HOUR) throw new HttpError(429, 'too many failed logins; try again next hour');
+  const expiresAt = new Date(now.getTime() + 2 * 3600 * 1000).toISOString();
+  // Count this attempt as a failure BEFORE checking it, in one atomic statement. Reading the
+  // counter and writing it back later would let a burst of parallel logins all see the same count.
+  const attempts = await kvIncrement(ctx.env.DB, hourKey, expiresAt);
+  if (attempts > MAX_FAILURES_PER_HOUR) throw new HttpError(429, 'too many failed logins; try again next hour');
   if (typeof passphrase === 'string' && (await constantTimeEqual(passphrase, ctx.env.APP_PASSPHRASE))) {
+    await kvDecrement(ctx.env.DB, hourKey); // a success isn't a failure: give the reserved attempt back
     return makeSessionCookie(ctx);
   }
-  const expiresAt = new Date(now.getTime() + 2 * 3600 * 1000).toISOString();
-  await kvPut(ctx.env.DB, hourKey, String(failures + 1), expiresAt);
-  throw new HttpError(401, 'wrong passphrase');
+  throw new HttpError(401, 'wrong passphrase'); // the reserved attempt stays counted
 }

@@ -62,6 +62,19 @@ describe('auth', () => {
     expect(ok.status).toBe(200);
   });
 
+  it('keeps the limit when 10 wrong logins arrive at once', async () => {
+    // Its own clock hour, so the other tests' logins don't count here.
+    const hour = testDeps({ now: () => new Date('2026-10-07T15:30:00.000Z') });
+    const wrong = () => call('/api/login', { method: 'POST', body: JSON.stringify({ passphrase: 'nope' }) }, hour);
+    const results = await Promise.all(Array.from({ length: 10 }, wrong));
+    const statuses = results.map((r) => r.status);
+    expect(statuses.filter((s) => s === 401).length).toBe(5);
+    expect(statuses.filter((s) => s === 429).length).toBe(5);
+    // The limit was reached, so even the right passphrase is refused for the rest of this hour.
+    const blocked = await call('/api/login', { method: 'POST', body: JSON.stringify({ passphrase: env.APP_PASSPHRASE }) }, hour);
+    expect(blocked.status).toBe(429);
+  });
+
   it('logout clears the cookie', async () => {
     const cookie = await loginCookie();
     const res = await call('/api/logout', { method: 'POST', cookie });
