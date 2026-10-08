@@ -1,14 +1,20 @@
 # Nightly backup of versus (spec §10, durability layer 2). Lives in the PRIVATE repo
 # BrunoBensadon/versus-backup at .github/workflows/backup.yml, next to split-export.mjs.
 # Source of truth: versus/ops/versus-backup/ (copy both files over when they change).
-# GitHub only auto-disables scheduled workflows in PUBLIC repos after 60 days without activity;
-# this repo is private and commits every night anyway.
+# GitHub auto-disables scheduled workflows only in PUBLIC repos after 60 days without activity
+# (⚠️ as documented, not tested); this repo is private, so nights with no new data (and so no
+# commit) don't switch it off.
 name: Nightly backup
 
 on:
   schedule:
     - cron: '17 3 * * *' # 03:17 UTC every day
   workflow_dispatch: # "Run workflow" button for a manual backup
+    inputs:
+      allow_fewer:
+        description: 'Accept FEWER events than the last backup (only after restoring an older backup on purpose)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -29,9 +35,18 @@ jobs:
             -H "Authorization: Bearer $BACKUP_TOKEN" \
             "$VERSUS_URL/api/export" -o export.json
 
+      # split-export.mjs fails this run (and GitHub emails you) if the export is malformed or has
+      # fewer events than the last backup; the files from the last good night stay as they are.
+      # Note: the app's Settings still shows the backup as fresh, because the export WAS served.
       - name: Split into diff-friendly files
+        env:
+          ALLOW_FEWER: ${{ inputs.allow_fewer }} # empty on the nightly schedule
         run: |
-          node split-export.mjs export.json
+          if [ "$ALLOW_FEWER" = "true" ]; then
+            node split-export.mjs export.json --allow-fewer
+          else
+            node split-export.mjs export.json
+          fi
           rm export.json
 
       - name: Commit if anything changed

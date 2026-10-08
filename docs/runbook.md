@@ -23,7 +23,13 @@ The PWA updates on the next launch (the service worker fetches the network first
 `secrets:push` takes `.env` values for the first five and **generates new** `SESSION_KEY` and
 `BACKUP_TOKEN` on every run, so running it again is how you rotate them. Rotating `SESSION_KEY` logs
 every device out. To change only the passphrase: edit `.env`, then
-`grep '^APP_PASSPHRASE=' .env | cut -d= -f2- | tr -d '\n' | npx wrangler secret put APP_PASSPHRASE`.
+
+```bash
+PASS=$(node -e "process.loadEnvFile('.env'); const v = process.env.APP_PASSPHRASE; if (!v) { console.error('APP_PASSPHRASE is missing in .env'); process.exit(1); } process.stdout.write(v)") && printf '%s' "$PASS" | npx wrangler secret put APP_PASSPHRASE; unset PASS
+```
+
+It reads `.env` the same way `secrets:push` does (quotes and Windows line endings are stripped), and
+wrangler only runs if the value was found. `tests/scripts/secrets.test.ts` runs this exact `node -e` part.
 
 ## Backups: three layers
 
