@@ -5,5 +5,5 @@
     "jsx": "react-jsx",
     "types": ["node"]
   },
-  "include": ["src/core", "src/web", "tests/core", "tests/web", "tests/e2e", "tests/fixtures", "tests/boundary.test.ts", "scripts", "vite.config.ts", "playwright.config.ts"]
+  "include": ["src/core", "src/web", "tests/core", "tests/web", "tests/scripts", "tests/e2e", "tests/fixtures", "tests/boundary.test.ts", "scripts", "vite.config.ts", "playwright.config.ts"]
 }
