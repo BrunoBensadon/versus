@@ -16,8 +16,9 @@
     {
       "binding": "DB",
       "database_name": "versus",
-      // Placeholder for local dev and tests. Plan 6 replaces it with the id from `wrangler d1 create versus`.
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      // The production database (`wrangler d1 create versus`, 2026-10-08, region ENAM). Not a secret:
+      // using it needs Bruno's Cloudflare login. Local dev and tests use local copies, never this one.
+      "database_id": "6ef11265-fa22-4d98-8a76-29505b751044",
       "migrations_dir": "migrations"
     }
   ],
