@@ -557,13 +557,13 @@ Expected: the run succeeds; the clone now has `meta.json`, `events.jsonl`, `libr
 - [ ] **Step 3: Restore drill into a scratch database**
 
 ```bash
-npm run restore -- ../versus-backup drill.sql
+npm run restore -- ../versus-backup drill.restore.sql
 npx wrangler d1 create versus-drill
 npx wrangler d1 migrations apply versus-drill --remote
-npx wrangler d1 execute versus-drill --remote --file drill.sql
+npx wrangler d1 execute versus-drill --remote --file drill.restore.sql
 npx wrangler d1 execute versus-drill --remote --command "SELECT count(*) AS events FROM events"
 wc -l ../versus-backup/events.jsonl
-rm drill.sql
+rm drill.restore.sql
 npx wrangler d1 delete versus-drill
 ```
 
