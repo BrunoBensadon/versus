@@ -136,7 +136,8 @@ Per-task and final reviews found these in the plan's own Worker code; each fix h
 
 ## Open risks and follow-ups (carried from the spec, plus what planning found)
 
-- ⚠️ **Steam import CPU** on Workers Free (10 ms). It is measured in P6 Task 2; if it fails, the follow-up splits the import into two requests.
+- ⚠️ **Steam import CPU** on Workers Free (10 ms). Measured in P6 Task 2 (2026-10-08): outcome `ok` but **41–43 ms CPU** (runbook, Acceptance log). Cloudflare didn't enforce 10 ms here; if `exceededCpu` ever shows up, the follow-up splits the import into two requests.
+- ✅ **D1 per-invocation limit:** no "Too many API requests" error in P6 Task 2. Batch statements don't count one by one, so the `json_each` fallback isn't needed.
 - ⚠️ **Model fit time on the phone** (spec §7.2 budget < 200 ms) isn't measured by any test. Check it in P6 Task 4 with Chrome's performance panel if the game page feels slow; the fix is a Web Worker.
 - ⚠️ **Typeahead quality** (spec §12's main NF-1 risk): the rerank is tuned on 2 queries.
 - ⚠️ **`GetItems` is undocumented** (spec §12): see deviation 13 for the swap point.
