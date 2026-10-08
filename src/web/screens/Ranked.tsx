@@ -92,7 +92,11 @@ export function RankedScreen({ listId }: { listId: string | null }) {
         <button
           className="link"
           disabled={busy}
-          onClick={() => act(async () => { await store.removeSublist(sublist.id); navigate('/ranked'); })}
+          onClick={() => {
+            // Ask first: a set list's hand-picked games are gone for good once it's deleted.
+            if (!window.confirm("Delete this sub-list? Its hand-picked games can't be recovered.")) return;
+            void act(async () => { await store.removeSublist(sublist.id); navigate('/ranked'); });
+          }}
         >
           Delete this sub-list
         </button>

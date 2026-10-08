@@ -10,7 +10,8 @@ export const BUCKET_LABEL: Record<Bucket, string> = { loved: 'Loved', liked: 'Li
 
 export function Cover({ meta, big = false }: { meta: GameMeta | undefined; big?: boolean }) {
   const url = coverUrl(meta?.coverImageId ?? null, big ? 't_cover_big' : 't_cover_small');
-  return url ? <img className={big ? 'cover big' : 'cover'} src={url} alt="" loading="lazy" /> : <div className={big ? 'cover big blank' : 'cover blank'} />;
+  // no-referrer: IGDB's image CDN isn't told which page (or game) the cover was shown on.
+  return url ? <img className={big ? 'cover big' : 'cover'} src={url} alt="" loading="lazy" referrerPolicy="no-referrer" /> : <div className={big ? 'cover big blank' : 'cover blank'} />;
 }
 
 export function gameName(games: Map<GameId, GameMeta>, id: GameId): string {

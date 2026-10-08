@@ -101,5 +101,6 @@ describe('rankedListCsv', () => {
     const games = new Map([[1, game(1, { name: 'Hades, the "good" one', year: 2020 })], [2, game(2, { year: null })]]);
     const csv = rankedListCsv(state, scores(state), games, new Map([[1, row(1, { status: 'played' })]]));
     expect(csv).toBe('rank,name,year,bucket,score,status\n1,"Hades, the ""good"" one",2020,loved,10.0,played\n2,Game 2,,liked,6.6,\n');
+    expect(rankedListCsv(state, scores(state), new Map([[1, game(1, { name: 'Line\rbreak' })]]), new Map())).toContain('\n1,"Line\rbreak",');
   });
 });

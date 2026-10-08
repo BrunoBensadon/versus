@@ -54,11 +54,9 @@ export function GameScreen({ gameId }: { gameId: GameId }) {
   }
 
   const setStatus = (status: Status) => act(() => store.patchLibrary(gameId, { status }));
-  const rankNow = () =>
-    act(async () => {
-      await store.patchLibrary(gameId, { status: row?.status === 'dropped' ? 'dropped' : 'played' });
-      navigate(`/rank/new/${gameId}`);
-    });
+  // Only go to the bucket choice: choosing a bucket there saves `played` (or keeps `dropped`) with the bucket,
+  // so backing out of it leaves a backlog/wishlist game as it was.
+  const rankNow = () => navigate(`/rank/new/${gameId}`);
   const unrank = () => act(() => store.append([{ type: 'unranked', gameId, data: {} }]));
   const mergedHere = [...store.state.aliases].filter(([, into]) => into === gameId).map(([from]) => from);
   const unmerge = (from: GameId) =>

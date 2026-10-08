@@ -75,7 +75,7 @@ export function backupAgeDays(lastBackupAt: string | null, now: Date): number | 
 
 function csvCell(v: string | number): string {
   const s = String(v);
-  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  return /[",\r\n]/.test(s) ?`"${s.replace(/"/g, '""')}"` : s;
 }
 
 /** The ranked list as CSV (spec §10, Export): rank, name, year, bucket, score, status. */
