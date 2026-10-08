@@ -20,6 +20,7 @@ export default defineConfig({
       url: 'http://127.0.0.1:8787/',
       timeout: 180_000,
       reuseExistingServer: !process.env.CI,
+      env: { WRANGLER_SEND_METRICS: 'false' }, // wrangler sends no telemetry during e2e
     },
   ],
 });

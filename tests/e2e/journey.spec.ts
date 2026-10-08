@@ -15,16 +15,21 @@ async function answerUntilConfirm(page: Page, choice: 'pick-new' | 'pick-pivot' 
     if (await page.getByTestId('confirm').isVisible()) return asked;
     // The pick buttons stay visible but disabled while the answer saves, so wait for the save to finish
     // (and the buttons to be enabled again, or the confirm screen to replace them) before looking again.
-    await Promise.all([
+    const [response] = await Promise.all([
       page.waitForResponse((r) => r.url().endsWith('/api/events') && r.request().method() === 'POST'),
       page.getByTestId(choice).click(),
     ]);
+    // A failed save fails the test right here, instead of timing out later.
+    expect(response.ok(), 'saving an answer failed').toBe(true);
     await expect(page.locator('[data-testid^="pick-"][disabled]')).toHaveCount(0);
     asked += 1;
   }
 }
 
 test('the v1 journey on a phone', async ({ page }) => {
+  // Covers come from IGDB's CDN; tests never touch the real IGDB, so serve a local image instead.
+  await page.route('https://images.igdb.com/**', (route) => route.fulfill({ path: 'src/web/public/icons/icon-192.png' }));
+
   await test.step('log in', async () => {
     await page.goto('/');
     await page.getByLabel('Passphrase').fill('e2e-passphrase');
