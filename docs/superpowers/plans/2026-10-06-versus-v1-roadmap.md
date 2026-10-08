@@ -105,6 +105,15 @@ Per-task and final reviews found these in the plan's own Worker code; each fix h
 - Worker tests: 71 (the plan's 55 + 16 for the above).
 - ⚠️ **Unverified, check in Plan 6 Task 2:** whether each statement inside a `db.batch()` counts toward Workers Free's 50 D1 queries per invocation. The Steam import batches ~400 statements and a large event POST up to ~1000. If the limit trips, switch those writes to set-based `INSERT … SELECT FROM json_each(?)`.
 
+## Changes made during Plan 5 (approved by Bruno, 2026-10-07)
+
+- **Store:** `store.predict` fits the recommender lazily, once per event log / game data (`prepareRecommender`); App passes a stable `onUnauthorized`, so data loads once per login instead of on every navigation; a 401 on resume goes to login; a load error offers Retry; the logged-out Privacy page has a way back.
+- **Screens:** every save reports failures inline and always re-enables its buttons (ranking, triage, sub-lists, logout — a failed logout keeps you logged in); Redo sends cancel + start in one request; Merge keeps the ranked game when exactly one of the pair is ranked and never overrides a ranked bucket; Rank 10 survives a bucket change; a re-rank no longer writes the library bucket before `placed`; "rank now" no longer pre-marks a backlog game as played; duplicate hints are memoized; the confidence label is always shown; deleting a sub-list asks first; a failed backup-status check says so instead of showing the red "no backup".
+- **Layout:** works at 360 px (head-to-head and filter grids shrink), 44 px tap targets, readable dark-mode primary buttons.
+- **Privacy:** covers load with `referrerPolicy="no-referrer"`; wrangler telemetry is off during e2e.
+- **e2e:** the fake `SESSION_KEY` is ≥ 16 characters (Plan 4 guard); the answer helper waits for each save (it raced a disabled button) and fails fast if a save fails; cover images from `images.igdb.com` are intercepted, so tests never touch IGDB; a second test checks no element passes the 360 px content box; CI job timeout 20 min.
+- Plan 6 Task 3's drill writes `drill.restore.sql` (git-ignored), not `drill.sql`.
+
 ## Spec coverage
 
 | Spec | Where |
