@@ -501,6 +501,7 @@ In desktop Chrome: open the URL → log in with the passphrase → Settings → 
 Expected:
 - the summary reads about `121 owned · 118 found on IGDB · ~110 new` (✅ spec §8 numbers; some appids collapse into one work);
 - the tail shows `POST /api/import/steam` with outcome **ok**. If it shows `exceededCpu`, record it in `docs/runbook.md` (Acceptance log) and open a follow-up to split the import into two requests (owned+mapping, then tags+time-to-beat). Do not work around it in this task.
+- the tail also shows no D1 error "Too many API requests by single Worker invocation" for the import (it batches ~400 statements; ⚠️ unverified whether batch statements count toward Workers Free's 50 D1 queries per invocation — roadmap, "Changes made during Plan 4"). If it appears, record it in the Acceptance log and open a follow-up to switch the import, event and sub-list writes to set-based `INSERT … SELECT FROM json_each(?)`. Do not work around it in this task.
 - `GET https://<url>/api/status` without a cookie → `{"error":"log in first"}`.
 
 Stop the tail with Ctrl+C.

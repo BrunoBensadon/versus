@@ -79,4 +79,5 @@ Check: log in → My ranking shows the same order; Settings → Export → compa
 | | Install from Chrome on the S26; rank one just-finished game in < 1 min (NF-1) | |
 | | First nightly backup committed; restore drill B into a scratch database matched the event count | |
 | | Steam import CPU: `wrangler tail` showed no `exceededCpu` | |
+| | D1 per-invocation limit: the Steam import (~400 statements in one batch) and a large event POST showed no "Too many API requests by single Worker invocation" error in `wrangler tail` (⚠️ unverified whether batch statements count toward Workers Free's 50; fallback: set-based `INSERT … SELECT FROM json_each(?)`, see the roadmap) | |
 | | ≥ 20 ranked games: `npm run eval` run; `SCORER` set by the ship rule | |
